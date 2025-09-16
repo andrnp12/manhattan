@@ -3,56 +3,86 @@
 <!DOCTYPE html>
 <html>
   <?php include('header.php'); ?>
-  <section id="slider">
-    <div class="swiper slider position-relative">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide d-flex"
-          style="background-image: url(images/slider-image.jpg); background-size: cover; background-repeat: no-repeat; height: 90vh; background-position: center;">
 
-          <div class="container m-auto ">
-            <div class="text-start col-md-10 offset-md-1">
-              <h2 class="display-1 fw-bold text-white">Top Solar and Renewable Energy</h2>
-              <p class="text-white">Vero elitr justo clita dolor at sed stet sit diam no. Kasd rebum ipsum et diam <br>
-                justo
-                clita et kasd rebum sea elitr.</p>
-              <a href="services-single.html" class="btn btn-primary mt-3">Read More</a>
-            </div>
+<section id="slider">
+  <div class="swiper position-relative">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide"
+        style="background-image: url(images/slider-image.jpg);">
+        <div class="container m-auto">
+          <div class="text-start col-md-10">
+            <h2 class="display-1 fw-bold text-white">Top Solar and Renewable Energy</h2>
+            <p class="text-white">Vero elitr justo clita dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+            <a href="services-single.html" class="btn btn-primary mt-3">Read More</a>
           </div>
-
         </div>
-        <div class="swiper-slide d-flex"
-          style="background-image: url(images/slider-image1.jpg); background-size: cover; background-repeat: no-repeat; height: 90vh; background-position: center;">
-
-          <div class="container m-auto ">
-            <div class="text-start col-md-10 offset-md-1">
-              <h2 class="display-1 fw-bold text-white">Top Solar and Renewable Energy</h2>
-              <p class="text-white">Vero elitr justo clita dolor at sed stet sit diam no. Kasd rebum ipsum et diam <br>
-                justo
-                clita et kasd rebum sea elitr.</p>
-              <a href="services-single.html" class="btn btn-primary mt-3">Read More</a>
-            </div>
-          </div>
-
-        </div>
-        <div class="swiper-slide d-flex"
-          style="background-image: url(images/slider-image2.jpg); background-size: cover; background-repeat: no-repeat; height: 90vh; background-position: center;">
-
-          <div class="container m-auto ">
-            <div class="text-start col-md-10 offset-md-1">
-              <h2 class="display-1 fw-bold text-white">Top Solar and Renewable Energy</h2>
-              <p class="text-white">Vero elitr justo clita dolor at sed stet sit diam no. Kasd rebum ipsum et diam <br>
-                justo
-                clita et kasd rebum sea elitr.</p>
-              <a href="services-single.html" class="btn btn-primary mt-3">Read More</a>
-            </div>
-          </div>
-
-        </div>
-
       </div>
-      <div class="swiper-pagination slider-pagination position-absolute pb-5"></div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide"
+        style="background-image: url(images/slider-image1.jpg);">
+        <div class="container m-auto">
+          <div class="text-start col-md-10">
+            <h2 class="display-1 fw-bold text-white">Top Solar and Renewable Energy</h2>
+            <p class="text-white">Vero elitr justo clita dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+            <a href="services-single.html" class="btn btn-primary mt-3">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide"
+        style="background-image: url(images/slider-image2.jpg);">
+        <div class="container m-auto">
+          <div class="text-start col-md-10">
+            <h2 class="display-1 fw-bold text-white">Top Solar and Renewable Energy</h2>
+            <p class="text-white">Vero elitr justo clita dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+            <a href="services-single.html" class="btn btn-primary mt-3">Read More</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <!-- Pagination & Navigation -->
+    <div class="swiper-pagination slider-pagination position-absolute pb-5"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+<style>
+  /* FIX: pastikan semua slide punya ukuran */
+  #slider .swiper {
+    width: 100%;
+    height: 90vh;
+  }
+  #slider .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  }
+</style>
 
   <!-- <section id="info" class="padding-medium">
     <div class="container">
