@@ -228,8 +228,8 @@
 
   <section id="projects" class="padding-medium">
     <div class="container">
-      <h6 class="text-center text-primary">Our Projects</h6>
-      <h3 class="text-center display-5 fw-bold ">View Our Latest Projects</h3>
+      <h6 class="text-center text-primary">Materi Kami</h6>
+      <h3 class="text-center display-5 fw-bold ">Lihat Seluruh Materi Kami</h3>
       <div class="my-4">
         <p class="text-center">
           <button class="filter-button px-3 me-2 mb-3 active" data-filter="*">All</button>
@@ -376,9 +376,8 @@
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-between">
         <div>
-          <h3 class="display-5 fw-bold mb-3">Feel Free to Contact Us</h3>
-          <p>If you have any projects in mind say hello at contact@yourinfo.com or <br> just call us at +111 222 333
-            444.</p>
+          <h3 class="display-5 fw-bold mb-3">Segera Hubungi Kami</h3>
+          <p>Jika anda memiliki masukan atau pesan dan kesan pada kami silahkan hubungi di <br> yyy@gmail.com atau Via Whatsapp di +628123456789</p>
         </div>
         <a href="contact.html" class="btn btn-primary">Contact Us</a>
       </div>

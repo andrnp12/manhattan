@@ -1,8 +1,11 @@
 <section id="footer">
     <div class="container footer-container mt-5 pt-3">
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
-        <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-          <h5 class="py-3">Our Address</h5>
+      <div class="col-md-12 col-lg-6 mb-6 mb-lg-0">
+          <a href="index.php" class="d-flex align-items-center">
+            <img src="images/main-logo.png" alt="Sola" class="img-fluid me-2 py-3">
+            <!-- <h5 class="py-1">Sola</h5> -->
+          </a>
           <ul class="nav flex-column">
             <li class="location text-capitalize d-flex align-items-center">
               <svg class="text-primary me-1" width="16" height="16">
@@ -21,27 +24,27 @@
             </li>
           </ul>
           <ul class="social-links d-flex flex-wrap list-unstyled mt-4">
-            <li class="social me-4">
+            <!-- <li class="social me-4">
               <a href="#">
                 <svg width="16" height="16">
                   <use xlink:href="#facebook"></use>
                 </svg>
               </a>
-            </li>
-            <li class="social me-4">
+            </li> -->
+            <!-- <li class="social me-4">
               <a href="#">
                 <svg width="16" height="16">
                   <use xlink:href="#twitter"></use>
                 </svg>
               </a>
-            </li>
-            <li class="social me-4">
+            </li> -->
+            <!-- <li class="social me-4">
               <a href="#">
                 <svg width="16" height="16">
                   <use xlink:href="#linkedin"></use>
                 </svg>
               </a>
-            </li>
+            </li> -->
             <li class="social me-4">
               <a href="#">
                 <svg width="16" height="16">
@@ -68,7 +71,7 @@
             <li class="nav-item"><a href="#" class="text-uppercase p-0 "> Support </a></li>
           </ul>
         </div>
-        <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+        <!-- <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
           <h5 class="py-3">Project Gallery</h5>
           <div class="row g-1">
             <div class="col-4">
@@ -96,7 +99,7 @@
                   class="post-image img-fluid "></a>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
           <h5 class="py-3">Our Newsletter</h5>
           <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
