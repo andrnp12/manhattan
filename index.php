@@ -226,7 +226,7 @@
     </div>
   </section> -->
 
-  <section id="projects" class="padding-medium">
+  <!-- <section id="projects" class="padding-medium">
     <div class="container">
       <h6 class="text-center text-primary">Materi Kami</h6>
       <h3 class="text-center display-5 fw-bold ">Lihat Seluruh Materi Kami</h3>
@@ -275,7 +275,7 @@
       </div>
     </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- <section id="testimonial">
     <div class="container">
@@ -343,14 +343,14 @@
 
   </section> -->
 
-  <!-- <section id="blogs">
+  <section id="blogs" class="padding-medium">
     <div class="container">
       <div class="mb-3 d-flex flex-wrap align-items-center justify-content-between">
         <div>
-          <h6 class="text-primary">Blog & articles</h6>
-          <h3 class="display-5 fw-bold mb-3">Read our latest news</h3>
+          <h6 class="text-primary">Materi Terbaru</h6>
+          <h3 class="display-5 fw-bold mb-3">Lihat Materi Terbaru Kami</h3>
         </div>
-        <a href="blog.html" class="btn btn-primary">Read Blogs</a>
+        <a href="blog.html" class="btn btn-primary">Lihat Semuanya</a>
       </div>
       <div class="row mt-5 mt-lg-0">
         <div class="col-md-4 mb-4">
@@ -370,7 +370,7 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <section id="contact-info" class="padding-small bg-gray">
     <div class="container">
