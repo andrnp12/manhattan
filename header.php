@@ -199,7 +199,7 @@
       </div>
     </nav>
 
-    <nav id="primary-header" class="navbar navbar-expand-lg py-3">
+    <nav id="primary-header" class="navbar navbar-expand-lg py-3 border-bottom">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img src="images/main-logo.png" class="logo img-fluid">
