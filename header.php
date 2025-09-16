@@ -201,7 +201,7 @@
 
     <nav id="primary-header" class="navbar navbar-expand-lg py-3 border-bottom">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <img src="images/main-logo.png" class="logo img-fluid">
         </a>
         <button class="navbar-toggler border-0 d-flex d-lg-none order-3 p-2 shadow-none" type="button"
