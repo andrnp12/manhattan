@@ -27,8 +27,6 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap"
     rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
 .dropdown-submenu {
   position: relative;
@@ -38,7 +36,28 @@
   top: 0;
   left: 100%;
   margin-top: -1px;
+  margin-left: 0.1rem;
+    margin-right: 0.1rem;
 }
+
+.item {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 1;
+      transform: scale(1);
+    }
+    .hidden {
+      opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    }
+
+    /* Highlight tombol filter aktif */
+    #filterTags .btn.active {
+      background-color:rgb(253, 177, 13);
+      color: #fff;
+      border-color: rgb(253, 177, 13);
+    }
+
 </style>
 </head>
 
