@@ -218,29 +218,10 @@
           <div class="offcanvas-body align-items-center justify-content-end">
             <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
               <li class="nav-item px-3">
-                <a class="nav-link active p-0" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active p-0" aria-current="page" href="index.php">Home</a>
               </li>
-              <li class="nav-item px-3 dropdown">
-                <a class="nav-link p-0 dropdown-toggle text-center" data-bs-toggle="dropdown" href="#" role="button"
-                  aria-expanded="false">Kategori</a>
-                <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 shadow">
-                <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">HTML</a></li>
-                    <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">CSS</a></li>
-                    <li class="dropdown-submenu">
-                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" >New dropdown <span class="dropdown-toggle"></span></a>
-                        <ul class="dropdown-menu">
-                        <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                        <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                        <li class="dropdown-submenu">
-                            <a class="test dropdown-item text-uppercase" href="#">Another dropdown <span class="dropdown-toggle"></span></a>
-                            <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
-                            <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
-                            </ul>
-                        </li>
-                        </ul>
-                    </li>
-                </ul>
+              <li class="nav-item px-3">
+                <a class="nav-link p-0" aria-current="page" href="materi.php">Materi & rps</a>
               </li>
 
               <li class="nav-item ps-3 mt-4 mt-lg-0">
