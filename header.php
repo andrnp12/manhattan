@@ -27,8 +27,6 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap"
     rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
 .dropdown-submenu {
   position: relative;
@@ -38,7 +36,28 @@
   top: 0;
   left: 100%;
   margin-top: -1px;
+  margin-left: 0.1rem;
+    margin-right: 0.1rem;
 }
+
+.item {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 1;
+      transform: scale(1);
+    }
+    .hidden {
+      opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    }
+
+    /* Highlight tombol filter aktif */
+    #filterTags .btn.active {
+      background-color:rgb(253, 177, 13);
+      color: #fff;
+      border-color: rgb(253, 177, 13);
+    }
+
 </style>
 </head>
 
@@ -199,9 +218,9 @@
       </div>
     </nav>
 
-    <nav id="primary-header" class="navbar navbar-expand-lg py-3">
+    <nav id="primary-header" class="navbar navbar-expand-lg py-3 border-bottom">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <img src="images/main-logo.png" class="logo img-fluid">
         </a>
         <button class="navbar-toggler border-0 d-flex d-lg-none order-3 p-2 shadow-none" type="button"
@@ -218,29 +237,10 @@
           <div class="offcanvas-body align-items-center justify-content-end">
             <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
               <li class="nav-item px-3">
-                <a class="nav-link active p-0" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active p-0" aria-current="page" href="index.php">Home</a>
               </li>
-              <li class="nav-item px-3 dropdown">
-                <a class="nav-link p-0 dropdown-toggle text-center" data-bs-toggle="dropdown" href="#" role="button"
-                  aria-expanded="false">Kategori</a>
-                <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 shadow">
-                <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">HTML</a></li>
-                    <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">CSS</a></li>
-                    <li class="dropdown-submenu">
-                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" >New dropdown <span class="dropdown-toggle"></span></a>
-                        <ul class="dropdown-menu">
-                        <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                        <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                        <li class="dropdown-submenu">
-                            <a class="test dropdown-item text-uppercase" href="#">Another dropdown <span class="dropdown-toggle"></span></a>
-                            <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
-                            <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
-                            </ul>
-                        </li>
-                        </ul>
-                    </li>
-                </ul>
+              <li class="nav-item px-3">
+                <a class="nav-link p-0" aria-current="page" href="materi.php">Materi & rps</a>
               </li>
 
               <li class="nav-item ps-3 mt-4 mt-lg-0">

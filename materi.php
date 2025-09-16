@@ -4,86 +4,6 @@
 <html>
   <?php include('header.php'); ?>
 
-<section id="slider">
-  <div class="swiper position-relative">
-    <div class="swiper-wrapper">
-      <!-- Slide 1 -->
-      <div class="swiper-slide"
-        style="background-image: url(images/slider-image.jpg);">
-        <div class="container m-auto">
-          <div class="text-start col-md-10">
-            <h2 class="display-1 fw-bold text-white">Materi Ajar RPS Terbaik dan Terpadu</h2>
-            <p class="text-white">Vero elitr justo clita dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-            <a href="services-single.html" class="btn btn-primary mt-3">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="swiper-slide"
-        style="background-image: url(images/slider-image1.jpg);">
-        <div class="container m-auto">
-          <div class="text-start col-md-10">
-            <h2 class="display-1 fw-bold text-white">Top Solar and Renewable Energy</h2>
-            <p class="text-white">Vero elitr justo clita dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-            <a href="services-single.html" class="btn btn-primary mt-3">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="swiper-slide"
-        style="background-image: url(images/slider-image2.jpg);">
-        <div class="container m-auto">
-          <div class="text-start col-md-10">
-            <h2 class="display-1 fw-bold text-white">Top Solar and Renewable Energy</h2>
-            <p class="text-white">Vero elitr justo clita dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-            <a href="services-single.html" class="btn btn-primary mt-3">Read More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pagination & Navigation -->
-    <div class="swiper-pagination slider-pagination position-absolute pb-5"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  </script>
-
-<style>
-  /* FIX: pastikan semua slide punya ukuran */
-  #slider .swiper {
-    width: 100%;
-    height: 90vh;
-  }
-  #slider .swiper-slide {
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-  }
-</style>
-
   <!-- <section id="info" class="padding-medium">
     <div class="container">
       <div class="row">
@@ -113,28 +33,28 @@
         <div class="col-lg-6">
           <div class="imageblock me-4 position-relative">
             <img class="img-fluid" src="images/materi.jpg" alt="img">
-            <a type="button" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/W_tIumKa8VY"
-              data-bs-target="#myModal" class="play-btn position-absolute top-50 start-50 translate-middle">
-              <svg class="play-icon text-primary" width="70" height="70">
+            <!-- <a type="button" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/W_tIumKa8VY"
+              data-bs-target="#myModal" class="play-btn position-absolute top-50 start-50 translate-middle"> -->
+              <!-- <svg class="play-icon text-primary" width="70" height="70">
                 <use xlink:href="#play"></use>
-              </svg>
+              </svg> -->
             </a>
           </div>
         </div>
         <div class="col-lg-6 mt-5 mt-lg-0">
-          <h6 class="text-primary">Tentang Kami</h6>
-          <h3 class="display-5 fw-bold mb-3">Situs Edukasi Bahan Ajar RPS dan Materi Pendidikan Terbaik</h3>
+          <h6 class="text-primary">Materi</h6>
+          <h3 class="display-5 fw-bold mb-3">Temukan Edukasi RPS dan Bahan Ajar Terbaik</h3>
           <p>Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet. Tempor erat sed stet lorem
             sit clita duo justo elitr rebum at clita diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat
             ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet
           </p>
-          <a class="btn btn-primary mt-4" href="about.html">Jelajahi Sekarang</a>
+          <!-- <a class="btn btn-primary mt-4" href="about.html">Jelajahi Sekarang</a> -->
         </div>
       </div>
     </div>
   </section>
 
-  <section id="services">
+  <!-- <section id="services">
     <div class="container-fluid p-0">
       <h6 class="text-center text-primary">Layanan Kami</h6>
       <h3 class="text-center display-5 fw-bold mb-3">Apa Yang Kami Tawarkan</h3>
@@ -175,7 +95,7 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
             <img src="images/service1.jpg" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
@@ -186,10 +106,10 @@
               </a>
             </div>
           </div>
-        </div> -->
+        </div
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- <section id="feature" class="padding-medium">
     <div class="container">
@@ -226,20 +146,52 @@
     </div>
   </section> -->
 
-  <!-- <section id="projects" class="padding-medium">
+  <section id="projects" class="pb-5">
     <div class="container">
-      <h6 class="text-center text-primary">Materi Kami</h6>
-      <h3 class="text-center display-5 fw-bold ">Lihat Seluruh Materi Kami</h3>
+      <div class="d-flex flex-wrap align-items-center justify-content-between">
+      <div>
+      <h6 class="text-primary">Materi Kami</h6>
+      <h3 class="display-5 fw-bold ">Lihat Seluruh Materi Kami</h3>
+      </div>
       <div class="my-4">
-        <p class="text-center">
+        <div class="dropdown">
+          <button class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" role="button"
+          aria-expanded="false">Kategori</button>
+            <ul class="dropdown-menu animate border-0 shadow">
+                  <li class="dropdown-submenu">
+                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" >Solar <span class="dropdown-toggle"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase" data-category = "oplosan">oplosan</a></li>
+                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase" data-category = "asli">asli</a></li>
+                            <!-- <li class="dropdown-submenu">
+                              <a class="test dropdown-item text-uppercase" href="#">Another dropdown <span class="dropdown-toggle"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
+                                  <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
+                                  <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
+                                  <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
+                                </ul>
+                            </li> -->
+                          </ul>
+                      </li>
+
+            </ul>
+        </div>
+
+      </div>
+      </div>
+      <div class="my-4">
+        <!-- <p class="text-center">
           <button class="filter-button px-3 me-2 mb-3 active" data-filter="*">All</button>
           <button class="filter-button px-3 me-2 mb-3" data-filter=".energy">Energy</button>
           <button class="filter-button px-3 me-2 mb-3" data-filter=".wind">Wind Turbines</button>
           <button class="filter-button px-3 me-2 mb-3" data-filter=".renew">Renewable</button>
-        </p>
+        </p> -->
+        <!-- Tempat muncul filter tags -->
+        <div id="filterTags" class="mb-4" style="display: none;"></div>
       </div>
 
-      <div class="isotope-container">
+      <div class="grid-container">
         <div class="row">
           <div class="col-md-4 item energy mb-4">
             <a href="project-single.html"><img src="images/project1.jpg" alt="image" class="img-fluid"></a>
@@ -275,7 +227,7 @@
       </div>
     </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- <section id="testimonial">
     <div class="container">
@@ -343,14 +295,14 @@
 
   </section> -->
 
-  <section id="blogs" class="padding-medium">
+  <!-- <section id="blogs">
     <div class="container">
       <div class="mb-3 d-flex flex-wrap align-items-center justify-content-between">
         <div>
-          <h6 class="text-primary">Materi Terbaru</h6>
-          <h3 class="display-5 fw-bold mb-3">Lihat Materi Terbaru Kami</h3>
+          <h6 class="text-primary">Blog & articles</h6>
+          <h3 class="display-5 fw-bold mb-3">Read our latest news</h3>
         </div>
-        <a href="blog.html" class="btn btn-primary">Lihat Semuanya</a>
+        <a href="blog.html" class="btn btn-primary">Read Blogs</a>
       </div>
       <div class="row mt-5 mt-lg-0">
         <div class="col-md-4 mb-4">
@@ -370,7 +322,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section id="contact-info" class="padding-small bg-gray">
     <div class="container">
@@ -385,5 +337,88 @@
   </section>
 
   <?php include('footer.php'); ?>
+
+  <!-- Script -->
+  <script>
+  // Data filter per kategori
+  const filterData = {
+    "oplosan": [
+      { label: "All", value: "*" },
+      { label: "Energy", value: "energy" },
+      { label: "Wind Turbines", value: "wind" },
+      { label: "Renewable", value: "renew" }
+    ],
+    "asli": [
+      { label: "All", value: "*" },
+      { label: "Energy Only", value: "energy" }
+    ],
+    "bbm-pertalite": [
+      { label: "All", value: "*" },
+      { label: "Wind Only", value: "wind" }
+    ]
+  };
+
+  // Buka submenu dropdown Bootstrap 5 saat diklik
+  document.querySelectorAll('.dropdown-submenu > a').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const submenu = this.nextElementSibling;
+        if(submenu) submenu.classList.toggle('show');
+      });
+    });
+
+    // Klik dropdown item kategori
+    document.querySelectorAll('.dropdown-item[data-category]').forEach(item => {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const category = this.dataset.category;
+
+        const filterTagsContainer = document.getElementById('filterTags');
+        filterTagsContainer.style.display = "block";
+        filterTagsContainer.innerHTML = '';
+
+        (filterData[category] || []).forEach(tag => {
+          const btn = document.createElement('button');
+          btn.className = "btn btn-outline-primary me-2 mb-2";
+          btn.textContent = tag.label;
+          btn.dataset.filter = tag.value;
+
+          btn.addEventListener('click', function () {
+            // Hapus active dari semua tombol dalam container yang sama
+            filterTagsContainer.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+            // Tambahkan active pada tombol ini
+            this.classList.add('active');
+
+            const filterValue = this.dataset.filter;
+            const items = document.querySelectorAll('.grid-container .item');
+
+            items.forEach(el => {
+              if(filterValue === "*" || el.classList.contains(filterValue)) {
+                el.classList.remove('hidden');
+                el.style.display = 'block';
+                setTimeout(() => {
+                  el.style.opacity = '1';
+                  el.style.transform = 'scale(1)';
+                }, 10);
+              } else {
+                el.style.opacity = '0';
+                el.style.transform = 'scale(0.95)';
+                setTimeout(() => el.style.display = 'none', 300);
+                el.classList.add('hidden');
+              }
+            });
+          });
+
+          filterTagsContainer.appendChild(btn);
+        });
+
+        // Tutup dropdown setelah pilih
+        const dropdown = this.closest('.dropdown-menu');
+        if(dropdown) dropdown.classList.remove('show');
+      });
+    });
+</script>
 
 </html>
