@@ -159,12 +159,10 @@
           aria-expanded="false">Kategori</button>
             <ul class="dropdown-menu animate border-0 shadow">
                   <li class="dropdown-submenu">
-                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" >New dropdown <span class="dropdown-toggle"></span></a>
+                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" >Solar <span class="dropdown-toggle"></span></a>
                           <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
+                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase" data-category = "oplosan">oplosan</a></li>
+                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase" data-category = "asli">asli</a></li>
                             <!-- <li class="dropdown-submenu">
                               <a class="test dropdown-item text-uppercase" href="#">Another dropdown <span class="dropdown-toggle"></span></a>
                                 <ul class="dropdown-menu">
@@ -176,69 +174,24 @@
                             </li> -->
                           </ul>
                       </li>
-                      <li class="dropdown-submenu">
-                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" >New dropdown <span class="dropdown-toggle"></span></a>
-                          <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <!-- <li class="dropdown-submenu">
-                              <a class="test dropdown-item text-uppercase" href="#">Another dropdown <span class="dropdown-toggle"></span></a>
-                                <ul class="dropdown-menu">
-                                  <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
-                                  <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
-                                </ul>
-                            </li> -->
-                          </ul>
-                      </li>
-                      <li class="dropdown-submenu">
-                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" >New dropdown <span class="dropdown-toggle"></span></a>
-                          <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <!-- <li class="dropdown-submenu">
-                              <a class="test dropdown-item text-uppercase" href="#">Another dropdown <span class="dropdown-toggle"></span></a>
-                                <ul class="dropdown-menu">
-                                  <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
-                                  <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
-                                </ul>
-                            </li> -->
-                          </ul>
-                      </li>
-                      <li class="dropdown-submenu">
-                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" >New dropdown <span class="dropdown-toggle"></span></a>
-                          <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase">2nd level dropdown</a></li>
-                            <!-- <li class="dropdown-submenu">
-                              <a class="test dropdown-item text-uppercase" href="#">Another dropdown <span class="dropdown-toggle"></span></a>
-                                <ul class="dropdown-menu">
-                                  <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
-                                  <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
-                                </ul>
-                            </li> -->
-                          </ul>
-                      </li>
+
             </ul>
         </div>
 
       </div>
       </div>
       <div class="my-4">
-        <p class="text-center">
+        <!-- <p class="text-center">
           <button class="filter-button px-3 me-2 mb-3 active" data-filter="*">All</button>
           <button class="filter-button px-3 me-2 mb-3" data-filter=".energy">Energy</button>
           <button class="filter-button px-3 me-2 mb-3" data-filter=".wind">Wind Turbines</button>
           <button class="filter-button px-3 me-2 mb-3" data-filter=".renew">Renewable</button>
-        </p>
+        </p> -->
+        <!-- Tempat muncul filter tags -->
+        <div id="filterTags" class="mb-4" style="display: none;"></div>
       </div>
 
-      <div class="isotope-container">
+      <div class="grid-container">
         <div class="row">
           <div class="col-md-4 item energy mb-4">
             <a href="project-single.html"><img src="images/project1.jpg" alt="image" class="img-fluid"></a>
@@ -384,5 +337,88 @@
   </section>
 
   <?php include('footer.php'); ?>
+
+  <!-- Script -->
+  <script>
+  // Data filter per kategori
+  const filterData = {
+    "oplosan": [
+      { label: "All", value: "*" },
+      { label: "Energy", value: "energy" },
+      { label: "Wind Turbines", value: "wind" },
+      { label: "Renewable", value: "renew" }
+    ],
+    "asli": [
+      { label: "All", value: "*" },
+      { label: "Energy Only", value: "energy" }
+    ],
+    "bbm-pertalite": [
+      { label: "All", value: "*" },
+      { label: "Wind Only", value: "wind" }
+    ]
+  };
+
+  // Buka submenu dropdown Bootstrap 5 saat diklik
+  document.querySelectorAll('.dropdown-submenu > a').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const submenu = this.nextElementSibling;
+        if(submenu) submenu.classList.toggle('show');
+      });
+    });
+
+    // Klik dropdown item kategori
+    document.querySelectorAll('.dropdown-item[data-category]').forEach(item => {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const category = this.dataset.category;
+
+        const filterTagsContainer = document.getElementById('filterTags');
+        filterTagsContainer.style.display = "block";
+        filterTagsContainer.innerHTML = '';
+
+        (filterData[category] || []).forEach(tag => {
+          const btn = document.createElement('button');
+          btn.className = "btn btn-outline-primary me-2 mb-2";
+          btn.textContent = tag.label;
+          btn.dataset.filter = tag.value;
+
+          btn.addEventListener('click', function () {
+            // Hapus active dari semua tombol dalam container yang sama
+            filterTagsContainer.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+            // Tambahkan active pada tombol ini
+            this.classList.add('active');
+
+            const filterValue = this.dataset.filter;
+            const items = document.querySelectorAll('.grid-container .item');
+
+            items.forEach(el => {
+              if(filterValue === "*" || el.classList.contains(filterValue)) {
+                el.classList.remove('hidden');
+                el.style.display = 'block';
+                setTimeout(() => {
+                  el.style.opacity = '1';
+                  el.style.transform = 'scale(1)';
+                }, 10);
+              } else {
+                el.style.opacity = '0';
+                el.style.transform = 'scale(0.95)';
+                setTimeout(() => el.style.display = 'none', 300);
+                el.classList.add('hidden');
+              }
+            });
+          });
+
+          filterTagsContainer.appendChild(btn);
+        });
+
+        // Tutup dropdown setelah pilih
+        const dropdown = this.closest('.dropdown-menu');
+        if(dropdown) dropdown.classList.remove('show');
+      });
+    });
+</script>
 
 </html>
