@@ -15,6 +15,8 @@ if (
   }
   exit;
 }
+
+include(__DIR__ . '../../data/data_dummy.php');
 ?>
 
 <!doctype html>
@@ -186,7 +188,7 @@ if (
                 <i class="ti ti-menu-2"></i>
               </a>
             </li>
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link " href="javascript:void(0)" id="drop1" data-bs-toggle="dropdown" aria-expanded="false">
                 <iconify-icon icon="solar:bell-linear" class="fs-6"></iconify-icon>
                 <div class="notification bg-primary rounded-circle"></div>
@@ -201,7 +203,7 @@ if (
                   </a>
                 </div>
               </div>
-            </li>
+            </li> -->
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
@@ -243,6 +245,71 @@ if (
     </div>
   </div>
   </div>
+
+  <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="formModalLabel">Form Input</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form action="simpan.php" method="POST">
+          <input type="hidden" name="tipe" id="tipe">
+
+          <div class="modal-body">
+            <!-- Field kategori -->
+            <div class="mb-3 d-none" id="fieldKategori">
+              <label class="form-label">Nama Kategori</label>
+              <input type="text" class="form-control" name="kategori">
+            </div>
+
+            <!-- Field topik -->
+            <div class="mb-3 d-none" id="fieldTopikKategori">
+              <label class="form-label">Pilih Kategori</label>
+              <select class="form-select" name="kategori_id" id="kategoriSelect">
+                <option value="">-- Pilih Kategori --</option>
+                <?php foreach ($categories as $item) : ?>
+                  <option value="<?php echo $item['id']; ?>"><?php echo $item['name']; ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+            <div class="mb-3 d-none" id="fieldTopik">
+              <label class="form-label">Judul Topik</label>
+              <input type="text" class="form-control" name="topik">
+            </div>
+
+            <!-- Field rpp -->
+            <div class="mb-3 d-none" id="fieldRppTopik">
+              <label class="form-label">Pilih Topik</label>
+              <select class="form-select" name="topik_id" id="topikSelect">
+                <option value="">-- Pilih Topik --</option>
+              </select>
+            </div>
+            <div class="mb-3 d-none" id="fieldRpp">
+              <label class="form-label">Judul RPP</label>
+              <input type="text" class="form-control" name="rpp">
+            </div>
+
+            <!-- Field video -->
+            <div class="mb-3 d-none" id="fieldVideo">
+              <label class="form-label">Judul Video</label>
+              <input type="text" class="form-control" name="video">
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
   <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/sidebarmenu.js"></script>
@@ -300,6 +367,71 @@ if (
       const urlParams = new URLSearchParams(window.location.search);
       const page = urlParams.get('page') || 'dashboard';
       loadPage(page);
+    });
+  </script>
+
+  <!-- mengatur form modal input -->
+  <script>
+    function openModal(tipe) {
+      document.getElementById('tipe').value = tipe;
+      document.getElementById('formModalLabel').textContent = 'Tambah ' + tipe.charAt(0).toUpperCase() + tipe.slice(1);
+
+      // sembunyikan semua field dulu
+      document.querySelectorAll('#formModal .mb-3').forEach(el => el.classList.add('d-none'));
+
+      if (tipe === 'kategori') {
+        document.getElementById('fieldKategori').classList.remove('d-none');
+      }
+
+      if (tipe === 'topik') {
+        document.getElementById('fieldTopikKategori').classList.remove('d-none');
+        document.getElementById('fieldTopik').classList.remove('d-none');
+      }
+
+      if (tipe === 'rpp') {
+        document.getElementById('fieldTopikKategori').classList.remove('d-none');
+        document.getElementById('fieldRppTopik').classList.remove('d-none');
+        document.getElementById('fieldRpp').classList.remove('d-none');
+      }
+
+      if (tipe === 'video') {
+        document.getElementById('fieldTopikKategori').classList.remove('d-none');
+        document.getElementById('fieldRppTopik').classList.remove('d-none');
+        document.getElementById('fieldVideo').classList.remove('d-none');
+      }
+    }
+  </script>
+
+  <!-- mengatur dropdown topik berdasarkan kategori di modal -->
+  <script>
+    // ambil data dari PHP ke JS
+    const categories = <?php echo json_encode($categories); ?>;
+
+    const kategoriSelect = document.getElementById('kategoriSelect');
+    const topikSelect = document.getElementById('topikSelect');
+
+    kategoriSelect.addEventListener('change', function() {
+      const kategoriId = this.value;
+      topikSelect.innerHTML = ''; // kosongkan dulu
+
+      if (!kategoriId) {
+        topikSelect.innerHTML = '<option value="">-- Pilih Topik --</option>';
+        return;
+      }
+
+      const kategori = categories.find(c => c.id == kategoriId);
+
+      if (kategori && kategori.topics.length > 0) {
+        topikSelect.innerHTML = '<option value="">-- Pilih Topik --</option>';
+        kategori.topics.forEach(topik => {
+          const opt = document.createElement('option');
+          opt.value = topik.id;
+          opt.textContent = topik.title;
+          topikSelect.appendChild(opt);
+        });
+      } else {
+        topikSelect.innerHTML = '<option disabled>Belum ada topik di kategori ini</option>';
+      }
     });
   </script>
 

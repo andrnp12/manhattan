@@ -1,17 +1,63 @@
+<?php
+include(__DIR__ . '../../../data/data_dummy.php');
+?>
+
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Kategori</h5>
+            <div class="cold-12 d-flex justify-content-between mb-3">
+                <h5 class="card-title fw-semibold">Kategori</h5>
+                <button type="button" class="btn btn-primary" onclick="openModal('kategori')" data-bs-toggle="modal" data-bs-target="#formModal">Tambah Kategori</button>
+            </div>
+
             <div class="card">
                 <div class="card-body">
-                    <!-- form untuk menambah kategori -->
-                    <!-- <form>
-                        <div class="mb-3">
-                            <label for="" class="form-label">Nama Kategori Baru</label>
-                            <input type="email" class="form-control" id="" aria-describedby="emailHelp">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form> -->
+                    <div class="table-responsive">
+                        <table class="table text-nowrap mb-0 align-middle ">
+                            <thead class="text-dark fs-4">
+                                <tr>
+                                    <th>
+                                        <h6 class="fs-4 fw-semibold mb-0">No</h6>
+                                    </th>
+                                    <th>
+                                        <h6 class="fs-4 fw-semibold mb-0">Kategori</h6>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($categories as $item) : ?>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="ms-3">
+                                                    <h6 class="fs-4 fw-semibold mb-0"><?php echo $item['id']; ?></h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="mb-0 fw-normal"><?php echo $item['name']; ?></p>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown dropstart">
+                                                <a href="javascript:void(0)" class="text-muted" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="ti ti-dots-vertical fs-6"></i>
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <li>
+                                                        <a class="dropdown-item d-flex align-items-center gap-3" href="javascript:void(0)"><i class="fs-4 ti ti-edit"></i>Edit</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item d-flex align-items-center gap-3" href="javascript:void(0)"><i class="fs-4 ti ti-trash"></i>Delete</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
