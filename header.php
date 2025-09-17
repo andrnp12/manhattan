@@ -58,6 +58,18 @@
       border-color: rgb(253, 177, 13);
     }
 
+    .pdf-viewer {
+    width: 100%;
+    height: 100vh; /* default untuk desktop */
+  }
+
+  /* Aturan khusus untuk layar kecil (mobile) */
+  @media (max-width: 768px) {
+    .pdf-viewer {
+      height: 500px; /* batasi tinggi di mobile */
+    }
+  }
+
 </style>
 </head>
 
