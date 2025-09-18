@@ -9,16 +9,16 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <!--Bootstrap ================================================== -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 
   <!--vendor css ================================================== -->
-  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="../css/vendor.css">
 
   <!--Link Swiper's CSS ================================================== -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
   <!-- Style Sheet ================================================== -->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
 
   <!-- Google Fonts ================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -233,7 +233,7 @@
     <nav id="primary-header" class="navbar navbar-expand-lg py-3 border-bottom">
       <div class="container">
         <a class="navbar-brand" href="index.php">
-          <img src="images/main-logo.png" class="logo img-fluid">
+          <img src="../images/main-logo.png" class="logo img-fluid">
         </a>
         <button class="navbar-toggler border-0 d-flex d-lg-none order-3 p-2 shadow-none" type="button"
           data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false">
