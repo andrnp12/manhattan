@@ -27,17 +27,17 @@
     </div>
   </section> -->
 
-  <section id="about-us" class="padding-small">
+  <!-- <section id="about-us" class="padding-small">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="imageblock me-4 position-relative">
             <img class="img-fluid" src="images/materi.jpg" alt="img">
-            <!-- <a type="button" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/W_tIumKa8VY"
-              data-bs-target="#myModal" class="play-btn position-absolute top-50 start-50 translate-middle"> -->
-              <!-- <svg class="play-icon text-primary" width="70" height="70">
+            <a type="button" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/W_tIumKa8VY"
+              data-bs-target="#myModal" class="play-btn position-absolute top-50 start-50 translate-middle">
+              <svg class="play-icon text-primary" width="70" height="70">
                 <use xlink:href="#play"></use>
-              </svg> -->
+              </svg>
             </a>
           </div>
         </div>
@@ -48,11 +48,11 @@
             sit clita duo justo elitr rebum at clita diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat
             ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet
           </p>
-          <!-- <a class="btn btn-primary mt-4" href="about.html">Jelajahi Sekarang</a> -->
+          <a class="btn btn-primary mt-4" href="about.html">Jelajahi Sekarang</a>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- <section id="services">
     <div class="container-fluid p-0">
@@ -146,7 +146,7 @@
     </div>
   </section> -->
 
-  <section id="projects" class="pb-5 mb-5">
+  <section id="projects" class="padding-small">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-between">
       <div>
@@ -159,11 +159,12 @@
           aria-expanded="false">Kategori</button>
             <ul class="dropdown-menu animate border-0 shadow">
                   <li class="dropdown-submenu">
-                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" >Solar <span class="dropdown-toggle"></span></a>
-                          <ul class="dropdown-menu">
+                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" data-category = "oplosan" >solar </a>
+                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" data-category = "asli" >asli </a>
+                          <!-- <ul class="dropdown-menu">
                             <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase" data-category = "oplosan">oplosan</a></li>
                             <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase" data-category = "asli">asli</a></li>
-                            <!-- <li class="dropdown-submenu">
+                            <li class="dropdown-submenu">
                               <a class="test dropdown-item text-uppercase" href="#">Another dropdown <span class="dropdown-toggle"></span></a>
                                 <ul class="dropdown-menu">
                                   <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
@@ -171,8 +172,8 @@
                                   <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
                                   <li><a href="#" class="dropdown-item text-uppercase">3rd level dropdown</a></li>
                                 </ul>
-                            </li> -->
-                          </ul>
+                            </li>
+                          </ul> -->
                       </li>
 
             </ul>
@@ -194,7 +195,7 @@
       <div class="grid-container">
         <div class="row">
           <div class="col-md-4 item energy mb-4">
-            <a href="project-single.html"><img src="images/project1.jpg" alt="image" class="img-fluid"></a>
+            <a href="detail.php"><img src="images/project1.jpg" alt="image" class="img-fluid"></a>
             <h6 class="text-primary mt-3">energy</h6>
             <h3><a href="project-single.html">Houston roof solaring</a></h3>
           </div>
