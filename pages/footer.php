@@ -2,7 +2,7 @@
     <div class="container footer-container mt-5 pt-3">
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
       <div class="col-md-12 col-lg-6 mb-6 mb-lg-0">
-          <a href="index.php" class="d-flex align-items-center">
+          <a href="../index.php" class="d-flex align-items-center">
             <img src="../images/main-logo.png" alt="Sola" class="img-fluid me-2 py-3">
             <!-- <h5 class="py-1">Sola</h5> -->
           </a>
@@ -155,8 +155,6 @@
 
     </div>
   </div>
-
-  <script src="js/login.js"></script>
 
   <script>
 $(document).ready(function(){

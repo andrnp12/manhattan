@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html>
-  <?php include('header.php'); ?>
+  <?php include ('header.php'); ?>
 
   <!-- <section id="info" class="padding-medium">
     <div class="container">
@@ -195,32 +195,32 @@
       <div class="grid-container">
         <div class="row">
           <div class="col-md-4 item energy mb-4">
-            <a href="detail.php"><img src="images/project1.jpg" alt="image" class="img-fluid"></a>
+            <a href="detail.php"><img src="../images/project1.jpg" alt="image" class="img-fluid"></a>
             <h6 class="text-primary mt-3">energy</h6>
             <h3><a href="project-single.html">Houston roof solaring</a></h3>
           </div>
           <div class="col-md-4 item wind mb-4">
-            <a href="project-single.html"><img src="images/project2.jpg" alt="image" class="img-fluid"></a>
+            <a href="project-single.html"><img src="../images/project2.jpg" alt="image" class="img-fluid"></a>
             <h6 class="text-primary mt-3">wind</h6>
             <h3><a href="project-single.html">City solar light</a></h3>
           </div>
           <div class="col-md-4 item renew mb-4">
-            <a href="project-single.html"><img src="images/project3.jpg" alt="image" class="img-fluid"></a>
+            <a href="project-single.html"><img src="../images/project3.jpg" alt="image" class="img-fluid"></a>
             <h6 class="text-primary mt-3">renew</h6>
             <h3><a href="project-single.html">solar power house</a></h3>
           </div>
           <div class="col-md-4 item wind mb-4">
-            <a href="project-single.html"><img src="images/project4.jpg" alt="image" class="img-fluid"></a>
+            <a href="project-single.html"><img src="../images/project4.jpg" alt="image" class="img-fluid"></a>
             <h6 class="text-primary mt-3">wind</h6>
             <h3><a href="project-single.html">rooftop solaring</a></h3>
           </div>
           <div class="col-md-4 item energy mb-4">
-            <a href="project-single.html"><img src="images/project5.jpg" alt="image" class="img-fluid"></a>
+            <a href="project-single.html"><img src="../images/project5.jpg" alt="image" class="img-fluid"></a>
             <h6 class="text-primary mt-3">energy</h6>
             <h3><a href="project-single.html">adjustment solaring</a></h3>
           </div>
           <div class="col-md-4 item renew mb-4">
-            <a href="project-single.html"><img src="images/project6.jpg" alt="image" class="img-fluid"></a>
+            <a href="project-single.html"><img src="../images/project6.jpg" alt="image" class="img-fluid"></a>
             <h6 class="text-primary mt-3">renew</h6>
             <h3><a href="project-single.html">wind turbining</a></h3>
           </div>

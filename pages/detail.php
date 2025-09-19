@@ -78,17 +78,17 @@
       </div>
       <div class="row mt-5 mt-lg-0">
         <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="images/blog1.jpg" alt="image" class="img-fluid"></a>
+          <a href="blog-single.html"><img src="../images/blog1.jpg" alt="image" class="img-fluid"></a>
           <h6 class="text-primary mt-3">16 Feb, 2024</h6>
           <h3><a href="blog-single.html">New research for green life</a></h3>
         </div>
         <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="images/blog2.jpg" alt="image" class="img-fluid"></a>
+          <a href="blog-single.html"><img src="../images/blog2.jpg" alt="image" class="img-fluid"></a>
           <h6 class="text-primary mt-3">16 Feb, 2024</h6>
           <h3><a href="blog-single.html">Happy city after energized</a></h3>
         </div>
         <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="images/blog3.jpg" alt="image" class="img-fluid"></a>
+          <a href="blog-single.html"><img src="../images/blog3.jpg" alt="image" class="img-fluid"></a>
           <h6 class="text-primary mt-3">16 Feb, 2024</h6>
           <h3><a href="blog-single.html">Turbines helped alot for people</a></h3>
         </div>
