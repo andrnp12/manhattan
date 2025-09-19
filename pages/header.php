@@ -263,9 +263,9 @@
               <!-- <li class="nav-item px-3">
                 <a class="nav-link p-0" aria-current="page" href="index.php">Pengaturan</a>
               </li> -->
-              <!-- <li class="nav-item px-3">
+              <li class="nav-item px-3">
                 <a class="nav-link p-0" aria-current="page" href="materi.php">Materi & rps</a>
-              </li> -->
+              </li>
 
               <!-- <li class="nav-item ps-3 mt-4 mt-lg-0">
                 <a href="quote.html" class="btn btn-outline-primary py-2 px-4">Login</a>

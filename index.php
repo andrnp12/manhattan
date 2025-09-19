@@ -79,17 +79,19 @@
 
   <section id="about-us" class="padding-medium">
     <div class="container">
-      <div class="row align-items-center gap-5">
-      <div class="col-lg-6 mt-5 mt-lg-0">
+      <div class="index-header row align-items-center">
+        <div class="col-lg-6 mt-5 mt-lg-0">
+        <div class="col-lg-10">
           <h6 class="text-primary">Tentang Kami</h6>
-          <h3 class="display-5 fw-bold mb-3">Sistem Edukasi Bahan Ajar RPS dan Materi Pendidikan Terbaik</h3>
+          <h3 class="display-5 fw-bold mb-3">Sistem Bahan Ajar RPS dan Materi Pendidikan Terbaik</h3>
           <p>Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet. Tempor erat sed stet lorem
             sit clita duo justo elitr rebum at clita diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat
             ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet
           </p>
           <a class="btn btn-primary mt-4" href="about.html">Jelajahi Fitur</a>
         </div>
-        <div class="col-lg-5">
+        </div>
+        <div class="col-lg-6">
         <!-- <div class="text-center my-5">
 						<img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="logo" width="100">
 					</div> -->
