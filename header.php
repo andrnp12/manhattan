@@ -68,6 +68,10 @@
     .pdf-viewer {
       height: 500px; /* batasi tinggi di mobile */
     }
+
+    .index-header {
+      gap: 3rem;
+    }
   }
 
   .bg-images {
