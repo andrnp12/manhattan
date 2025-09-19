@@ -250,14 +250,14 @@
             <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
               <!-- <li class="nav-item px-3">
                 <a class="nav-link active p-0" aria-current="page" href="index.php">Home</a>
-              </li>
+              </li> -->
               <li class="nav-item px-3">
-                <a class="nav-link p-0" aria-current="page" href="materi.php">Materi & rps</a>
-              </li> -->
+                <a class="nav-link p-0" aria-current="page" href="pages/materi.php">Materi & rps</a>
+              </li>
 
-              <!-- <li class="nav-item ps-3 mt-4 mt-lg-0">
-                <a href="quote.html" class="btn btn-outline-primary py-2 px-4">Login</a>
-              </li> -->
+              <li class="nav-item ps-3 mt-4 mt-lg-0">
+                <a href="quote.html" class="btn btn-outline-primary py-2 px-4">Daftar Akun</a>
+              </li>
 
             </ul>
           </div>

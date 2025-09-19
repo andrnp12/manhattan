@@ -156,6 +156,8 @@
     </div>
   </div>
 
+  <script src="js/login.js"></script>
+
   <script>
 $(document).ready(function(){
   $('.dropdown-submenu a.test').on("click", function(e){

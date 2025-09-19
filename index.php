@@ -174,7 +174,7 @@
       <div class="row g-0 mt-5 justify-content-center">
         <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
-            <img src="../images/service1.jpg" class="service-img img-fluid" alt="img">
+            <img src="images/service1.jpg" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
               <h5 class="text-white">Video Pembelajaran Edukatif</h5>
               <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
@@ -186,7 +186,7 @@
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
-            <img src="../images/service2.jpg" class="service-img img-fluid" alt="img">
+            <img src="images/service2.jpg" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
               <h5 class="text-white">Materi Ajar RPP Terupdate</h5>
               <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
@@ -198,7 +198,7 @@
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
-            <img src="../images/service3.jpg" class="service-img img-fluid" alt="img">
+            <img src="images/service3.jpg" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
               <h5 class="text-white">Video dan Materi Downloadable</h5>
               <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
@@ -210,7 +210,7 @@
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
-            <img src="../images/service4.jpg" class="service-img img-fluid" alt="img">
+            <img src="images/service4.jpg" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
               <h5 class="text-white">Akses Gratis dan Mudah</h5>
               <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
@@ -235,17 +235,17 @@
       </div>
       <div class="row mt-5 mt-lg-0">
         <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="../images/blog1.jpg" alt="image" class="img-fluid"></a>
+          <a href="blog-single.html"><img src="images/blog1.jpg" alt="image" class="img-fluid"></a>
           <h6 class="text-primary mt-3">16 Feb, 2024</h6>
           <h3><a href="blog-single.html">New research for green life</a></h3>
         </div>
         <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="../images/blog2.jpg" alt="image" class="img-fluid"></a>
+          <a href="blog-single.html"><img src="images/blog2.jpg" alt="image" class="img-fluid"></a>
           <h6 class="text-primary mt-3">16 Feb, 2024</h6>
           <h3><a href="blog-single.html">Happy city after energized</a></h3>
         </div>
         <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="../images/blog3.jpg" alt="image" class="img-fluid"></a>
+          <a href="blog-single.html"><img src="images/blog3.jpg" alt="image" class="img-fluid"></a>
           <h6 class="text-primary mt-3">16 Feb, 2024</h6>
           <h3><a href="blog-single.html">Turbines helped alot for people</a></h3>
         </div>
