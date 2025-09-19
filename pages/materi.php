@@ -159,8 +159,8 @@
           aria-expanded="false">Kategori</button>
             <ul class="dropdown-menu animate border-0 shadow">
                   <li class="dropdown-submenu">
-                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" data-category = "oplosan" >solar </a>
-                        <a class="test dropdown-item text-uppercase" tabindex="-1" href="#" data-category = "asli" >asli </a>
+                        <a class="dropdown-item text-uppercase" tabindex="-1" href="#" data-category = "oplosan" >solar </a>
+                        <a class="dropdown-item text-uppercase" tabindex="-1" href="#" data-category = "asli" >asli </a>
                           <!-- <ul class="dropdown-menu">
                             <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase" data-category = "oplosan">oplosan</a></li>
                             <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase" data-category = "asli">asli</a></li>
@@ -219,10 +219,30 @@
             <h6 class="text-primary mt-3">energy</h6>
             <h3><a href="project-single.html">adjustment solaring</a></h3>
           </div>
+          <div class="col-md-4 item wind mb-4">
+            <a href="project-single.html"><img src="../images/project2.jpg" alt="image" class="img-fluid"></a>
+            <h6 class="text-primary mt-3">wind</h6>
+            <h3><a href="project-single.html">City solar light</a></h3>
+          </div>
+          <div class="col-md-4 item renew mb-4">
+            <a href="project-single.html"><img src="../images/project3.jpg" alt="image" class="img-fluid"></a>
+            <h6 class="text-primary mt-3">renew</h6>
+            <h3><a href="project-single.html">solar power house</a></h3>
+          </div>
           <div class="col-md-4 item renew mb-4">
             <a href="project-single.html"><img src="../images/project6.jpg" alt="image" class="img-fluid"></a>
             <h6 class="text-primary mt-3">renew</h6>
             <h3><a href="project-single.html">wind turbining</a></h3>
+          </div>
+          <div class="col-md-4 item energy mb-4">
+            <a href="detail.php"><img src="../images/project1.jpg" alt="image" class="img-fluid"></a>
+            <h6 class="text-primary mt-3">energy</h6>
+            <h3><a href="project-single.html">Houston roof solaring</a></h3>
+          </div>
+          <div class="col-md-4 item wind mb-4">
+            <a href="project-single.html"><img src="../images/project2.jpg" alt="image" class="img-fluid"></a>
+            <h6 class="text-primary mt-3">wind</h6>
+            <h3><a href="project-single.html">City solar light</a></h3>
           </div>
         </div>
       </div>

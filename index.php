@@ -92,13 +92,13 @@
 					</div> -->
 					<div class="card shadow-lg">
 						<div class="card-body p-5">
-							<h1 class="fs-4 card-title fw-bold mb-4">Login</h1>
+							<h1 class="fs-4 card-title fw-bold mb-4">Masuk ke akun anda</h1>
 							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">
-									<label class="mb-2 text-muted" for="email">E-Mail Address</label>
-									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+									<label class="mb-2 text-muted" for="email">Username</label>
+									<input id="name" type="text" class="form-control" name="name" value="" required autofocus>
 									<div class="invalid-feedback">
-										Email is invalid
+										Username tidak valid
 									</div>
 								</div>
 
@@ -106,12 +106,12 @@
 									<div class="mb-2 w-100">
 										<label class="text-muted" for="password">Password</label>
 										<a href="forgot.php" class="float-end">
-											Forgot Password?
+											Lupa Kata Sandi?
 										</a>
 									</div>
 									<input id="password" type="password" class="form-control" name="password" required>
 								    <div class="invalid-feedback">
-								    	Password is required
+								    	Kata Sandi tidak valid
 							    	</div>
 								</div>
 
@@ -121,14 +121,14 @@
 										<label for="remember" class="form-check-label">Remember Me</label>
 									</div>
 									<button type="submit" class="btn btn-primary ms-auto">
-										Login
+										Masuk
 									</button>
 								</div>
 							</form>
 						</div>
 						<div class="card-footer py-3 border-0">
 							<div class="text-center">
-								Don't have an account? <a href="register.php" class="text-dark">Create One</a>
+								Belum memiliki akun? <a href="register.php" class="text-dark">Daftar Sekarang</a>
 							</div>
 						</div>
 					</div>

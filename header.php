@@ -256,7 +256,7 @@
               </li>
 
               <li class="nav-item ps-3 mt-4 mt-lg-0">
-                <a href="quote.html" class="btn btn-outline-primary py-2 px-4">Daftar Akun</a>
+                <a href="register.php" class="btn btn-outline-primary py-2 px-4">Daftar Akun</a>
               </li>
 
             </ul>

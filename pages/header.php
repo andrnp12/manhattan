@@ -249,15 +249,48 @@
           <div class="offcanvas-body align-items-center justify-content-end">
             <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
               <!-- <li class="nav-item px-3">
-                <a class="nav-link active p-0" aria-current="page" href="index.php">Home</a>
-              </li>
-              <li class="nav-item px-3">
+                <a class="nav-link p-0" aria-current="page" href="index.php">Pengaturan</a>
+              </li> -->
+              <!-- <li class="nav-item px-3">
                 <a class="nav-link p-0" aria-current="page" href="materi.php">Materi & rps</a>
               </li> -->
 
               <!-- <li class="nav-item ps-3 mt-4 mt-lg-0">
                 <a href="quote.html" class="btn btn-outline-primary py-2 px-4">Login</a>
               </li> -->
+              <li class="nav-item dropdown user-menu">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                    <img
+                        src="../images/profile.png"
+                        class="user-image rounded-circle shadow"
+                        alt="User Image" 
+                        height="32px"
+                        width="32px"/>
+                    <span class="d-none d-md-inline"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+                    <!--begin::User Image-->
+                    <!-- <li class="user-header text-bg-primary">
+                        <img
+                            src="../images/profile.png"
+                            class="rounded-circle shadow"
+                            alt="User Image" 
+                            height="50px"
+                            width="50px"/>
+                        <p>
+                            <span class="d-block">Admin</span>
+                            <small>Admin</small>
+                        </p>
+                    </li> -->
+                    <!--end::User Image-->
+                    <!--begin::Menu Footer-->
+                    <li class="user-footer">
+                        <a href="settings.php" class="btn btn-default btn-flat">Pengaturan</a>
+                        <a href="logout.php" class="btn btn-default btn-flat float-end">Log out</a>
+                    </li>
+                    <!--end::Menu Footer-->
+                </ul>
+            </li>
 
             </ul>
           </div>
