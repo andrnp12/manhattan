@@ -74,6 +74,9 @@
     </div>
   </section> -->
 
+  <!-- Bagian background di luar section -->
+  <!-- <div class="bg-home"></div> -->
+
   <section id="about-us" class="padding-medium">
     <div class="container">
       <div class="row align-items-center gap-5">

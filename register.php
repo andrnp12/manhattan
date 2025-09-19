@@ -74,7 +74,10 @@
     </div>
   </section> -->
 
-  <section class="h-100 padding-small">
+  <!-- Bagian background di luar section -->
+  <div class="bg-images"></div>
+
+  <section class="section-images h-100" style="padding-bottom: 10rem !important;">
 		<div class="container h-100">
 			<div class="row justify-content-sm-center h-100">
 				<div class="col-lg-6">
