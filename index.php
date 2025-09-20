@@ -179,7 +179,7 @@
       <div class="row g-0 mt-5 justify-content-center">
         <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
-            <img src="images/service1.jpg" class="service-img img-fluid" alt="img">
+            <img src="images/service1.png" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
               <h5 class="text-white">Video Pembelajaran Edukatif</h5>
               <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
@@ -191,7 +191,7 @@
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
-            <img src="images/service2.jpg" class="service-img img-fluid" alt="img">
+            <img src="images/service2.png" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
               <h5 class="text-white">Materi Ajar RPP Terupdate</h5>
               <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
@@ -203,7 +203,7 @@
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
-            <img src="images/service3.jpg" class="service-img img-fluid" alt="img">
+            <img src="images/service3.png" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
               <h5 class="text-white">Video dan Materi Downloadable</h5>
               <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
@@ -215,7 +215,7 @@
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
-            <img src="images/service4.jpg" class="service-img img-fluid" alt="img">
+            <img src="images/service4.png" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
               <h5 class="text-white">Akses Gratis dan Mudah</h5>
               <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>

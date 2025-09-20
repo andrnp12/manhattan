@@ -1,4 +1,14 @@
-<?php ?>
+<?php 
+
+include ('function.php');
+
+if (isset($_POST['submit'])) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $verifikasi = $_POST['verifikasi'];
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -87,7 +97,7 @@
 					<div class="card shadow-lg">
 						<div class="card-body p-5">
 							<h1 class="fs-4 card-title fw-bold mb-4">Daftar Akun Baru</h1>
-							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+							<form method="POST" action="register.php" class="needs-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="name">Username</label>
 									<input id="name" type="text" class="form-control" name="name" value="" required autofocus>
