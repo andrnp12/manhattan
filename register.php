@@ -2,10 +2,13 @@
 
 include ('function.php');
 
+$verif = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 6);
+
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
-  $verifikasi = $_POST['verifikasi'];
+  $verifikasi = $verif;
+  register($username, $password, $verifikasi);
 }
 
 ?>
@@ -100,7 +103,7 @@ if (isset($_POST['submit'])) {
 							<form method="POST" action="register.php" class="needs-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="name">Username</label>
-									<input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+									<input id="name" type="text" class="form-control" name="username" value="" required autofocus>
 									<div class="invalid-feedback">
 										Username diperlukan	
 									</div>
@@ -108,26 +111,26 @@ if (isset($_POST['submit'])) {
 
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="password">Kata Sandi</label>
-									<input id="password" type="password" class="form-control" name="password" required>
+									<input id="password" type="password" class="form-control" name="password" value="" required>
 								    <div class="invalid-feedback">
 								    	Kata Sandi diperlukan
 							    	</div>
 								</div>
 
-                <div class="mb-3">
-									<label class="mb-2 text-muted" for="email">Kode Verifikasi</label>
-									<input id="text" type="text" class="form-control" name="verifikasi" value="" disabled>
-									<!-- <div class="invalid-feedback">
+                <!-- <div class="mb-3">
+									<label class="mb-2 text-muted" for="verif">Kode Verifikasi</label>
+									<input id="verif" type="text" class="form-control" name="verifikasi" value="<?php echo $verif; ?>" disabled>
+									<div class="invalid-feedback">
 										Email is invalid
-									</div> -->
-								</div>
+									</div>
+								</div> -->
 
 								<p class="form-text text-muted mb-3">
-									Simpan kode verifikasi diatas dengan aman. Kode verifikasi akan diminta saat anda mencoba mereset kata sandi anda.
+									Cek kode verifikasi anda di pengaturan akun anda nanti. Simpan kode verifikasi dengan aman. Kode verifikasi akan diminta saat anda mencoba mereset kata sandi anda.
 								</p>
 
 								<div class="align-items-center d-flex">
-									<button type="submit" class="btn btn-primary ms-auto">
+									<button type="submit" class="btn btn-primary ms-auto" name="submit">
 										Daftar Sekarang	
 									</button>
 								</div>

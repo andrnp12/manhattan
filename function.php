@@ -25,5 +25,4 @@ function register($username, $password, $verifikasi) {
 
 }
 
-
 ?>
