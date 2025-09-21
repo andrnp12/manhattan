@@ -3,7 +3,7 @@
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
       <div class="col-md-12 col-lg-6 mb-6 mb-lg-0">
           <a href="index.php" class="d-flex align-items-center">
-            <img src="images/main-logo.png" alt="Sola" class="img-fluid me-2 py-3">
+            <img src="../images/main-logo.png" alt="Sola" class="img-fluid me-2 py-3">
             <!-- <h5 class="py-1">Sola</h5> -->
           </a>
           <ul class="nav flex-column">
@@ -156,8 +156,6 @@
     </div>
   </div>
 
-  <script src="js/login.js"></script>
-
   <script>
 $(document).ready(function(){
   $('.dropdown-submenu a.test').on("click", function(e){
@@ -168,10 +166,10 @@ $(document).ready(function(){
 });
 </script>
 
-  <script src="js/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="js/plugins.js"></script>
+  <script src="../js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="../js/plugins.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </body>

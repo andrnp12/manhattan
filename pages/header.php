@@ -9,16 +9,16 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <!--Bootstrap ================================================== -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 
   <!--vendor css ================================================== -->
-  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="../css/vendor.css">
 
   <!--Link Swiper's CSS ================================================== -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
   <!-- Style Sheet ================================================== -->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
 
   <!-- Google Fonts ================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,10 +68,6 @@
     .pdf-viewer {
       height: 500px; /* batasi tinggi di mobile */
     }
-
-    .index-header {
-      gap: 3rem;
-    }
   }
 
   .bg-images {
@@ -84,6 +80,7 @@
   position: relative;
   z-index: 1;
 }
+
 
 </style>
 </head>
@@ -248,7 +245,7 @@
     <nav id="primary-header" class="navbar navbar-expand-lg py-3 border-bottom">
       <div class="container">
         <a class="navbar-brand" href="index.php">
-          <img src="images/main-logo.png" class="logo img-fluid">
+          <img src="../images/main-logo.png" class="logo img-fluid">
         </a>
         <button class="navbar-toggler border-0 d-flex d-lg-none order-3 p-2 shadow-none" type="button"
           data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false">
@@ -264,15 +261,48 @@
           <div class="offcanvas-body align-items-center justify-content-end">
             <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
               <!-- <li class="nav-item px-3">
-                <a class="nav-link active p-0" aria-current="page" href="index.php">Home</a>
+                <a class="nav-link p-0" aria-current="page" href="index.php">Pengaturan</a>
               </li> -->
               <li class="nav-item px-3">
-                <a class="nav-link p-0" aria-current="page" href="pages/index.php">Materi & rps</a>
+                <a class="nav-link p-0" aria-current="page" href="index.php">Materi & rps</a>
               </li>
 
-              <li class="nav-item ps-3 mt-4 mt-lg-0">
-                <a href="register.php" class="btn btn-outline-primary py-2 px-4">Daftar Akun</a>
-              </li>
+              <!-- <li class="nav-item ps-3 mt-4 mt-lg-0">
+                <a href="quote.html" class="btn btn-outline-primary py-2 px-4">Login</a>
+              </li> -->
+              <li class="nav-item dropdown user-menu">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                    <img
+                        src="../images/profile.png"
+                        class="user-image rounded-circle shadow"
+                        alt="User Image" 
+                        height="32px"
+                        width="32px"/>
+                    <span class="d-none d-md-inline"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+                    <!--begin::User Image-->
+                    <!-- <li class="user-header text-bg-primary">
+                        <img
+                            src="../images/profile.png"
+                            class="rounded-circle shadow"
+                            alt="User Image" 
+                            height="50px"
+                            width="50px"/>
+                        <p>
+                            <span class="d-block">Admin</span>
+                            <small>Admin</small>
+                        </p>
+                    </li> -->
+                    <!--end::User Image-->
+                    <!--begin::Menu Footer-->
+                    <li class="user-footer">
+                        <a href="settings.php" class="btn btn-default btn-flat">Pengaturan</a>
+                        <a href="logout.php" class="btn btn-default btn-flat float-end">Log out</a>
+                    </li>
+                    <!--end::Menu Footer-->
+                </ul>
+            </li>
 
             </ul>
           </div>

@@ -1,13 +1,24 @@
-<?php ?>
+<?php 
+
+include ('function.php');
+
+if (isset($_POST['submit'])) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $remember = isset($_POST['remember']) ? $_POST['remember'] : false;
+  login($username, $password, $remember);
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
   <?php include('header.php'); ?>
 
-<section id="slider">
+<!-- <section id="slider">
   <div class="swiper position-relative">
     <div class="swiper-wrapper">
-      <!-- Slide 1 -->
+      Slide 1
       <div class="swiper-slide"
         style="background-image: url(images/slider-image.jpg);">
         <div class="container m-auto">
@@ -19,7 +30,7 @@
         </div>
       </div>
 
-      <!-- Slide 2 -->
+      Slide 2
       <div class="swiper-slide"
         style="background-image: url(images/slider-image1.jpg);">
         <div class="container m-auto">
@@ -31,7 +42,7 @@
         </div>
       </div>
 
-      <!-- Slide 3 -->
+      Slide 3
       <div class="swiper-slide"
         style="background-image: url(images/slider-image2.jpg);">
         <div class="container m-auto">
@@ -44,45 +55,12 @@
       </div>
     </div>
 
-    <!-- Pagination & Navigation -->
+    Pagination & Navigation
     <div class="swiper-pagination slider-pagination position-absolute pb-5"></div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  </script>
-
-<style>
-  /* FIX: pastikan semua slide punya ukuran */
-  #slider .swiper {
-    width: 100%;
-    height: 90vh;
-  }
-  #slider .swiper-slide {
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-  }
-</style>
+</section> -->
 
   <!-- <section id="info" class="padding-medium">
     <div class="container">
@@ -107,7 +85,78 @@
     </div>
   </section> -->
 
+  <!-- Bagian background di luar section -->
+  <!-- <div class="bg-home"></div> -->
+
   <section id="about-us" class="padding-medium">
+    <div class="container">
+      <div class="index-header row align-items-center">
+        <div class="col-lg-6 mt-5 mt-lg-0">
+        <div class="col-lg-10">
+          <h6 class="text-primary">Tentang Kami</h6>
+          <h3 class="display-5 fw-bold mb-3">Sistem Bahan Ajar RPS dan Materi Pendidikan Terbaik</h3>
+          <p>Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet. Tempor erat sed stet lorem
+            sit clita duo justo elitr rebum at clita diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat
+            ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet
+          </p>
+          <a class="btn btn-primary mt-4" href="about.html">Jelajahi Fitur</a>
+        </div>
+        </div>
+        <div class="col-lg-6">
+        <!-- <div class="text-center my-5">
+						<img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="logo" width="100">
+					</div> -->
+					<div class="card shadow-lg">
+						<div class="card-body p-5">
+							<h1 class="fs-4 card-title fw-bold mb-4">Masuk ke akun anda</h1>
+							<form method="POST" action="index.php" class="needs-validation" novalidate="" autocomplete="off">
+								<div class="mb-3">
+									<label class="mb-2 text-muted" for="name">Username</label>
+									<input id="name" type="text" class="form-control" name="username" value="" required autofocus>
+									<div class="invalid-feedback">
+										Username tidak valid
+									</div>
+								</div>
+
+								<div class="mb-3">
+									<div class="mb-2 w-100">
+										<label class="text-muted" for="password">Password</label>
+										<a href="forgot.php" class="float-end">
+											Lupa Kata Sandi?
+										</a>
+									</div>
+									<input id="password" type="password" class="form-control" name="password" required>
+								    <div class="invalid-feedback">
+								    	Kata Sandi tidak valid
+							    	</div>
+								</div>
+
+								<div class="d-flex align-items-center">
+									<div class="form-check">
+										<input type="checkbox" name="remember" id="remember" class="form-check-input">
+										<label for="remember" class="form-check-label">Remember Me</label>
+									</div>
+									<button type="submit" class="btn btn-primary ms-auto" name="submit">
+										Masuk
+									</button>
+								</div>
+							</form>
+						</div>
+						<div class="card-footer py-3 border-0">
+							<div class="text-center">
+								Belum memiliki akun? <a href="register.php" class="text-dark">Daftar Sekarang</a>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="text-center mt-5 text-muted">
+						Copyright &copy; 2017-2021 &mdash; Your Company 
+					</div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section id="about-us" class="padding-medium">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
@@ -132,216 +181,64 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section id="services">
     <div class="container-fluid p-0">
       <h6 class="text-center text-primary">Layanan Kami</h6>
-      <h3 class="text-center display-5 fw-bold mb-3">Apa Yang Kami Tawarkan</h3>
+      <h3 class="text-center display-5 fw-bold mb-3">Apa Yang Anda Dapatkan?</h3>
       <div class="row g-0 mt-5 justify-content-center">
         <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
-            <img src="images/service1.jpg" class="service-img img-fluid" alt="img">
+            <img src="images/service1.png" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
               <h5 class="text-white">Video Pembelajaran Edukatif</h5>
               <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
               <a href="services-single.html">
-                <h6 class="text-white text-decoration-underline">Lihat Semua</h6>
+                <!-- <h6 class="text-white text-decoration-underline">Lihat Semua</h6> -->
               </a>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
-            <img src="images/service2.jpg" class="service-img img-fluid" alt="img">
+            <img src="images/service2.png" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
-              <h5 class="text-white">Materi Ajar RPS Terupdate</h5>
+              <h5 class="text-white">Materi Ajar RPP Terupdate</h5>
               <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
               <a href="services-single.html">
-                <h6 class="text-white text-decoration-underline">Lihat Semua</h6>
+                <!-- <h6 class="text-white text-decoration-underline">Lihat Semua</h6> -->
               </a>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
-            <img src="images/service3.jpg" class="service-img img-fluid" alt="img">
+            <img src="images/service3.png" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
               <h5 class="text-white">Video dan Materi Downloadable</h5>
               <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
               <a href="services-single.html">
-                <h6 class="text-white text-decoration-underline">Lihat Semua</h6>
+                <!-- <h6 class="text-white text-decoration-underline">Lihat Semua</h6> -->
               </a>
             </div>
           </div>
         </div>
-        <!-- <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-3">
           <div class="service-post position-relative bg-primary">
-            <img src="images/service1.jpg" class="service-img img-fluid" alt="img">
+            <img src="images/service4.png" class="service-img img-fluid" alt="img">
             <div class="position-absolute bottom-0 p-5">
-              <h5 class="text-white">Solar panels</h5>
+              <h5 class="text-white">Akses Gratis dan Mudah</h5>
               <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
               <a href="services-single.html">
-                <h6 class="text-white text-decoration-underline">Read more</h6>
+                <!-- <h6 class="text-white text-decoration-underline">Read more</h6> -->
               </a>
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- <section id="feature" class="padding-medium">
-    <div class="container">
-      <h6 class="text-primary">Why Choose Us!</h6>
-      <h3 class="display-5 fw-bold mb-3">Our motive to change world</h3>
-      <p>Aliqu diam amet diam et dolor diam ipsum sit tet lorem sit clita duo eos. <br> Clita erat ipsum et lorem et
-        sit, sed tempor erat elitr rebum at clita. </p>
-      <div class="row">
-        <div class="col-md-6 col-lg-3">
-          <div class="position-relative">
-            <h2 style="color:#F9F4EC; -webkit-text-stroke: 1px #E6E1D9; font-size: 130px; ">01</h2>
-            <h6 class="position-absolute top-50 start-50 translate-end m-0">Quality services</h6>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="position-relative">
-            <h2 style="color:#F9F4EC; -webkit-text-stroke: 1px #E6E1D9; font-size: 130px; ">02</h2>
-            <h6 class="position-absolute top-50 start-50 translate-end m-0">expertise workers</h6>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="position-relative">
-            <h2 style="color:#F9F4EC; -webkit-text-stroke: 1px #E6E1D9; font-size: 130px; ">03</h2>
-            <h6 class="position-absolute top-50 start-50 translate-end m-0">Free consulting</h6>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="position-relative">
-            <h2 style="color:#F9F4EC; -webkit-text-stroke: 1px #E6E1D9; font-size: 130px; ">04</h2>
-            <h6 class="position-absolute top-50 start-50 translate-end m-0">Customer support</h6>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- <section id="projects" class="padding-medium">
-    <div class="container">
-      <h6 class="text-center text-primary">Materi Kami</h6>
-      <h3 class="text-center display-5 fw-bold ">Lihat Seluruh Materi Kami</h3>
-      <div class="my-4">
-        <p class="text-center">
-          <button class="filter-button px-3 me-2 mb-3 active" data-filter="*">All</button>
-          <button class="filter-button px-3 me-2 mb-3" data-filter=".energy">Energy</button>
-          <button class="filter-button px-3 me-2 mb-3" data-filter=".wind">Wind Turbines</button>
-          <button class="filter-button px-3 me-2 mb-3" data-filter=".renew">Renewable</button>
-        </p>
-      </div>
-
-      <div class="isotope-container">
-        <div class="row">
-          <div class="col-md-4 item energy mb-4">
-            <a href="project-single.html"><img src="images/project1.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">energy</h6>
-            <h3><a href="project-single.html">Houston roof solaring</a></h3>
-          </div>
-          <div class="col-md-4 item wind mb-4">
-            <a href="project-single.html"><img src="images/project2.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">wind</h6>
-            <h3><a href="project-single.html">City solar light</a></h3>
-          </div>
-          <div class="col-md-4 item renew mb-4">
-            <a href="project-single.html"><img src="images/project3.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">renew</h6>
-            <h3><a href="project-single.html">solar power house</a></h3>
-          </div>
-          <div class="col-md-4 item wind mb-4">
-            <a href="project-single.html"><img src="images/project4.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">wind</h6>
-            <h3><a href="project-single.html">rooftop solaring</a></h3>
-          </div>
-          <div class="col-md-4 item energy mb-4">
-            <a href="project-single.html"><img src="images/project5.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">energy</h6>
-            <h3><a href="project-single.html">adjustment solaring</a></h3>
-          </div>
-          <div class="col-md-4 item renew mb-4">
-            <a href="project-single.html"><img src="images/project6.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">renew</h6>
-            <h3><a href="project-single.html">wind turbining</a></h3>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section> -->
-
-  <!-- <section id="testimonial">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-1 offset-md-1 ">
-          <div class="me-3">
-            <svg class="text-primary me-1" width="60px" height="60px">
-              <use xlink:href="#quote"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="col-md-9">
-          <div class="swiper testimonial-swiper mt-3">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="review">
-                  <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="review">
-                  <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="review">
-                  <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="review">
-                  <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="review">
-                  <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-pagination testimonial-pagination text-start position-relative mt-4"></div>
-          </div>
-        </div>
-      </div>
-
-  </section> -->
 
   <section id="blogs" class="padding-medium">
     <div class="container">
