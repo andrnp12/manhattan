@@ -1,4 +1,14 @@
-<?php ?>
+<?php 
+
+include ('function.php');
+
+if (isset($_POST['submit'])) {
+  $username = $_POST['username'];
+  $verifikasi = $_POST['verifikasi'];
+  forgot($username, $verifikasi);
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -87,25 +97,25 @@
 					<div class="card shadow-lg">
 						<div class="card-body p-5">
 							<h1 class="fs-4 card-title fw-bold mb-4">Lupa Kata Sandi?</h1>
-							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+							<form method="POST" action="forgot.php" class="needs-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">
-									<label class="mb-2 text-muted" for="email">Username</label>
-									<input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+									<label class="mb-2 text-muted" for="name">Username</label>
+									<input id="name" type="text" class="form-control" name="username" value="" required autofocus>
 									<div class="invalid-feedback">
 										Username tidak valid
 									</div>
 								</div>
 
                 <div class="mb-3">
-									<label class="mb-2 text-muted" for="email">Kode Verifikasi</label>
-									<input id="text" type="text" class="form-control" name="verifikasi" value="" required autofocus>
+									<label class="mb-2 text-muted" for="verif">Kode Verifikasi</label>
+									<input id="verif" type="text" class="form-control" name="verifikasi" value="" required autofocus>
 									<div class="invalid-feedback">
 										Kode verifikasi tidak valid
 									</div>
 								</div>
 
 								<div class="d-flex align-items-center">
-									<button type="submit" class="btn btn-primary ms-auto">
+									<button type="submit" class="btn btn-primary ms-auto" name="submit">
 										Reset Sekarang
 									</button>
 								</div>
