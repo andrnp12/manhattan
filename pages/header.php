@@ -60,13 +60,13 @@
 
     .pdf-viewer {
     width: 100%;
-    height: 100vh; /* default untuk desktop */
+    height: 80vh; /* default untuk desktop */
   }
 
   /* Aturan khusus untuk layar kecil (mobile) */
   @media (max-width: 768px) {
     .pdf-viewer {
-      height: 500px; /* batasi tinggi di mobile */
+      height: 350px; /* batasi tinggi di mobile */
     }
   }
 

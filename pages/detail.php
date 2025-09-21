@@ -46,7 +46,11 @@ if (!isset($_SESSION['username'])) {
           </p>
         </div>
       </div>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000;">
+      <div class="col-lg-12">
+        <div class="col-lg-8">
+          <h3 class="display-8 fw-bold mb-3">Video Edukasi Materi</h3>
+        </div>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000;">
         <iframe 
           src="https://www.youtube.com/embed/tgbNymZ7vqY" 
           title="YouTube video player" 
@@ -56,8 +60,17 @@ if (!isset($_SESSION['username'])) {
           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
         </iframe>
       </div>
+      </div>
       <br>
-      <div style="position:relative; height:100vh; overflow:hidden;">
+      
+      <div class="col-lg-12">
+        <div class="col-lg-12 d-flex flex-wrap align-items-center justify-content-between pb-4 pt-5">
+          <h3 class="display-8 fw-bold">Detail RPS Materi</h3>
+          <div class="">
+            <a class="btn btn-primary" href="about.html">Download PDF Materi</a>
+          </div>
+        </div>
+        <div style="position:relative; overflow:hidden;">
         <object 
           data="pengunguman.pdf" 
           type="application/pdf" 
@@ -65,9 +78,25 @@ if (!isset($_SESSION['username'])) {
           height="100%"
           class="pdf-viewer">
         </object>
+        </div>
       </div>
-      <div class="pt-5">
-        <a class="btn btn-primary mb-5 mt-3" href="about.html">Download PDF Bahan Ajar</a>
+
+      <div class="col-lg-12">
+        <div class="col-lg-12 d-flex flex-wrap align-items-center justify-content-between pb-4 pt-5">
+          <h3 class="display-8 fw-bold">Detail SKSS Laporan</h3>
+          <div class="">
+            <a class="btn btn-primary" href="about.html">Download PDF Laporan</a>
+          </div>
+        </div>
+        <div style="position:relative; overflow:hidden;">
+        <object 
+          data="pengunguman.pdf" 
+          type="application/pdf" 
+          width="100%" 
+          height="100%"
+          class="pdf-viewer">
+        </object>
+        </div>
       </div>
 
     </div>
