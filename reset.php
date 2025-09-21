@@ -1,4 +1,19 @@
-<?php ?>
+<?php 
+session_start();
+if (!isset($_SESSION['username'])) {
+  header("Location: forgot.php");
+}
+
+include ('function.php');
+
+if (isset($_POST['submit'])) {
+  $password = $_POST['password'];
+  $username = $_SESSION['username'];
+  $logout = isset($_POST['logout']) ? $_POST['logout'] : false;
+  resetpass($password, $username, $logout);
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -74,39 +89,42 @@
     </div>
   </section> -->
 
-  <section class="h-100 padding-small">
+  <!-- Bagian background di luar section -->
+  <div class="bg-images"></div>
+
+  <section class="section-images h-100" style="padding-bottom: 10rem !important;">
 		<div class="container h-100">
 			<div class="row justify-content-sm-center h-100">
-				<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+				<div class="col-lg-6">
 					<!-- <div class="text-center my-5">
 						<img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="logo" width="100">
 					</div> -->
 					<div class="card shadow-lg">
 						<div class="card-body p-5">
 							<h1 class="fs-4 card-title fw-bold mb-4">Reset Password</h1>
-							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+							<form method="POST" action="reset.php" class="needs-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">
-									<label class="mb-2 text-muted" for="password">New Password</label>
+									<label class="mb-2 text-muted" for="password">Password Baru</label>
 									<input id="password" type="password" class="form-control" name="password" value="" required autofocus>
 									<div class="invalid-feedback">
-										Password is required	
+										Password tidak valid	
 									</div>
 								</div>
 
-								<div class="mb-3">
+								<!-- <div class="mb-3">
 									<label class="mb-2 text-muted" for="password-confirm">Confirm Password</label>
 									<input id="password-confirm" type="password" class="form-control" name="password_confirm" required>
 								    <div class="invalid-feedback">
 										Please confirm your new password
 							    	</div>
-								</div>
+								</div> -->
 
 								<div class="d-flex align-items-center">
 									<div class="form-check">
-										<input type="checkbox" name="logout_devices" id="logout" class="form-check-input">
-										<label for="logout" class="form-check-label">Logout all devices</label>
+										<input type="checkbox" name="logout" id="logout" class="form-check-input">
+										<label for="logout" class="form-check-label">Logout akun</label>
 									</div>
-									<button type="submit" class="btn btn-primary ms-auto">
+									<button type="submit" class="btn btn-primary ms-auto" name="submit">
 										Reset Password	
 									</button>
 								</div>

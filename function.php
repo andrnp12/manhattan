@@ -70,12 +70,39 @@ function forgot ($username, $verifikasi) {
         $user = $query->fetch_assoc();
         $verif = $user['verifikasi'];
         if ($checkverif == $verif) {
+            session_start();
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['id'] = $user['id_user'];
             echo "<script>alert('Kode Verifikasi Benar'); window.location.href = 'reset.php';</script>";
         } else {
             echo "<script>alert('Kode Verifikasi Salah'); window.location.href = 'forgot.php';</script>";
         }
     } else {
         echo "<script>alert('Username Tidak Terdaftar'); window.location.href = 'forgot.php';</script>";
+    }
+}
+
+function resetpass ($password, $username, $logout) {
+    $conn = koneksi();
+
+    $checkpass = mysqli_escape_string($conn, $password);
+
+    $passwordhash = password_hash($checkpass, PASSWORD_DEFAULT);
+
+    $sql = "UPDATE user SET password = '$passwordhash' WHERE username = '$username'";
+    $query = mysqli_query($conn, $sql);
+
+    if ($query) {
+        if ($logout) {
+            session_destroy();
+            // header("Location: index.php");
+            echo "<script>alert('Reset Kata Sandi Berhasil'); window.location.href = 'index.php';</script>";
+            exit;
+          } else {
+            echo "<script>alert('Reset Kata Sandi Berhasil'); window.location.href = 'index.php';</script>";
+          }
+    } else {
+        echo "<script>alert('Reset Kata Sandi Gagal'); window.location.href = 'reset.php';</script>";
     }
 }
 
