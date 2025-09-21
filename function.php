@@ -21,7 +21,7 @@ function register($username, $password, $verifikasi) {
 
     if ($query) {
         // registrasi berhasil
-        echo "<script>alert('Registerasi berhasil!'); window.location.href = 'pages/materi.php';</script>";
+        echo "<script>alert('Registerasi berhasil!'); window.location.href = 'index.php';</script>";
     } else {
         // registrasi gagal
         echo "<script>alert('Registerasi gagal!, coba cek lagi atau hubungi kami melalui kontak!'); window.location.href = 'register.php';</script>";
@@ -29,7 +29,7 @@ function register($username, $password, $verifikasi) {
 
 }
 
-function login($username, $password) {
+function login($username, $password, $remember) {
     $conn = koneksi();
 
     $checkuser = mysqli_escape_string($conn, $username);
@@ -42,11 +42,24 @@ function login($username, $password) {
             $user = $query->fetch_assoc();
             // check password match
             if (password_verify($checkpass, $user['password'])) {
-                //password match, process login
-                session_start();
-                $_SESSION['username'] = $user['username'];
-                $_SESSION['id'] = $user['id_user'];
-                echo "<script>alert('Login Berhasil'); window.location.href = 'pages/materi.php';</script>";
+                // check remember checklist
+                if ($remember) {
+                    //password match, process login
+                    session_start();
+
+                    setcookie("username", $user['username'], time() + (86400 * 30), "/");
+                    setcookie("password", $user['password'], time() + (86400 * 30), "/");
+
+                    echo "<script>alert('Login Berhasil'); window.location.href = 'pages/index.php';</script>";
+                } else {
+                    //password match, process login
+                    session_start();
+
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['id'] = $user['id_user'];
+
+                    echo "<script>alert('Login Berhasil'); window.location.href = 'pages/index.php';</script>";
+                }
             } else {
                 // Password does not match, handle login failure
                 echo "<script>alert('Password Salah'); window.location.href = 'index.php';</script>";
@@ -86,7 +99,6 @@ function resetpass ($password, $username, $logout) {
     $conn = koneksi();
 
     $checkpass = mysqli_escape_string($conn, $password);
-
     $passwordhash = password_hash($checkpass, PASSWORD_DEFAULT);
 
     $sql = "UPDATE user SET password = '$passwordhash' WHERE username = '$username'";

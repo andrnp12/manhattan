@@ -244,7 +244,7 @@
 
     <nav id="primary-header" class="navbar navbar-expand-lg py-3 border-bottom">
       <div class="container">
-        <a class="navbar-brand" href="../index.php">
+        <a class="navbar-brand" href="index.php">
           <img src="../images/main-logo.png" class="logo img-fluid">
         </a>
         <button class="navbar-toggler border-0 d-flex d-lg-none order-3 p-2 shadow-none" type="button"
@@ -264,7 +264,7 @@
                 <a class="nav-link p-0" aria-current="page" href="index.php">Pengaturan</a>
               </li> -->
               <li class="nav-item px-3">
-                <a class="nav-link p-0" aria-current="page" href="materi.php">Materi & rps</a>
+                <a class="nav-link p-0" aria-current="page" href="index.php">Materi & rps</a>
               </li>
 
               <!-- <li class="nav-item ps-3 mt-4 mt-lg-0">

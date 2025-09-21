@@ -5,7 +5,8 @@ include ('function.php');
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
-  login($username, $password);
+  $remember = isset($_POST['remember']) ? $_POST['remember'] : false;
+  login($username, $password, $remember);
 }
 
 ?>
