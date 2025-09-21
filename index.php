@@ -1,4 +1,14 @@
-<?php ?>
+<?php 
+
+include ('function.php');
+
+if (isset($_POST['submit'])) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  login($username, $password);
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -98,10 +108,10 @@
 					<div class="card shadow-lg">
 						<div class="card-body p-5">
 							<h1 class="fs-4 card-title fw-bold mb-4">Masuk ke akun anda</h1>
-							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+							<form method="POST" action="index.php" class="needs-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">
-									<label class="mb-2 text-muted" for="email">Username</label>
-									<input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+									<label class="mb-2 text-muted" for="name">Username</label>
+									<input id="name" type="text" class="form-control" name="username" value="" required autofocus>
 									<div class="invalid-feedback">
 										Username tidak valid
 									</div>
@@ -125,7 +135,7 @@
 										<input type="checkbox" name="remember" id="remember" class="form-check-input">
 										<label for="remember" class="form-check-label">Remember Me</label>
 									</div>
-									<button type="submit" class="btn btn-primary ms-auto">
+									<button type="submit" class="btn btn-primary ms-auto" name="submit">
 										Masuk
 									</button>
 								</div>
