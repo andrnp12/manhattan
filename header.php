@@ -267,7 +267,7 @@
                 <a class="nav-link active p-0" aria-current="page" href="index.php">Home</a>
               </li> -->
               <li class="nav-item px-3">
-                <a class="nav-link p-0" aria-current="page" href="pages/materi.php">Materi & rps</a>
+                <a class="nav-link p-0" aria-current="page" href="pages/index.php">Materi & rps</a>
               </li>
 
               <li class="nav-item ps-3 mt-4 mt-lg-0">
