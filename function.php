@@ -57,4 +57,26 @@ function login($username, $password) {
     }
 }
 
+function forgot ($username, $verifikasi) {
+    $conn = koneksi();
+
+    $checkuser = mysqli_escape_string($conn, $username);
+    $checkverif = mysqli_escape_string($conn, $verifikasi);
+
+    $sql = "SELECT * FROM user WHERE username = '$checkuser'";
+    $query = mysqli_query($conn, $sql);
+
+    if ($query->num_rows > 0) {
+        $user = $query->fetch_assoc();
+        $verif = $user['verifikasi'];
+        if ($checkverif == $verif) {
+            echo "<script>alert('Kode Verifikasi Benar'); window.location.href = 'reset.php';</script>";
+        } else {
+            echo "<script>alert('Kode Verifikasi Salah'); window.location.href = 'forgot.php';</script>";
+        }
+    } else {
+        echo "<script>alert('Username Tidak Terdaftar'); window.location.href = 'forgot.php';</script>";
+    }
+}
+
 ?>
