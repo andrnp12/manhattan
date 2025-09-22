@@ -17,6 +17,7 @@ if (
 }
 
 include(__DIR__ . '../../data/data_dummy.php');
+include(__DIR__ . '../../function/index.php');
 ?>
 
 <!doctype html>
@@ -88,12 +89,36 @@ include(__DIR__ . '../../data/data_dummy.php');
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link justify-content-between"
+                href="#" onclick="loadPage('materi'); return false;" aria-expanded="false">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <iconify-icon icon="solar:layers-line-duotone" class=""></iconify-icon>
+                  </span>
+                  <span class="hide-menu">Materi</span>
+                </div>
+                <!-- <span class="hide-menu badge bg-secondary-subtle text-secondary fs-1 py-1">Pro</span> -->
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link justify-content-between"
                 href="#" onclick="loadPage('rpp'); return false;" aria-expanded="false">
                 <div class="d-flex align-items-center gap-3">
                   <span class="d-flex">
                     <iconify-icon icon="solar:layers-line-duotone" class=""></iconify-icon>
                   </span>
                   <span class="hide-menu">RPP</span>
+                </div>
+                <!-- <span class="hide-menu badge bg-secondary-subtle text-secondary fs-1 py-1">Pro</span> -->
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link justify-content-between"
+                href="#" onclick="loadPage('lkp'); return false;" aria-expanded="false">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <iconify-icon icon="solar:layers-line-duotone" class=""></iconify-icon>
+                  </span>
+                  <span class="hide-menu">LKP</span>
                 </div>
                 <!-- <span class="hide-menu badge bg-secondary-subtle text-secondary fs-1 py-1">Pro</span> -->
               </a>
@@ -110,48 +135,6 @@ include(__DIR__ . '../../data/data_dummy.php');
                 <!-- <span class="hide-menu badge bg-secondary-subtle text-secondary fs-1 py-1">Pro</span> -->
               </a>
             </li>
-
-            <!-- jika ingin menu dropdown -->
-            <!-- <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex align-items-center gap-3">
-                  <span class="d-flex">
-                    <iconify-icon icon="solar:home-angle-line-duotone"></iconify-icon>
-                  </span>
-                  <span class="hide-menu">Front Pages</span>
-                </div>
-                
-              </a>
-              <ul aria-expanded="false" class="collapse first-level">
-                <li class="sidebar-item">
-                  <a class="sidebar-link justify-content-between"
-                    href="https://bootstrapdemos.wrappixel.com/materialM/dist/main/frontend-landingpage.html">
-                    <div class="d-flex align-items-center gap-3">
-                      <span class="d-flex">
-                        <span class="icon-small"></span>
-                      </span>
-                      <span class="hide-menu">Homepage</span>
-                    </div>
-                    <span class="hide-menu badge bg-secondary-subtle text-secondary fs-1 py-1">Pro</span>
-                  </a>
-                </li>
-                <li class="sidebar-item">
-                  <a class="sidebar-link justify-content-between"
-                    href="https://bootstrapdemos.wrappixel.com/materialM/dist/main/frontend-aboutpage.html">
-                    <div class="d-flex align-items-center gap-3">
-                      <span class="d-flex">
-                        <span class="icon-small"></span>
-                      </span>
-                      <span class="hide-menu">About Us</span>
-                    </div>
-                    <span class="hide-menu badge bg-secondary-subtle text-secondary fs-1 py-1">Pro</span>
-                  </a>
-                </li>
-              </ul>
-            </li> -->
-
-            <!-- ---------------------------------- -->
-
             <li>
               <span class="sidebar-divider lg"></span>
             </li>
@@ -188,22 +171,6 @@ include(__DIR__ . '../../data/data_dummy.php');
                 <i class="ti ti-menu-2"></i>
               </a>
             </li>
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link " href="javascript:void(0)" id="drop1" data-bs-toggle="dropdown" aria-expanded="false">
-                <iconify-icon icon="solar:bell-linear" class="fs-6"></iconify-icon>
-                <div class="notification bg-primary rounded-circle"></div>
-              </a>
-              <div class="dropdown-menu dropdown-menu-animate-up" aria-labelledby="drop1">
-                <div class="message-body">
-                  <a href="javascript:void(0)" class="dropdown-item">
-                    Item 1
-                  </a>
-                  <a href="javascript:void(0)" class="dropdown-item">
-                    Item 2
-                  </a>
-                </div>
-              </div>
-            </li> -->
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
@@ -246,6 +213,7 @@ include(__DIR__ . '../../data/data_dummy.php');
   </div>
   </div>
 
+  <!-- model form tambah -->
   <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -262,13 +230,13 @@ include(__DIR__ . '../../data/data_dummy.php');
             <!-- Field kategori -->
             <div class="mb-3 d-none" id="fieldKategori">
               <label class="form-label">Nama Kategori</label>
-              <input type="text" class="form-control" name="kategori">
+              <input type="text" class="form-control" name="kategori" required>
             </div>
 
             <!-- Field topik -->
             <div class="mb-3 d-none" id="fieldTopikKategori">
               <label class="form-label">Pilih Kategori</label>
-              <select class="form-select" name="kategori_id" id="kategoriSelect">
+              <select class="form-select" name="kategori_id" id="kategoriSelect" required>
                 <option value="">-- Pilih Kategori --</option>
                 <?php foreach ($categories as $item) : ?>
                   <option value="<?php echo $item['id']; ?>"><?php echo $item['name']; ?></option>
@@ -277,25 +245,51 @@ include(__DIR__ . '../../data/data_dummy.php');
             </div>
             <div class="mb-3 d-none" id="fieldTopik">
               <label class="form-label">Judul Topik</label>
-              <input type="text" class="form-control" name="topik">
+              <input type="text" class="form-control" name="topik" required>
             </div>
 
-            <!-- Field rpp -->
+            <!-- Field topik -->
             <div class="mb-3 d-none" id="fieldRppTopik">
               <label class="form-label">Pilih Topik</label>
-              <select class="form-select" name="topik_id" id="topikSelect">
+              <select class="form-select" name="topik_id" id="topikSelect" required>
                 <option value="">-- Pilih Topik --</option>
               </select>
             </div>
+
+            <!-- Field sub topik -->
+            <div class="mb-3 d-none" id="fieldSubTopik">
+              <label class="form-label">Judul Sub Topik</label>
+              <input type="text" class="form-control" name="subTopik" required>
+            </div>
+
+            <!-- field RPP -->
             <div class="mb-3 d-none" id="fieldRpp">
               <label class="form-label">Judul RPP</label>
-              <input type="text" class="form-control" name="rpp">
+              <input type="text" class="form-control" name="rpp" required>
+
+              <label for="filePdf" class="form-label mt-2">Upload File PDF RPP</label>
+              <input class="form-control" type="file" id="filePdf" name="file_pdf" accept="application/pdf" required>
+            </div>
+
+
+
+
+            <!-- field LKP -->
+            <div class="mb-3 d-none" id="fieldLkp">
+              <label class="form-label">Judul LKP</label>
+              <input type="text" class="form-control" name="lkp" required>
+
+              <label for="filePdf" class="form-label mt-2">Upload File PDF LKP</label>
+              <input class="form-control" type="file" id="filePdf2" name="file_pdf" accept="application/pdf" required>
             </div>
 
             <!-- Field video -->
             <div class="mb-3 d-none" id="fieldVideo">
               <label class="form-label">Judul Video</label>
-              <input type="text" class="form-control" name="video">
+              <input type="text" class="form-control" name="video" required>
+
+              <label for="fileVideo" class="form-label mt-2">Upload File Video</label>
+              <input class="form-control" type="url" id="linkVideo" name="link_video" placeholder="Masukkan link video YouTube" required>
             </div>
 
           </div>
@@ -310,6 +304,66 @@ include(__DIR__ . '../../data/data_dummy.php');
     </div>
   </div>
 
+  <!-- modal form edit -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Form Edit</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="simpan.php" method="POST">
+          <input type="hidden" name="tipe" value="kategori">
+          <input type="hidden" name="id" id="editId">
+          <div class="modal-body">
+            <!-- <div class="mb-3">
+              <label class="form-label">Nama Kategori</label>
+              <input type="text" class="form-control" name="kategori" id="editKategori">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Judul Topik</label>
+              <input type="text" class="form-control" name="topik" id="editTopik">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Judul Sub Topik</label>
+              <input type="text" class="form-control" name="sub_topik" id="editSubTopik">
+            </div> -->
+            <div class="mb-3">
+              <label class="form-label">Judul Sub Topik</label>
+              <input type="text" class="form-control" name="sub_topik" id="editSubTopik">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Judul RPP</label>
+              <input type="text" class="form-control" name="rpp" id="editRpp">
+
+              <label class="form-label mt-2">Upload File RPP</label>
+              <input class="form-control" type="file" id="editFilePdf" name="file_pdf" accept="application/pdf">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Judul LKP</label>
+              <input type="text" class="form-control" name="lkp" id="editLkp">
+
+              <label class="form-label mt-2">Upload File LKP</label>
+              <input class="form-control" type="file" id="editFilePdf" name="file_pdf" accept="application/pdf">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Judul Video</label>
+              <input type="text" class="form-control" name="video" id="editVideo">
+
+              <label for="fileVideo" class="form-label mt-2">Upload File Video</label>
+              <input class="form-control" type="url" id="editLink" name="link_video" placeholder="Masukkan link video YouTube">
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/sidebarmenu.js"></script>
@@ -320,6 +374,7 @@ include(__DIR__ . '../../data/data_dummy.php');
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
   <!-- fungsi seperti single page aplication -->
+
   <script>
     function setActiveLink(linkElement) {
       document.querySelectorAll('.sidebar-link').forEach(link => link.classList.remove('active'));
@@ -372,12 +427,49 @@ include(__DIR__ . '../../data/data_dummy.php');
 
   <!-- mengatur form modal input -->
   <script>
+    // daftar konfigurasi field berdasarkan tipe 
+    const config = {
+      kategori: ['fieldKategori'],
+      topik: ['fieldTopikKategori', 'fieldTopik'],
+      rpp: ['fieldTopikKategori', 'fieldRppTopik', 'fieldRpp'],
+      video: ['fieldTopikKategori', 'fieldRppTopik', 'fieldVideo'],
+      materi: ['fieldTopikKategori', 'fieldRppTopik', 'fieldSubTopik', 'fieldRpp', 'fieldLkp', 'fieldVideo']
+    };
+
     function openModal(tipe) {
       document.getElementById('tipe').value = tipe;
       document.getElementById('formModalLabel').textContent = 'Tambah ' + tipe.charAt(0).toUpperCase() + tipe.slice(1);
 
-      // sembunyikan semua field dulu
+      // sembunyikan semua field dulu 
       document.querySelectorAll('#formModal .mb-3').forEach(el => el.classList.add('d-none'));
+
+      // reset form input 
+      document.querySelector('#formModal form').reset();
+
+      // sembunyikan semua field + hilangkan required 
+      document.querySelectorAll('#formModal .mb-3').forEach(el => {
+        el.classList.add('d-none');
+        el.querySelectorAll('input, select, textarea').forEach(input => {
+          input.removeAttribute('required');
+        });
+      });
+
+      // ambil field yang sesuai dengan tipe 
+      const fields = config[tipe] || [];
+      fields.forEach(id => {
+        const field = document.getElementById(id);
+
+        if (!field) return;
+
+        field.classList.remove('d-none');
+
+        const inputs = field.querySelectorAll('input, select, textarea');
+        inputs.forEach(el => {
+          el.setAttribute('required', true);
+        });
+      })
+
+
 
       if (tipe === 'kategori') {
         document.getElementById('fieldKategori').classList.remove('d-none');
@@ -399,7 +491,36 @@ include(__DIR__ . '../../data/data_dummy.php');
         document.getElementById('fieldRppTopik').classList.remove('d-none');
         document.getElementById('fieldVideo').classList.remove('d-none');
       }
+
+      if (tipe === 'materi') {
+        document.getElementById('fieldTopikKategori').classList.remove('d-none');
+        document.getElementById('fieldRppTopik').classList.remove('d-none');
+        document.getElementById('fieldSubTopik').classList.remove('d-none');
+        document.getElementById('fieldRpp').classList.remove('d-none');
+        document.getElementById('fieldLkp').classList.remove('d-none');
+        document.getElementById('fieldVideo').classList.remove('d-none');
+        document.getElementById('topik').setAttribute('required', true);
+      }
     }
+  </script>
+
+  <!-- mengisi data di modal edit -->
+  <script>
+    var editModal = document.getElementById('editModal');
+    editModal.addEventListener('show.bs.modal', function(event) {
+      var button = event.relatedTarget;
+      var data = button.dataset;
+
+      console.log(data);
+
+      // loop isi daat
+      Object.keys(data).forEach(function(key) {
+        var modalInput = editModal.querySelector('#edit' + key.charAt(0).toUpperCase() + key.slice(1));
+        if (modalInput) {
+          modalInput.value = data[key] || '';
+        }
+      })
+    });
   </script>
 
   <!-- mengatur dropdown topik berdasarkan kategori di modal -->
