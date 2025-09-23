@@ -4,6 +4,18 @@ if (!isset($_SESSION['username'])) {
   header("Location: ../index.php");
 }
 
+include ('../function.php');
+
+// panggil fungsi settings
+$user = user();
+
+//panggil fungsi update user
+if (isset($_POST['submit'])) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  updateuser($username, $password);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -90,23 +102,23 @@ if (!isset($_SESSION['username'])) {
         <div class="card shadow-lg">
           <div class="card-body p-5">
             <h1 class="fs-4 card-title fw-bold mb-4">Pengaturan Akun</h1>
-            <form method="POST" class="needs-validation" novalidate autocomplete="off">
+            <form method="POST" action="settings.php" class="needs-validation" novalidate autocomplete="off">
               
               <div class="mb-3">
                 <label class="mb-2 text-muted" for="name">Username</label>
-                <input id="name" type="text" class="form-control" name="name" required autofocus>
+                <input id="name" type="text" class="form-control" name="username" value="<?php echo $user['username']; ?>" required autofocus>
                 <div class="invalid-feedback">Username diperlukan</div>
               </div>
 
               <div class="mb-3">
                 <label class="mb-2 text-muted" for="password">Kata Sandi</label>
-                <input id="password" type="password" class="form-control" name="password" required>
+                <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan kata sandi baru jika ingin merubah" required>
                 <div class="invalid-feedback">Kata Sandi diperlukan</div>
               </div>
 
               <div class="mb-3">
                 <label class="mb-2 text-muted" for="verifikasi">Kode Verifikasi</label>
-                <input id="verifikasi" type="text" class="form-control" name="verifikasi" value="123456" readonly>
+                <input id="verifikasi" type="text" class="form-control" name="verifikasi" value="<?php echo $user['verifikasi']; ?>" readonly>
               </div>
 
               <p class="form-text text-muted mb-3">
@@ -114,8 +126,8 @@ if (!isset($_SESSION['username'])) {
               </p>
 
               <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-primary">
-                  Simpan Perubahan
+                <button type="submit" class="btn btn-primary" name="submit">
+                  Simpan
                 </button>
               </div>
             </form>

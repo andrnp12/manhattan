@@ -119,7 +119,7 @@ if (isset($_POST['submit'])) {
 
                 <!-- <div class="mb-3">
 									<label class="mb-2 text-muted" for="verif">Kode Verifikasi</label>
-									<input id="verif" type="text" class="form-control" name="verifikasi" value="<?php echo $verif; ?>" disabled>
+									<input id="verif" type="text" class="form-control" name="verifikasi" value="" disabled>
 									<div class="invalid-feedback">
 										Email is invalid
 									</div>

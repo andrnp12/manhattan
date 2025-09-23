@@ -12,6 +12,9 @@ $satu = kategorisatu();
 // panggil fungsi filter data kategori
 $filter = filterdata();
 
+// panggil fungsi subtopik
+$sub = subtopik();
+
 ?>
 
 <!DOCTYPE html>
@@ -210,12 +213,14 @@ $filter = filterdata();
 
       <div class="grid-container">
         <div class="row">
-          <div class="col-md-4 item energy mb-4">
-            <a href="detail.php"><img src="../images/project1.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">energy</h6>
-            <h3><a href="project-single.html">Houston roof solaring</a></h3>
-          </div>
-          <div class="col-md-4 item wind mb-4">
+          <?php 
+            while($row = $sub->fetch_assoc()) { ?>
+              <div class="col-md-4 item <?php echo $row['id_topik']; ?> mb-4">
+                <a href="detail.php?id=<?php echo $row['id_sub']; ?>"><img src="../images/<?php echo $row['cover']; ?>" alt="image" class="img-fluid"></a>
+                <h6 class="text-primary mt-3"><?php echo $row['nama_topik']; ?></h6>
+                <h3><a href="detail.php?id=<?php echo $row['id_sub']; ?>"><?php echo $row['judul_sub']; ?></a></h3>
+              </div>
+          <!-- <div class="col-md-4 item wind mb-4">
             <a href="project-single.html"><img src="../images/project2.jpg" alt="image" class="img-fluid"></a>
             <h6 class="text-primary mt-3">wind</h6>
             <h3><a href="project-single.html">City solar light</a></h3>
@@ -239,27 +244,8 @@ $filter = filterdata();
             <a href="project-single.html"><img src="../images/project2.jpg" alt="image" class="img-fluid"></a>
             <h6 class="text-primary mt-3">wind</h6>
             <h3><a href="project-single.html">City solar light</a></h3>
-          </div>
-          <div class="col-md-4 item renew mb-4">
-            <a href="project-single.html"><img src="../images/project3.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">renew</h6>
-            <h3><a href="project-single.html">solar power house</a></h3>
-          </div>
-          <div class="col-md-4 item renew mb-4">
-            <a href="project-single.html"><img src="../images/project6.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">renew</h6>
-            <h3><a href="project-single.html">wind turbining</a></h3>
-          </div>
-          <div class="col-md-4 item energy mb-4">
-            <a href="detail.php"><img src="../images/project1.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">energy</h6>
-            <h3><a href="project-single.html">Houston roof solaring</a></h3>
-          </div>
-          <div class="col-md-4 item wind mb-4">
-            <a href="project-single.html"><img src="../images/project2.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">wind</h6>
-            <h3><a href="project-single.html">City solar light</a></h3>
-          </div>
+          </div> -->
+          <?php } ?>
         </div>
       </div>
     </div>
