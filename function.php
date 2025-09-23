@@ -118,4 +118,52 @@ function resetpass ($password, $username, $logout) {
     }
 }
 
+function kategori() {
+    $conn = koneksi();
+
+    $sql = "SELECT kategori.nama_kategori, topik.nama_topik FROM kategori INNER JOIN topik ON kategori.id_kategori = topik.id_kategori";
+    $query = mysqli_query($conn, $sql);
+
+    return $query;
+}
+
+function kategorisatu() {
+    $conn = koneksi();
+
+    $sql = "SELECT * FROM kategori";
+    $query = mysqli_query($conn, $sql);
+
+    return $query;
+}
+
+function filterdata() {
+    $conn = koneksi();
+
+    // Query ambil data
+    $sql = "SELECT kategori.id_kategori, topik.id_topik, topik.nama_topik FROM kategori INNER JOIN topik ON kategori.id_kategori = topik.id_kategori";
+    $result = mysqli_query($conn, $sql);
+
+    // Siapkan array kosong
+    $filterData = [];
+
+    // Loop hasil query
+    while ($row = mysqli_fetch_assoc($result)) {
+        $kategori = $row['id_kategori'];
+
+        // jika kategori belum ada, buatkan array baru
+        if (!isset($filterData[$kategori])) {
+            $filterData[$kategori] = [];
+        }
+
+        // tambahkan data label & value
+        $filterData[$kategori][] = [
+            "label" => $row['nama_topik'],
+            "value" => $row['id_topik']
+        ];
+    }
+
+    return $filterData;
+
+}
+
 ?>
