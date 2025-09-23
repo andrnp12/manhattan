@@ -4,6 +4,14 @@ if (!isset($_SESSION['username'])) {
   header("Location: ../index.php");
 }
 
+include ('../function.php');
+
+// panggil fungsi kategori
+$satu = kategorisatu();
+
+// panggil fungsi filter data kategori
+$filter = filterdata();
+
 ?>
 
 <!DOCTYPE html>
@@ -165,8 +173,10 @@ if (!isset($_SESSION['username'])) {
           aria-expanded="false">Kategori</button>
             <ul class="dropdown-menu animate border-0 shadow">
                   <li class="dropdown-submenu">
-                        <a class="dropdown-item text-uppercase" tabindex="-1" href="#" data-category = "oplosan" >solar </a>
-                        <a class="dropdown-item text-uppercase" tabindex="-1" href="#" data-category = "asli" >asli </a>
+                    <?php
+                      while($row = $satu->fetch_assoc()) { ?>
+                        <a class="dropdown-item text-uppercase" tabindex="-1" href="#" data-category = "<?php echo $row['id_kategori']; ?>" ><?php echo $row['nama_kategori']; ?> </a>
+                      <?php } ?>
                           <!-- <ul class="dropdown-menu">
                             <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase" data-category = "oplosan">oplosan</a></li>
                             <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase" data-category = "asli">asli</a></li>
@@ -368,22 +378,7 @@ if (!isset($_SESSION['username'])) {
   <!-- Script -->
   <script>
   // Data filter per kategori
-  const filterData = {
-    "oplosan": [
-      { label: "All", value: "*" },
-      { label: "Energy", value: "energy" },
-      { label: "Wind Turbines", value: "wind" },
-      { label: "Renewable", value: "renew" }
-    ],
-    "asli": [
-      { label: "All", value: "*" },
-      { label: "Energy Only", value: "energy" }
-    ],
-    "bbm-pertalite": [
-      { label: "All", value: "*" },
-      { label: "Wind Only", value: "wind" }
-    ]
-  };
+  const filterData = <?php echo json_encode($filter, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>;
 
   // Buka submenu dropdown Bootstrap 5 saat diklik
   document.querySelectorAll('.dropdown-submenu > a').forEach(a => {
