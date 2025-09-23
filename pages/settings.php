@@ -112,7 +112,7 @@ if (isset($_POST['submit'])) {
 
               <div class="mb-3">
                 <label class="mb-2 text-muted" for="password">Kata Sandi</label>
-                <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan kata sandi baru jika ingin merubah" required>
+                <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan kata sandi atau kata sandi baru jika ingin merubahnya" required>
                 <div class="invalid-feedback">Kata Sandi diperlukan</div>
               </div>
 
