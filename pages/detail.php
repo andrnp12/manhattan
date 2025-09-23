@@ -46,7 +46,7 @@ $topik = subtopik();
   <section id="about-us" class="padding-small">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-8">
+        <div class="col-lg-10">
           <h3 class="display-5 fw-bold mb-3"><?php echo $sub['judul_sub']; ?></h3>
         </div>
         <div class="col-lg-12 pb-5">
@@ -76,7 +76,7 @@ $topik = subtopik();
         <div class="col-lg-12 d-flex flex-wrap align-items-center justify-content-between pb-4 pt-5">
           <h3 class="display-8 fw-bold">Detail RPS Materi</h3>
           <div class="">
-            <a class="btn btn-primary" href="about.html">Download PDF Materi</a>
+            <a class="btn btn-primary" href="<?php echo $sub['nama_rpp']; ?>">Download PDF Materi</a>
           </div>
         </div>
         <div style="position:relative; overflow:hidden;">
@@ -94,7 +94,7 @@ $topik = subtopik();
         <div class="col-lg-12 d-flex flex-wrap align-items-center justify-content-between pb-4 pt-5">
           <h3 class="display-8 fw-bold">Detail SKSS Laporan</h3>
           <div class="">
-            <a class="btn btn-primary" href="about.html">Download PDF Laporan</a>
+            <a class="btn btn-primary" href="<?php echo $sub['nama_lkp']; ?>">Download PDF Laporan</a>
           </div>
         </div>
         <div style="position:relative; overflow:hidden;">
