@@ -4,6 +4,16 @@ if (!isset($_SESSION['username'])) {
   header("Location: ../index.php");
 }
 
+include ('../function.php');
+
+$id = $_GET['id'];
+
+// panggil fungsi subtopik
+$sub = detailsub($id);
+
+// panggil fungsi topik
+$topik = subtopik();
+
 ?>
 
 <!DOCTYPE html>
@@ -37,12 +47,11 @@ if (!isset($_SESSION['username'])) {
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-8">
-          <h3 class="display-5 fw-bold mb-3">Temukan Edukasi RPS dan Bahan Ajar Terbaik</h3>
+          <h3 class="display-5 fw-bold mb-3"><?php echo $sub['judul_sub']; ?></h3>
         </div>
         <div class="col-lg-12 pb-5">
-          <p>Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet. Tempor erat sed stet lorem
-            sit clita duo justo elitr rebum at clita diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat
-            ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet
+          <p>
+            <?php echo $sub['detail_sub']; ?>
           </p>
         </div>
       </div>
@@ -52,7 +61,7 @@ if (!isset($_SESSION['username'])) {
         </div>
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000;">
         <iframe 
-          src="https://www.youtube.com/embed/tgbNymZ7vqY" 
+          src="https://www.youtube.com/embed/<?php echo $sub['link_video']; ?>" 
           title="YouTube video player" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -72,7 +81,7 @@ if (!isset($_SESSION['username'])) {
         </div>
         <div style="position:relative; overflow:hidden;">
         <object 
-          data="pengunguman.pdf" 
+          data="<?php echo $sub['nama_rpp']; ?>" 
           type="application/pdf" 
           width="100%" 
           height="100%"
@@ -90,7 +99,7 @@ if (!isset($_SESSION['username'])) {
         </div>
         <div style="position:relative; overflow:hidden;">
         <object 
-          data="pengunguman.pdf" 
+          data="<?php echo $sub['nama_lkp']; ?>" 
           type="application/pdf" 
           width="100%" 
           height="100%"
@@ -112,12 +121,14 @@ if (!isset($_SESSION['username'])) {
         <a href="blog.html" class="btn btn-primary">Lihat Semuanya</a>
       </div>
       <div class="row mt-5 mt-lg-0">
+        <?php while ($row = $topik->fetch_assoc()) { ?>
         <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="../images/blog1.jpg" alt="image" class="img-fluid"></a>
-          <h6 class="text-primary mt-3">16 Feb, 2024</h6>
-          <h3><a href="blog-single.html">New research for green life</a></h3>
+          <a href="detail.php?id=<?php echo $row['id_sub']; ?>"><img src="../images/<?php echo $row['cover']; ?>" alt="image" class="img-fluid"></a>
+          <h6 class="text-primary mt-3"><?php echo $row['nama_topik']; ?></h6>
+          <h3><a href="detail.php?id=<?php echo $row['id_sub']; ?>"><?php echo $row['judul_sub']; ?></a></h3>
         </div>
-        <div class="col-md-4 mb-4">
+        <?php } ?>
+        <!-- <div class="col-md-4 mb-4">
           <a href="blog-single.html"><img src="../images/blog2.jpg" alt="image" class="img-fluid"></a>
           <h6 class="text-primary mt-3">16 Feb, 2024</h6>
           <h3><a href="blog-single.html">Happy city after energized</a></h3>
@@ -126,7 +137,7 @@ if (!isset($_SESSION['username'])) {
           <a href="blog-single.html"><img src="../images/blog3.jpg" alt="image" class="img-fluid"></a>
           <h6 class="text-primary mt-3">16 Feb, 2024</h6>
           <h3><a href="blog-single.html">Turbines helped alot for people</a></h3>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

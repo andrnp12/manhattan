@@ -9,6 +9,9 @@ if (isset($_POST['submit'])) {
   login($username, $password, $remember);
 }
 
+//panggil fungsi sub
+$topik = subtopik();
+
 ?>
 
 <!DOCTYPE html>
@@ -250,21 +253,23 @@ if (isset($_POST['submit'])) {
         <a href="blog.html" class="btn btn-primary">Lihat Semuanya</a>
       </div>
       <div class="row mt-5 mt-lg-0">
+        <?php while ($row = $topik->fetch_assoc()) { ?>
         <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="images/blog1.jpg" alt="image" class="img-fluid"></a>
-          <h6 class="text-primary mt-3">16 Feb, 2024</h6>
-          <h3><a href="blog-single.html">New research for green life</a></h3>
+          <a href="pages/index.php"><img src="images/<?php echo $row['cover']; ?>" alt="image" class="img-fluid"></a>
+          <h6 class="text-primary mt-3"><?php echo $row['nama_topik']; ?></h6>
+          <h3><a href="pages/index.php"><?php echo $row['judul_sub']; ?></a></h3>
         </div>
-        <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="images/blog2.jpg" alt="image" class="img-fluid"></a>
+        <?php } ?>
+        <!-- <div class="col-md-4 mb-4">
+          <a href="blog-single.html"><img src="../images/blog2.jpg" alt="image" class="img-fluid"></a>
           <h6 class="text-primary mt-3">16 Feb, 2024</h6>
           <h3><a href="blog-single.html">Happy city after energized</a></h3>
         </div>
         <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="images/blog3.jpg" alt="image" class="img-fluid"></a>
+          <a href="blog-single.html"><img src="../images/blog3.jpg" alt="image" class="img-fluid"></a>
           <h6 class="text-primary mt-3">16 Feb, 2024</h6>
           <h3><a href="blog-single.html">Turbines helped alot for people</a></h3>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
