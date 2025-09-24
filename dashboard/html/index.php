@@ -2,6 +2,7 @@
 include(__DIR__ . '../../data/data_dummy.php');
 include(__DIR__ . '../../function/koneksi.php');
 
+ob_start();
 ?>
 
 <!doctype html>
@@ -32,7 +33,6 @@ include(__DIR__ . '../../function/koneksi.php');
       <div class="body-wrapper-inner" id="content">
         <!-- Konten awal akan dimuat di sini -->
 
-        // cek parameter `page`
         <?php
         if (isset($_GET['page']) && !empty($_GET['page'])) {
           $page = $_GET['page'];
@@ -231,3 +231,7 @@ include(__DIR__ . '../../function/koneksi.php');
 </body>
 
 </html>
+
+<?php
+ob_end_flush();
+?>

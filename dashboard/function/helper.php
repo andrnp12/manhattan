@@ -48,7 +48,6 @@
     });
 
     window.addEventListener('DOMContentLoaded', () => {
-        // Cek apakah ada ?page= di URL
         const urlParams = new URLSearchParams(window.location.search);
         const page = urlParams.get('page') || localStorage.getItem('lastPage') || 'dashboard';
 

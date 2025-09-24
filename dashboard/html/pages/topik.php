@@ -4,6 +4,9 @@ include(__DIR__ . '../../../function/database_function.php');
 
 // ambil data topik dari database
 $topics = getAllTopics();
+
+// ambil data kategori dari database
+$categories = getCategories();
 ?>
 
 <div class="container-fluid">
@@ -93,7 +96,7 @@ $topics = getAllTopics();
     </div>
 </div>
 
-<!-- model tambah materi -->
+<!-- model tambah topik -->
 <div class="modal fade" id="formTambahTopik" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -107,7 +110,7 @@ $topics = getAllTopics();
                         <label for="kategori" class="form-label">Kategori</label>
                         <select class="form-select" id="kategori" name="kategori" required>
                             <option value="" disabled selected>Pilih Kategori</option>
-                            <?php foreach ($topics as $item) : ?>
+                            <?php foreach ($categories as $item) : ?>
                                 <option value="<?php echo $item['id_kategori']; ?>"><?php echo $item['nama_kategori']; ?></option>
                             <?php endforeach; ?>
                         </select>

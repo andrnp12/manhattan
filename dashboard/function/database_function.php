@@ -29,19 +29,57 @@ function addCategory($nama)
     $con = connect();
     $query = 'INSERT INTO kategori (nama_kategori) VALUES (?)';
     $stmt = mysqli_prepare($con, $query);
-
-    if ($stmt === false) {
-        return false;
-    }
-
     mysqli_stmt_bind_param($stmt, 's', $nama);
     $exec = mysqli_stmt_execute($stmt);
 
     mysqli_stmt_close($stmt);
     mysqli_close($con);
 
-    return $exec; // true jika berhasil, false jika gagal
+    return $exec;
 }
+
+// edit kategori
+function editCategory($id, $nama)
+{
+    $con = connect();
+    $query = 'UPDATE kategori SET nama_kategori = ? WHERE id_kategori = ?';
+    $stmt = mysqli_prepare($con, $query);
+    mysqli_stmt_bind_param($stmt, 'si', $nama, $id);
+    $exec = mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
+
+    return $exec;
+}
+
+// menghapus kategori
+function deleteCategory($id)
+{
+    $con = connect();
+    if (!$con) {
+        die('Koneksi gagal: ' . mysqli_connect_error());
+    }
+
+    $query = 'DELETE FROM kategori WHERE id_kategori = ?';
+    $stmt = mysqli_prepare($con, $query);
+    if (!$stmt) {
+        die('Prepare gagal: ' . mysqli_error($con));
+    }
+
+    mysqli_stmt_bind_param($stmt, 'i', $id);
+    $exec = mysqli_stmt_execute($stmt);
+
+    if (!$exec) {
+        echo 'Eksekusi gagal: ' . mysqli_stmt_error($stmt);
+    }
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
+
+    return $exec;
+}
+
 
 
 // bagian topik
