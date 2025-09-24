@@ -63,16 +63,16 @@ function deleteCategory($id)
 
     $query = 'DELETE FROM kategori WHERE id_kategori = ?';
     $stmt = mysqli_prepare($con, $query);
-    if (!$stmt) {
-        die('Prepare gagal: ' . mysqli_error($con));
-    }
+    // if (!$stmt) {
+    //     die('Prepare gagal: ' . mysqli_error($con));
+    // }
 
     mysqli_stmt_bind_param($stmt, 'i', $id);
     $exec = mysqli_stmt_execute($stmt);
 
-    if (!$exec) {
-        echo 'Eksekusi gagal: ' . mysqli_stmt_error($stmt);
-    }
+    // if (!$exec) {
+    //     echo 'Eksekusi gagal: ' . mysqli_stmt_error($stmt);
+    // }
 
     mysqli_stmt_close($stmt);
     mysqli_close($con);
@@ -98,6 +98,63 @@ function getAllTopics()
     }
     mysqli_close($con);
     return $topics;
+}
+
+// menambah topik baru pada kategori
+function addTopic($topik, $kategori)
+{
+    $con = connect();
+    $query = 'INSERT INTO topik (nama_topik, id_kategori) VALUES (?, ?)';
+    $stmt = mysqli_prepare($con, $query);
+    mysqli_stmt_bind_param($stmt, 'si', $topik, $kategori);
+    $exec = mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
+
+    return $exec;
+}
+
+// edit topik
+function editTopic($id, $topik, $kategori)
+{
+    $con = connect();
+    $query = 'UPDATE topik SET nama_topik = ?, id_kategori = ? WHERE id_topik = ?';
+    $stmt = mysqli_prepare($con, $query);
+    mysqli_stmt_bind_param($stmt, 'sii', $topik, $kategori, $id);
+    $exec = mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
+
+    return $exec;
+}
+
+// menghapus topik
+function deleteTopic($id)
+{
+    $con = connect();
+    // if (!$con) {
+    //     die('Koneksi gagal: ' . mysqli_connect_error());
+    // }
+
+    $query = 'DELETE FROM topik WHERE id_topik = ?';
+    $stmt = mysqli_prepare($con, $query);
+    // if (!$stmt) {
+    //     die('Prepare gagal: ' . mysqli_error($con));
+    // }
+
+    mysqli_stmt_bind_param($stmt, 'i', $id);
+    $exec = mysqli_stmt_execute($stmt);
+
+    // if (!$exec) {
+    //     echo 'Eksekusi gagal: ' . mysqli_stmt_error($stmt);
+    // }
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
+
+    return $exec;
 }
 
 // bagian materi

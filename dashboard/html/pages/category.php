@@ -99,12 +99,13 @@ if (isset($_GET['successDelete'])) {
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $no = 1; ?>
                                 <?php foreach ($categories as $item) : ?>
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <div class="ms-3">
-                                                    <h6 class="fs-4 fw-semibold mb-0"><?php echo $item['id_kategori']; ?></h6>
+                                                    <h6 class="fs-4 fw-semibold mb-0"><?php echo $no++; ?></h6>
                                                 </div>
                                             </div>
                                         </td>
@@ -227,7 +228,6 @@ if (isset($_GET['successDelete'])) {
 
         document.getElementById('kategoriName').innerText = name; // tampil di modal
         document.getElementById('deleteKategoriId').value = id; // input hidden
-        // var deleteModal = new bootstrap.Modal(document.getElementById('formDeleteKategori'));
-        // deleteModal.show();
+
     }
 </script>
