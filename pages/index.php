@@ -216,7 +216,7 @@ $sub = subtopik();
           <?php 
             while($row = $sub->fetch_assoc()) { ?>
               <div class="col-md-4 item <?php echo $row['id_topik']; ?> mb-4">
-                <a href="detail.php?id=<?php echo $row['id_sub']; ?>"><img src="../images/<?php echo $row['cover']; ?>" alt="image" class="img-fluid"></a>
+                <a href="detail.php?id=<?php echo $row['id_sub']; ?>"><img src="https://img.youtube.com/vi/<?php echo $row['cover']; ?>/maxresdefault.jpg" alt="image" class="img-fluid"></a>
                 <h6 class="text-primary mt-3"><?php echo $row['nama_topik']; ?></h6>
                 <h3><a href="detail.php?id=<?php echo $row['id_sub']; ?>"><?php echo $row['judul_sub']; ?></a></h3>
               </div>

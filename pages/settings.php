@@ -13,7 +13,14 @@ $user = user();
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
-  updateuser($username, $password);
+
+  if (empty($password)) {
+    $password_hash = $user['password'];
+  } else {
+    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+  }
+
+  updateuser($username, $password_hash);
 }
 
 ?>
@@ -112,7 +119,7 @@ if (isset($_POST['submit'])) {
 
               <div class="mb-3">
                 <label class="mb-2 text-muted" for="password">Kata Sandi</label>
-                <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan kata sandi atau kata sandi baru jika ingin merubahnya" required>
+                <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan kata sandi baru jika ingin mengubahnya">
                 <div class="invalid-feedback">Kata Sandi diperlukan</div>
               </div>
 

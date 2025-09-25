@@ -194,15 +194,15 @@ function user() {
     return $query->fetch_assoc();
 }
 
-function updateuser($username, $password) {
+function updateuser($username, $password_hash) {
     $conn = koneksi();
 
     $checkuser = mysqli_escape_string($conn, $username);
-    $checkpass = mysqli_escape_string($conn, $password);
+    $checkpass = mysqli_escape_string($conn, $password_hash);
 
-    $passwordhash = password_hash($checkpass, PASSWORD_DEFAULT);
+    // $passwordhash = password_hash($checkpass, PASSWORD_DEFAULT);
 
-    $sql = "UPDATE user SET username = '$checkuser', password = '$passwordhash' WHERE id_user = '$_SESSION[id]'";
+    $sql = "UPDATE user SET username = '$checkuser', password = '$password_hash' WHERE id_user = '$_SESSION[id]'";
     $query = mysqli_query($conn, $sql);
 
     if ($query) {
