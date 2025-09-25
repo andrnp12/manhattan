@@ -255,7 +255,7 @@ $topik = subtopik();
       <div class="row mt-5 mt-lg-0">
         <?php while ($row = $topik->fetch_assoc()) { ?>
         <div class="col-md-4 mb-4">
-          <a href="pages/index.php"><img src="images/<?php echo $row['cover']; ?>" alt="image" class="img-fluid"></a>
+          <a href="pages/index.php"><img src="https://img.youtube.com/vi/<?php echo $row['cover']; ?>/maxresdefault.jpg" alt="image" class="img-fluid"></a>
           <h6 class="text-primary mt-3"><?php echo $row['nama_topik']; ?></h6>
           <h3><a href="pages/index.php"><?php echo $row['judul_sub']; ?></a></h3>
         </div>
