@@ -46,7 +46,9 @@ if (isset($_POST['submit'])) {
     $judul_lkp   = sanitizeFileName($_POST['lkp']);
     $link_video  = $_POST['linkVideo'];
 
-    $cover = $link_video;
+    // ambil kode unik yutube
+    parse_str(parse_url($link_video, PHP_URL_QUERY), $params);
+    $cover = isset($params['v']) ? trim($params['v'], '()') : null;
 
     // --- Upload RPP ---
     if (isset($_FILES['filePdfRpp']) && $_FILES['filePdfRpp']['error'] == 0) {
@@ -96,7 +98,9 @@ if (isset($_POST['edit_submit'])) {
     $judul_lkp  = sanitizeFileName($_POST['editLkp']);
     $link_video = $_POST['editLinkVideo'];
 
-    $cover = $link_video;
+    // ambil kode unik yutube
+    parse_str(parse_url($link_video, PHP_URL_QUERY), $params);
+    $cover = isset($params['v']) ? trim($params['v'], '()') : null;
 
     $oldRpp = $_POST['oldRpp'];
     $oldLkp = $_POST['oldLkp'];
