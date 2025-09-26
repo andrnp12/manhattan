@@ -2,13 +2,15 @@
 
 use LDAP\Result;
 
-function koneksi() {
+function koneksi()
+{
     $conn = mysqli_connect("localhost", "root", "", "manhattan");
     return $conn;
 }
 
 
-function register($username, $password, $verifikasi) {
+function register($username, $password, $verifikasi)
+{
     $conn = koneksi();
 
     $checkuser = mysqli_escape_string($conn, $username);
@@ -26,10 +28,10 @@ function register($username, $password, $verifikasi) {
         // registrasi gagal
         echo "<script>alert('Registerasi gagal!, coba cek lagi atau hubungi kami melalui kontak!'); window.location.href = 'register.php';</script>";
     }
-
 }
 
-function login($username, $password, $remember) {
+function login($username, $password, $remember)
+{
     $conn = koneksi();
 
     $checkuser = mysqli_escape_string($conn, $username);
@@ -39,39 +41,40 @@ function login($username, $password, $remember) {
     $query = mysqli_query($conn, $sql);
 
     if ($query->num_rows > 0) {
-            $user = $query->fetch_assoc();
-            // check password match
-            if (password_verify($checkpass, $user['password'])) {
-                // check remember checklist
-                if ($remember) {
-                    //password match, process login
-                    session_start();
+        $user = $query->fetch_assoc();
+        // check password match
+        if (password_verify($checkpass, $user['password'])) {
+            // check remember checklist
+            if ($remember) {
+                //password match, process login
+                session_start();
 
-                    setcookie("username", $user['username'], time() + (86400 * 30), "/");
-                    setcookie("id", $user['id_user'], time() + (86400 * 30), "/");
-                    setcookie("password", $user['password'], time() + (86400 * 30), "/");
+                setcookie("username", $user['username'], time() + (86400 * 30), "/");
+                setcookie("id", $user['id_user'], time() + (86400 * 30), "/");
+                setcookie("password", $user['password'], time() + (86400 * 30), "/");
 
-                    echo "<script>alert('Login Berhasil'); window.location.href = 'pages/index.php';</script>";
-                } else {
-                    //password match, process login
-                    session_start();
-
-                    $_SESSION['username'] = $user['username'];
-                    $_SESSION['id'] = $user['id_user'];
-
-                    echo "<script>alert('Login Berhasil'); window.location.href = 'pages/index.php';</script>";
-                }
+                echo "<script>alert('Login Berhasil'); window.location.href = 'pages/index.php';</script>";
             } else {
-                // Password does not match, handle login failure
-                echo "<script>alert('Password Salah'); window.location.href = 'index.php';</script>";
+                //password match, process login
+                session_start();
+
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['id'] = $user['id_user'];
+
+                echo "<script>alert('Login Berhasil'); window.location.href = 'pages/index.php';</script>";
             }
+        } else {
+            // Password does not match, handle login failure
+            echo "<script>alert('Password Salah'); window.location.href = 'index.php';</script>";
+        }
     } else {
         // No user found with the provided username
         echo "<script>alert('Username Tidak Terdaftar'); window.location.href = 'index.php';</script>";
     }
 }
 
-function forgot ($username, $verifikasi) {
+function forgot($username, $verifikasi)
+{
     $conn = koneksi();
 
     $checkuser = mysqli_escape_string($conn, $username);
@@ -96,7 +99,8 @@ function forgot ($username, $verifikasi) {
     }
 }
 
-function resetpass ($password, $username, $logout) {
+function resetpass($password, $username, $logout)
+{
     $conn = koneksi();
 
     $checkpass = mysqli_escape_string($conn, $password);
@@ -111,15 +115,16 @@ function resetpass ($password, $username, $logout) {
             // header("Location: index.php");
             echo "<script>alert('Reset Kata Sandi Berhasil'); window.location.href = 'index.php';</script>";
             exit;
-          } else {
+        } else {
             echo "<script>alert('Reset Kata Sandi Berhasil'); window.location.href = 'index.php';</script>";
-          }
+        }
     } else {
         echo "<script>alert('Reset Kata Sandi Gagal'); window.location.href = 'reset.php';</script>";
     }
 }
 
-function kategori() {
+function kategori()
+{
     $conn = koneksi();
 
     $sql = "SELECT kategori.nama_kategori, topik.nama_topik FROM kategori INNER JOIN topik ON kategori.id_kategori = topik.id_kategori";
@@ -128,7 +133,8 @@ function kategori() {
     return $query;
 }
 
-function kategorisatu() {
+function kategorisatu()
+{
     $conn = koneksi();
 
     $sql = "SELECT * FROM kategori";
@@ -137,7 +143,8 @@ function kategorisatu() {
     return $query;
 }
 
-function filterdata() {
+function filterdata()
+{
     $conn = koneksi();
 
     // Query ambil data
@@ -164,10 +171,10 @@ function filterdata() {
     }
 
     return $filterData;
-
 }
 
-function subtopik () {
+function subtopik()
+{
     $conn = koneksi();
 
     $sql = "SELECT * FROM subtopik INNER JOIN topik ON subtopik.id_topik = topik.id_topik";
@@ -176,7 +183,8 @@ function subtopik () {
     return $query;
 }
 
-function detailsub($id) {
+function detailsub($id)
+{
     $conn = koneksi();
 
     $sql = "SELECT * FROM subtopik WHERE id_sub = '$id'";
@@ -185,7 +193,8 @@ function detailsub($id) {
     return $query->fetch_assoc();
 }
 
-function user() {
+function user()
+{
     $conn = koneksi();
 
     $sql = "SELECT * FROM user WHERE id_user = '$_SESSION[id]'";
@@ -194,7 +203,8 @@ function user() {
     return $query->fetch_assoc();
 }
 
-function updateuser($username, $password_hash) {
+function updateuser($username, $password_hash)
+{
     $conn = koneksi();
 
     $checkuser = mysqli_escape_string($conn, $username);
@@ -211,4 +221,3 @@ function updateuser($username, $password_hash) {
         echo "<script>alert('Update Gagal'); window.location.href = 'settings.php';</script>";
     }
 }
-?>
