@@ -26,63 +26,67 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap"
     rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <style>
-.dropdown-submenu {
-  position: relative;
-}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    .dropdown-submenu {
+      position: relative;
+    }
 
-.dropdown-submenu .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -1px;
-  margin-left: 0.1rem;
-    margin-right: 0.1rem;
-}
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-top: -1px;
+      margin-left: 0.1rem;
+      margin-right: 0.1rem;
+    }
 
-.item {
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    .item {
+      transition: opacity 0.3s ease, transform 0.3s ease;
       opacity: 1;
       transform: scale(1);
     }
+
     .hidden {
       opacity: 0;
-    transform: scale(0.95);
-    pointer-events: none;
+      transform: scale(0.95);
+      pointer-events: none;
     }
 
     /* Highlight tombol filter aktif */
     #filterTags .btn.active {
-      background-color:rgb(253, 177, 13);
+      background-color: rgb(253, 177, 13);
       color: #fff;
       border-color: rgb(253, 177, 13);
     }
 
     .pdf-viewer {
-    width: 100%;
-    height: 80vh; /* default untuk desktop */
-  }
-
-  /* Aturan khusus untuk layar kecil (mobile) */
-  @media (max-width: 768px) {
-    .pdf-viewer {
-      height: 350px; /* batasi tinggi di mobile */
+      width: 100%;
+      height: 80vh;
+      /* default untuk desktop */
     }
-  }
 
-  .bg-images {
-    height: 250px; /* tinggi background header */
-    background: linear-gradient(rgba(44, 3, 3, 0.35), rgba(44, 3, 3, 0.35)), url('https://picsum.photos/1600/400') no-repeat center center;
-    background-size: cover;
-  }
-.section-images {
-  margin-top: -100px; /* geser section ke atas agar card overlap */
-  position: relative;
-  z-index: 1;
-}
+    /* Aturan khusus untuk layar kecil (mobile) */
+    @media (max-width: 768px) {
+      .pdf-viewer {
+        height: 350px;
+        /* batasi tinggi di mobile */
+      }
+    }
 
+    .bg-images {
+      height: 250px;
+      /* tinggi background header */
+      background: linear-gradient(rgba(44, 3, 3, 0.35), rgba(44, 3, 3, 0.35)), url('https://picsum.photos/1600/400') no-repeat center center;
+      background-size: cover;
+    }
 
-</style>
+    .section-images {
+      margin-top: -100px;
+      /* geser section ke atas agar card overlap */
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 
 <body>
@@ -194,34 +198,8 @@
                 <use xlink:href="#phone"></use>
               </svg>+666 333 9999
             </li>
-            <!-- <li class="time text-white text-capitalize d-flex align-items-center me-4" style="font-size: 12px;">
-              <svg class="text-primary me-1" width="15" height="15">
-                <use xlink:href="#clock"></use>
-              </svg>8:00-18:00, Sat: Closed
-            </li> -->
           </ul>
           <ul class="social-links d-flex flex-wrap list-unstyled m-0">
-            <!-- <li class="social">
-              <a href="#">
-                <svg class="me-1" width="16" height="16">
-                  <use xlink:href="#facebook"></use>
-                </svg>
-              </a>
-            </li> -->
-            <!-- <li class="social ms-4">
-              <a href="#">
-                <svg class="me-1" width="16" height="16">
-                  <use xlink:href="#twitter"></use>
-                </svg>
-              </a>
-            </li> -->
-            <!-- <li class="social ms-4">
-              <a href="#">
-                <svg class="me-1" width="16" height="16">
-                  <use xlink:href="#linkedin"></use>
-                </svg>
-              </a>
-            </li> -->
             <li class="social ms-4">
               <a href="#">
                 <svg class="me-1" width="16" height="16">
@@ -260,49 +238,29 @@
           </div>
           <div class="offcanvas-body align-items-center justify-content-end">
             <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
-              <!-- <li class="nav-item px-3">
-                <a class="nav-link p-0" aria-current="page" href="index.php">Pengaturan</a>
-              </li> -->
               <li class="nav-item px-3">
                 <a class="nav-link p-0" aria-current="page" href="index.php">Materi & rps</a>
               </li>
 
-              <!-- <li class="nav-item ps-3 mt-4 mt-lg-0">
-                <a href="quote.html" class="btn btn-outline-primary py-2 px-4">Login</a>
-              </li> -->
               <li class="nav-item dropdown user-menu">
                 <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                    <img
-                        src="../images/profile.png"
-                        class="user-image rounded-circle shadow"
-                        alt="User Image" 
-                        height="32px"
-                        width="32px"/>
-                    <span class="d-none d-md-inline"></span>
+                  <img
+                    src="../images/profile.png"
+                    class="user-image rounded-circle shadow"
+                    alt="User Image"
+                    height="32px"
+                    width="32px" />
+                  <span class="d-none d-md-inline"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                    <!--begin::User Image-->
-                    <!-- <li class="user-header text-bg-primary">
-                        <img
-                            src="../images/profile.png"
-                            class="rounded-circle shadow"
-                            alt="User Image" 
-                            height="50px"
-                            width="50px"/>
-                        <p>
-                            <span class="d-block">Admin</span>
-                            <small>Admin</small>
-                        </p>
-                    </li> -->
-                    <!--end::User Image-->
-                    <!--begin::Menu Footer-->
-                    <li class="user-footer">
-                        <a href="settings.php" class="btn btn-default btn-flat">Pengaturan</a>
-                        <a href="logout.php" class="btn btn-default btn-flat float-end">Log out</a>
-                    </li>
-                    <!--end::Menu Footer-->
+                  <!--begin::Menu Footer-->
+                  <li class="user-footer">
+                    <a href="settings.php" class="btn btn-default btn-flat">Pengaturan</a>
+                    <a href="logout.php" class="btn btn-default btn-flat float-end">Log out</a>
+                  </li>
+                  <!--end::Menu Footer-->
                 </ul>
-            </li>
+              </li>
 
             </ul>
           </div>
