@@ -11,31 +11,16 @@ $categories = [
                     [
                         "id" => 1,
                         "title" => "Penjumlahan",
-                        "rpp" => [
-                            ["title" => "RPP Penjumlahan Kelas 4",],
-                        ],
-                        "lkp" => [
-                            ["title" => "LKP Penjumlahan Dasar"],
-                        ],
-                        "videos" => [
-                            ["title" => "Video Penjumlahan Sederhana"],
-                        ]
+                        "rpp" => "Rpp Penjumlahan Kelas 4",
+                        "lkp" => "Lkp Penjumlahan Dasar",
+                        "videos" => "Video Penjumlahan Lanjutan"
                     ],
                     [
                         "id" => 2,
                         "title" => "Pengurangan",
-                        "rpp" => [
-                            ["title" => "RPP Pengurangan Kelas 4"],
-                        ],
-                        "lkp" => [
-                            ["title" => "LKP pengurangan Dasar"]
-                        ],
-                        "videos" => [
-                            [
-                                "title" => "Video Pengurangan Lanjutan",
-                                "link" => "https://www.example.com/video-pengurangan"
-                            ],
-                        ]
+                        "rpp" => "Rpp Pengurangan Kelas 4",
+                        "lkp" => "Lkp Pengurangan Dasar",
+                        "videos" => " Video Pengurangan Lanjutan"
                     ]
                 ]
             ],
@@ -46,9 +31,9 @@ $categories = [
                     [
                         "id" => 3,
                         "title" => "Pecahan Sederhana",
-                        "rpp" => [],
-                        "lkp" => [],
-                        "videos" => []
+                        "rpp" => 'Rpp Pecahan Sederhana Kelas 4',
+                        "lkp" => 'Lkp Pecahan Sederhana',
+                        "videos" => 'Video Pecahan Sederhana'
                     ]
                 ]
             ]
@@ -65,15 +50,9 @@ $categories = [
                     [
                         "id" => 4,
                         "title" => "Jantung",
-                        "rpp" => [
-                            ["title" => "RPP Anatomi Jantung"],
-                        ],
-                        "lkp" => [
-                            ["title" => "LKP Struktur Jantung"],
-                        ],
-                        "videos" => [
-                            // ["title" => "Video Fungsi Jantung"],
-                        ]
+                        "rpp" => 'Rpp Jantung Kelas 4',
+                        "lkp" => 'Lkp Jantung',
+                        "videos" => 'Video Jantung'
                     ]
                 ]
             ]
