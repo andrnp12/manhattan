@@ -2,7 +2,12 @@
 
 session_start();
 if (!isset($_SESSION['username'])) {
-  header("Location: ../../index.php");
+    header("Location: ../../index.php");
+} else {
+    if ($_SESSION['role'] != 0) {
+        session_destroy();
+        header("Location: ../../index.php");
+    }
 }
 
 // include(__DIR__ . '../../../data/data_dummy.php');

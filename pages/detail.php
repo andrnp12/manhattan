@@ -1,7 +1,13 @@
 <?php
+
 session_start();
 if (!isset($_SESSION['username'])) {
   header("Location: ../index.php");
+} else {
+  if ($_SESSION['role'] != 1) {
+    session_destroy();
+    header("Location: ../index.php");
+  }
 }
 
 include('../function.php');

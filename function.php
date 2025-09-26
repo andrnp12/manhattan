@@ -52,6 +52,7 @@ function login($username, $password, $remember)
                     session_start();
 
                     setcookie("username", $user['username'], time() + (86400 * 30), "/");
+                    setcookie("role", $user['role'], time() + (86400 * 30), "/");
                     setcookie("id", $user['id_user'], time() + (86400 * 30), "/");
                     setcookie("password", $user['password'], time() + (86400 * 30), "/");
 
@@ -61,6 +62,7 @@ function login($username, $password, $remember)
                     session_start();
 
                     $_SESSION['username'] = $user['username'];
+                    $_SESSION['role'] = $user['role'];
                     $_SESSION['id'] = $user['id_user'];
 
                     echo "<script>alert('Login Berhasil'); window.location.href = 'pages/index.php';</script>";
@@ -77,6 +79,7 @@ function login($username, $password, $remember)
                     session_start();
 
                     setcookie("username", $user['username'], time() + (86400 * 30), "/");
+                    setcookie("role", $user['role'], time() + (86400 * 30), "/");
                     setcookie("id", $user['id_user'], time() + (86400 * 30), "/");
                     setcookie("password", $user['password'], time() + (86400 * 30), "/");
 
@@ -86,6 +89,7 @@ function login($username, $password, $remember)
                     session_start();
 
                     $_SESSION['username'] = $user['username'];
+                    $_SESSION['role'] = $user['role'];
                     $_SESSION['id'] = $user['id_user'];
 
                     echo "<script>alert('Login Berhasil'); window.location.href = 'dashboard/html/index.php';</script>";
