@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 }
 
 //panggil fungsi sub
-$topik = subtopik();
+$topik = subtopik('LIMIT 3');
 
 ?>
 

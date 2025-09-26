@@ -13,7 +13,7 @@ $satu = kategorisatu();
 $filter = filterdata();
 
 // panggil fungsi subtopik
-$sub = subtopik();
+$sub = subtopik('');
 
 ?>
 

@@ -12,7 +12,7 @@ $id = $_GET['id'];
 $sub = detailsub($id);
 
 // panggil fungsi topik
-$topik = subtopik();
+$topik = subtopik('LIMIT 3');
 
 ?>
 
