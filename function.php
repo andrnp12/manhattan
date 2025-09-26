@@ -12,13 +12,14 @@ function koneksi()
 function register($username, $password, $verifikasi)
 {
     $conn = koneksi();
+    $role = 1;
 
     $checkuser = mysqli_escape_string($conn, $username);
     $checkpass = mysqli_escape_string($conn, $password);
 
     $passwordhash = password_hash($checkpass, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO user VALUES(null, '$checkuser', '$passwordhash', '$verifikasi')";
+    $sql = "INSERT INTO user VALUES(null, '$checkuser', '$passwordhash', '$verifikasi', '$role')";
     $query = mysqli_query($conn, $sql);
 
     if ($query) {
@@ -43,29 +44,56 @@ function login($username, $password, $remember)
     if ($query->num_rows > 0) {
         $user = $query->fetch_assoc();
         // check password match
-        if (password_verify($checkpass, $user['password'])) {
-            // check remember checklist
-            if ($remember) {
-                //password match, process login
-                session_start();
-
-                setcookie("username", $user['username'], time() + (86400 * 30), "/");
-                setcookie("id", $user['id_user'], time() + (86400 * 30), "/");
-                setcookie("password", $user['password'], time() + (86400 * 30), "/");
-
-                echo "<script>alert('Login Berhasil'); window.location.href = 'pages/index.php';</script>";
+        if ($user['role'] == 1) { 
+            if (password_verify($checkpass, $user['password'])) {
+                // check remember checklist
+                if ($remember) {
+                    //password match, process login
+                    session_start();
+    
+                    setcookie("username", $user['username'], time() + (86400 * 30), "/");
+                    setcookie("id", $user['id_user'], time() + (86400 * 30), "/");
+                    setcookie("password", $user['password'], time() + (86400 * 30), "/");
+    
+                    echo "<script>alert('Login Berhasil'); window.location.href = 'pages/index.php';</script>";
+                } else {
+                    //password match, process login
+                    session_start();
+    
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['id'] = $user['id_user'];
+    
+                    echo "<script>alert('Login Berhasil'); window.location.href = 'pages/index.php';</script>";
+                }
             } else {
-                //password match, process login
-                session_start();
-
-                $_SESSION['username'] = $user['username'];
-                $_SESSION['id'] = $user['id_user'];
-
-                echo "<script>alert('Login Berhasil'); window.location.href = 'pages/index.php';</script>";
+                // Password does not match, handle login failure
+                echo "<script>alert('Password Salah'); window.location.href = 'index.php';</script>";
             }
         } else {
-            // Password does not match, handle login failure
-            echo "<script>alert('Password Salah'); window.location.href = 'index.php';</script>";
+            if (password_verify($checkpass, $user['password'])) {
+                // check remember checklist
+                if ($remember) {
+                    //password match, process login
+                    session_start();
+    
+                    setcookie("username", $user['username'], time() + (86400 * 30), "/");
+                    setcookie("id", $user['id_user'], time() + (86400 * 30), "/");
+                    setcookie("password", $user['password'], time() + (86400 * 30), "/");
+    
+                    echo "<script>alert('Login Berhasil'); window.location.href = 'dashboard/html/index.php';</script>";
+                } else {
+                    //password match, process login
+                    session_start();
+    
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['id'] = $user['id_user'];
+    
+                    echo "<script>alert('Login Berhasil'); window.location.href = 'dashboard/html/index.php';</script>";
+                }
+            } else {
+                // Password does not match, handle login failure
+                echo "<script>alert('Password Salah'); window.location.href = 'index.php';</script>";
+            }
         }
     } else {
         // No user found with the provided username

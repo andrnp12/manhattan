@@ -1,4 +1,10 @@
 <?php
+
+session_start();
+if (!isset($_SESSION['username'])) {
+  header("Location: ../../index.php");
+}
+
 include(__DIR__ . '../../../function/database_function.php');
 
 // ambil data kategori dari database
