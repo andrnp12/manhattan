@@ -46,7 +46,10 @@ if (isset($_POST['submit'])) {
     $judul_lkp   = sanitizeFileName($_POST['lkp']);
     $link_video  = $_POST['linkVideo'];
 
-    $cover = $link_video;
+    // ambil kode unik yutube
+    preg_match('/embed\/([^?]+)/', $link_video, $matches);
+    $cover = $matches[1];
+
 
     // --- Upload RPP ---
     if (isset($_FILES['filePdfRpp']) && $_FILES['filePdfRpp']['error'] == 0) {
@@ -96,7 +99,9 @@ if (isset($_POST['edit_submit'])) {
     $judul_lkp  = sanitizeFileName($_POST['editLkp']);
     $link_video = $_POST['editLinkVideo'];
 
-    $cover = $link_video;
+    // ambil kode unik yutube
+    preg_match('/embed\/([^?]+)/', $link_video, $matches);
+    $cover = $matches[1];
 
     $oldRpp = $_POST['oldRpp'];
     $oldLkp = $_POST['oldLkp'];
@@ -501,7 +506,7 @@ if (isset($_GET['successDelete'])) {
                     <input type="hidden" name="oldLkp" id="oldLkp">
 
                     <div class="mb-3">
-                        <label for="fileVideo" class="form-label mt-2">Upload File Video</label>
+                        <label for="fileVideo" class="form-label mt-2">Upload Link Video</label>
                         <input class="form-control" type="url" id="editLinkVideo" name="editLinkVideo" placeholder="Masukkan link video YouTube">
                     </div>
 
