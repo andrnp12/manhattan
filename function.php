@@ -48,6 +48,7 @@ function login($username, $password, $remember) {
                     session_start();
 
                     setcookie("username", $user['username'], time() + (86400 * 30), "/");
+                    setcookie("id", $user['id_user'], time() + (86400 * 30), "/");
                     setcookie("password", $user['password'], time() + (86400 * 30), "/");
 
                     echo "<script>alert('Login Berhasil'); window.location.href = 'pages/index.php';</script>";
@@ -118,4 +119,96 @@ function resetpass ($password, $username, $logout) {
     }
 }
 
+function kategori() {
+    $conn = koneksi();
+
+    $sql = "SELECT kategori.nama_kategori, topik.nama_topik FROM kategori INNER JOIN topik ON kategori.id_kategori = topik.id_kategori";
+    $query = mysqli_query($conn, $sql);
+
+    return $query;
+}
+
+function kategorisatu() {
+    $conn = koneksi();
+
+    $sql = "SELECT * FROM kategori";
+    $query = mysqli_query($conn, $sql);
+
+    return $query;
+}
+
+function filterdata() {
+    $conn = koneksi();
+
+    // Query ambil data
+    $sql = "SELECT kategori.id_kategori, topik.id_topik, topik.nama_topik FROM kategori INNER JOIN topik ON kategori.id_kategori = topik.id_kategori";
+    $result = mysqli_query($conn, $sql);
+
+    // Siapkan array kosong
+    $filterData = [];
+
+    // Loop hasil query
+    while ($row = mysqli_fetch_assoc($result)) {
+        $kategori = $row['id_kategori'];
+
+        // jika kategori belum ada, buatkan array baru
+        if (!isset($filterData[$kategori])) {
+            $filterData[$kategori] = [];
+        }
+
+        // tambahkan data label & value
+        $filterData[$kategori][] = [
+            "label" => $row['nama_topik'],
+            "value" => $row['id_topik']
+        ];
+    }
+
+    return $filterData;
+
+}
+
+function subtopik () {
+    $conn = koneksi();
+
+    $sql = "SELECT * FROM subtopik INNER JOIN topik ON subtopik.id_topik = topik.id_topik";
+    $query = mysqli_query($conn, $sql);
+
+    return $query;
+}
+
+function detailsub($id) {
+    $conn = koneksi();
+
+    $sql = "SELECT * FROM subtopik WHERE id_sub = '$id'";
+    $query = mysqli_query($conn, $sql);
+
+    return $query->fetch_assoc();
+}
+
+function user() {
+    $conn = koneksi();
+
+    $sql = "SELECT * FROM user WHERE id_user = '$_SESSION[id]'";
+    $query = mysqli_query($conn, $sql);
+
+    return $query->fetch_assoc();
+}
+
+function updateuser($username, $password_hash) {
+    $conn = koneksi();
+
+    $checkuser = mysqli_escape_string($conn, $username);
+    $checkpass = mysqli_escape_string($conn, $password_hash);
+
+    // $passwordhash = password_hash($checkpass, PASSWORD_DEFAULT);
+
+    $sql = "UPDATE user SET username = '$checkuser', password = '$password_hash' WHERE id_user = '$_SESSION[id]'";
+    $query = mysqli_query($conn, $sql);
+
+    if ($query) {
+        echo "<script>alert('Update User Berhasil'); window.location.href = 'settings.php';</script>";
+    } else {
+        echo "<script>alert('Update Gagal'); window.location.href = 'settings.php';</script>";
+    }
+}
 ?>

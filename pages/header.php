@@ -71,10 +71,10 @@
   }
 
   .bg-images {
-  background: url('https://picsum.photos/1600/400') no-repeat center center;
-  background-size: cover;
-  height: 250px; /* tinggi background header */
-}
+    height: 250px; /* tinggi background header */
+    background: linear-gradient(rgba(44, 3, 3, 0.35), rgba(44, 3, 3, 0.35)), url('https://picsum.photos/1600/400') no-repeat center center;
+    background-size: cover;
+  }
 .section-images {
   margin-top: -100px; /* geser section ke atas agar card overlap */
   position: relative;

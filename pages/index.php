@@ -4,6 +4,17 @@ if (!isset($_SESSION['username'])) {
   header("Location: ../index.php");
 }
 
+include ('../function.php');
+
+// panggil fungsi kategori
+$satu = kategorisatu();
+
+// panggil fungsi filter data kategori
+$filter = filterdata();
+
+// panggil fungsi subtopik
+$sub = subtopik();
+
 ?>
 
 <!DOCTYPE html>
@@ -165,8 +176,10 @@ if (!isset($_SESSION['username'])) {
           aria-expanded="false">Kategori</button>
             <ul class="dropdown-menu animate border-0 shadow">
                   <li class="dropdown-submenu">
-                        <a class="dropdown-item text-uppercase" tabindex="-1" href="#" data-category = "oplosan" >solar </a>
-                        <a class="dropdown-item text-uppercase" tabindex="-1" href="#" data-category = "asli" >asli </a>
+                    <?php
+                      while($row = $satu->fetch_assoc()) { ?>
+                        <a class="dropdown-item text-uppercase" tabindex="-1" href="#" data-category = "<?php echo $row['id_kategori']; ?>" ><?php echo $row['nama_kategori']; ?> </a>
+                      <?php } ?>
                           <!-- <ul class="dropdown-menu">
                             <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase" data-category = "oplosan">oplosan</a></li>
                             <li><a tabindex="-1" href="#" class="dropdown-item text-uppercase" data-category = "asli">asli</a></li>
@@ -200,12 +213,14 @@ if (!isset($_SESSION['username'])) {
 
       <div class="grid-container">
         <div class="row">
-          <div class="col-md-4 item energy mb-4">
-            <a href="detail.php"><img src="../images/project1.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">energy</h6>
-            <h3><a href="project-single.html">Houston roof solaring</a></h3>
-          </div>
-          <div class="col-md-4 item wind mb-4">
+          <?php 
+            while($row = $sub->fetch_assoc()) { ?>
+              <div class="col-md-4 item <?php echo $row['id_topik']; ?> mb-4">
+                <a href="detail.php?id=<?php echo $row['id_sub']; ?>"><img src="https://img.youtube.com/vi/<?php echo $row['cover']; ?>/maxresdefault.jpg" alt="image" class="img-fluid"></a>
+                <h6 class="text-primary mt-3"><?php echo $row['nama_topik']; ?></h6>
+                <h3><a href="detail.php?id=<?php echo $row['id_sub']; ?>"><?php echo $row['judul_sub']; ?></a></h3>
+              </div>
+          <!-- <div class="col-md-4 item wind mb-4">
             <a href="project-single.html"><img src="../images/project2.jpg" alt="image" class="img-fluid"></a>
             <h6 class="text-primary mt-3">wind</h6>
             <h3><a href="project-single.html">City solar light</a></h3>
@@ -229,27 +244,8 @@ if (!isset($_SESSION['username'])) {
             <a href="project-single.html"><img src="../images/project2.jpg" alt="image" class="img-fluid"></a>
             <h6 class="text-primary mt-3">wind</h6>
             <h3><a href="project-single.html">City solar light</a></h3>
-          </div>
-          <div class="col-md-4 item renew mb-4">
-            <a href="project-single.html"><img src="../images/project3.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">renew</h6>
-            <h3><a href="project-single.html">solar power house</a></h3>
-          </div>
-          <div class="col-md-4 item renew mb-4">
-            <a href="project-single.html"><img src="../images/project6.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">renew</h6>
-            <h3><a href="project-single.html">wind turbining</a></h3>
-          </div>
-          <div class="col-md-4 item energy mb-4">
-            <a href="detail.php"><img src="../images/project1.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">energy</h6>
-            <h3><a href="project-single.html">Houston roof solaring</a></h3>
-          </div>
-          <div class="col-md-4 item wind mb-4">
-            <a href="project-single.html"><img src="../images/project2.jpg" alt="image" class="img-fluid"></a>
-            <h6 class="text-primary mt-3">wind</h6>
-            <h3><a href="project-single.html">City solar light</a></h3>
-          </div>
+          </div> -->
+          <?php } ?>
         </div>
       </div>
     </div>
@@ -368,22 +364,7 @@ if (!isset($_SESSION['username'])) {
   <!-- Script -->
   <script>
   // Data filter per kategori
-  const filterData = {
-    "oplosan": [
-      { label: "All", value: "*" },
-      { label: "Energy", value: "energy" },
-      { label: "Wind Turbines", value: "wind" },
-      { label: "Renewable", value: "renew" }
-    ],
-    "asli": [
-      { label: "All", value: "*" },
-      { label: "Energy Only", value: "energy" }
-    ],
-    "bbm-pertalite": [
-      { label: "All", value: "*" },
-      { label: "Wind Only", value: "wind" }
-    ]
-  };
+  const filterData = <?php echo json_encode($filter, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>;
 
   // Buka submenu dropdown Bootstrap 5 saat diklik
   document.querySelectorAll('.dropdown-submenu > a').forEach(a => {
