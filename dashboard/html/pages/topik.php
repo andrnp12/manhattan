@@ -301,7 +301,6 @@ if (isset($_GET['successDelete'])) {
 <script>
     function deleteTopik(id) {
         let name = document.getElementById('topik-name-' + id).innerText;
-        console.log(id);
         document.getElementById('topikName').innerText = name; // tampil di modal
         document.getElementById('deleteTopikId').value = id; // input hidden
     }

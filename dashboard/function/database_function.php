@@ -134,22 +134,11 @@ function editTopic($id, $topik, $kategori)
 function deleteTopic($id)
 {
     $con = connect();
-    // if (!$con) {
-    //     die('Koneksi gagal: ' . mysqli_connect_error());
-    // }
-
     $query = 'DELETE FROM topik WHERE id_topik = ?';
     $stmt = mysqli_prepare($con, $query);
-    // if (!$stmt) {
-    //     die('Prepare gagal: ' . mysqli_error($con));
-    // }
 
     mysqli_stmt_bind_param($stmt, 'i', $id);
     $exec = mysqli_stmt_execute($stmt);
-
-    // if (!$exec) {
-    //     echo 'Eksekusi gagal: ' . mysqli_stmt_error($stmt);
-    // }
 
     mysqli_stmt_close($stmt);
     mysqli_close($con);
@@ -174,4 +163,85 @@ function getAllMateri()
     }
     mysqli_close($con);
     return $materi;
+}
+
+
+
+// bagian materi(sub topik)
+// menambah materi
+function addMateri($id_topik, $cover, $judul_sub, $detail_sub, $link_video, $customRpp, $customLkp)
+{
+    $con = connect();
+    $query = 'INSERT INTO subtopik (id_topik, cover, judul_sub, detail_sub, link_video, nama_rpp, nama_lkp) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    $stmt = mysqli_prepare($con, $query);
+    mysqli_stmt_bind_param($stmt, 'issssss', $id_topik, $cover, $judul_sub, $detail_sub, $link_video, $customRpp, $customLkp);
+    $exec = mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
+
+    return $exec;
+}
+
+
+// edit materi
+function editMateri($id_sub, $cover, $judul_sub, $detail_sub, $link_video, $rpp, $lkp)
+{
+    $con = connect();
+    $query = 'UPDATE subtopik 
+              SET cover = ?, judul_sub = ?, detail_sub = ?, link_video = ?, nama_rpp = ?, nama_lkp = ? 
+              WHERE id_sub = ?';
+    $stmt = mysqli_prepare($con, $query);
+
+    if (!$stmt) {
+        die("Prepare failed: " . mysqli_error($con));
+    }
+
+    mysqli_stmt_bind_param($stmt, 'ssssssi', $cover, $judul_sub, $detail_sub, $link_video, $rpp, $lkp, $id_sub);
+
+    if (!mysqli_stmt_execute($stmt)) {
+        die("Execute failed: " . mysqli_stmt_error($stmt));
+    }
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
+
+    return true;
+}
+
+
+
+// menghapus materi
+function deleteMateri($id)
+{
+    $con = connect();
+    $query = 'DELETE FROM subtopik WHERE id_sub = ?';
+    $stmt = mysqli_prepare($con, $query);
+
+    mysqli_stmt_bind_param($stmt, 'i', $id);
+    $exec = mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
+
+    return $exec;
+}
+
+// fungsi mengambil rpp dan lkp berdasarkan id
+function getMateriById($id)
+{
+    $con = connect();
+    $query = 'SELECT nama_rpp, nama_lkp FROM subtopik WHERE id_sub = ?';
+    $stmt = mysqli_prepare($con, $query);
+
+    mysqli_stmt_bind_param($stmt, 'i', $id);
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+    $row = mysqli_fetch_assoc($result);
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
+
+    return $row; // hasil array atau null
 }
