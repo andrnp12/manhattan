@@ -20,6 +20,9 @@
   <!-- Style Sheet ================================================== -->
   <link rel="stylesheet" type="text/css" href="../style.css">
 
+  <!-- Bootstrap Icons ================================================== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
   <!-- Google Fonts ================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -241,6 +244,18 @@
               <li class="nav-item px-3">
                 <a class="nav-link p-0" aria-current="page" href="index.php">Materi & rps</a>
               </li>
+
+              <!-- Form Pencarian -->
+              <li class="nav-item px-3">
+                <form class="d-flex position-relative" role="search" action="search.php" method="get">
+                  <input class="form-control rounded-pill pe-5" type="search" placeholder="Cari Sesuatu..." aria-label="Search" name="search" required>
+                  <button type="submit"
+                    class="btn position-absolute end-0 top-50 translate-middle-y me-2 p-0 border-0 bg-transparent">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </form>
+              </li>
+              <!-- End Form Pencarian -->
 
               <li class="nav-item dropdown user-menu">
                 <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
