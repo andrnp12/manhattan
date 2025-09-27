@@ -1,7 +1,14 @@
 <?php
+
 session_start();
 if (!isset($_SESSION['username'])) {
+  session_destroy();
   header("Location: ../index.php");
+} else {
+  if ($_SESSION['role'] != 1) {
+    session_destroy();
+    header("Location: ../index.php");
+  }
 }
 
 include('../function.php');
@@ -12,36 +19,13 @@ $id = $_GET['id'];
 $sub = detailsub($id);
 
 // panggil fungsi topik
-$topik = subtopik();
+$topik = subtopik('LIMIT 3');
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <?php include('header.php'); ?>
-
-<!-- <section id="info" class="padding-medium">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 text-center mb-4 mb-lg-0">
-          <h3 class="display-3 fw-bold text-primary">1999</h3>
-          <h6>Happy Customer</h6>
-        </div>
-        <div class="col-md-3 text-center mb-4 mb-lg-0">
-          <h3 class="display-3 fw-bold text-primary">1721</h3>
-          <h6>project done</h6>
-        </div>
-        <div class="col-md-3 text-center mb-4 mb-lg-0">
-          <h3 class="display-3 fw-bold text-primary">97</h3>
-          <h6>award win</h6>
-        </div>
-        <div class="col-md-3 text-center mb-4 mb-lg-0">
-          <h3 class="display-3 fw-bold text-primary">1650</h3>
-          <h6>Expert worker</h6>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
 <section id="about-us" class="padding-small">
   <div class="container">
@@ -120,206 +104,10 @@ $topik = subtopik();
           <h3><a href="detail.php?id=<?php echo $row['id_sub']; ?>"><?php echo $row['judul_sub']; ?></a></h3>
         </div>
       <?php } ?>
-      <!-- <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="../images/blog2.jpg" alt="image" class="img-fluid"></a>
-          <h6 class="text-primary mt-3">16 Feb, 2024</h6>
-          <h3><a href="blog-single.html">Happy city after energized</a></h3>
-        </div>
-        <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="../images/blog3.jpg" alt="image" class="img-fluid"></a>
-          <h6 class="text-primary mt-3">16 Feb, 2024</h6>
-          <h3><a href="blog-single.html">Turbines helped alot for people</a></h3>
-        </div> -->
     </div>
   </div>
 </section>
 
-<!-- <section id="services">
-    <div class="container-fluid p-0">
-      <h6 class="text-center text-primary">Layanan Kami</h6>
-      <h3 class="text-center display-5 fw-bold mb-3">Apa Yang Kami Tawarkan</h3>
-      <div class="row g-0 mt-5 justify-content-center">
-        <div class="col-md-6 col-lg-3">
-          <div class="service-post position-relative bg-primary">
-            <img src="images/service1.jpg" class="service-img img-fluid" alt="img">
-            <div class="position-absolute bottom-0 p-5">
-              <h5 class="text-white">Video Pembelajaran Edukatif</h5>
-              <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-              <a href="services-single.html">
-                <h6 class="text-white text-decoration-underline">Lihat Semua</h6>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="service-post position-relative bg-primary">
-            <img src="images/service2.jpg" class="service-img img-fluid" alt="img">
-            <div class="position-absolute bottom-0 p-5">
-              <h5 class="text-white">Materi Ajar RPS Terupdate</h5>
-              <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-              <a href="services-single.html">
-                <h6 class="text-white text-decoration-underline">Lihat Semua</h6>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="service-post position-relative bg-primary">
-            <img src="images/service3.jpg" class="service-img img-fluid" alt="img">
-            <div class="position-absolute bottom-0 p-5">
-              <h5 class="text-white">Video dan Materi Downloadable</h5>
-              <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-              <a href="services-single.html">
-                <h6 class="text-white text-decoration-underline">Lihat Semua</h6>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="service-post position-relative bg-primary">
-            <img src="images/service1.jpg" class="service-img img-fluid" alt="img">
-            <div class="position-absolute bottom-0 p-5">
-              <h5 class="text-white">Solar panels</h5>
-              <p class="text-white">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-              <a href="services-single.html">
-                <h6 class="text-white text-decoration-underline">Read more</h6>
-              </a>
-            </div>
-          </div>
-        </div
-      </div>
-    </div>
-  </section> -->
-
-<!-- <section id="feature" class="padding-medium">
-    <div class="container">
-      <h6 class="text-primary">Why Choose Us!</h6>
-      <h3 class="display-5 fw-bold mb-3">Our motive to change world</h3>
-      <p>Aliqu diam amet diam et dolor diam ipsum sit tet lorem sit clita duo eos. <br> Clita erat ipsum et lorem et
-        sit, sed tempor erat elitr rebum at clita. </p>
-      <div class="row">
-        <div class="col-md-6 col-lg-3">
-          <div class="position-relative">
-            <h2 style="color:#F9F4EC; -webkit-text-stroke: 1px #E6E1D9; font-size: 130px; ">01</h2>
-            <h6 class="position-absolute top-50 start-50 translate-end m-0">Quality services</h6>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="position-relative">
-            <h2 style="color:#F9F4EC; -webkit-text-stroke: 1px #E6E1D9; font-size: 130px; ">02</h2>
-            <h6 class="position-absolute top-50 start-50 translate-end m-0">expertise workers</h6>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="position-relative">
-            <h2 style="color:#F9F4EC; -webkit-text-stroke: 1px #E6E1D9; font-size: 130px; ">03</h2>
-            <h6 class="position-absolute top-50 start-50 translate-end m-0">Free consulting</h6>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="position-relative">
-            <h2 style="color:#F9F4EC; -webkit-text-stroke: 1px #E6E1D9; font-size: 130px; ">04</h2>
-            <h6 class="position-absolute top-50 start-50 translate-end m-0">Customer support</h6>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-<!-- <section id="testimonial">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-1 offset-md-1 ">
-          <div class="me-3">
-            <svg class="text-primary me-1" width="60px" height="60px">
-              <use xlink:href="#quote"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="col-md-9">
-          <div class="swiper testimonial-swiper mt-3">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="review">
-                  <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="review">
-                  <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="review">
-                  <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="review">
-                  <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="review">
-                  <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-pagination testimonial-pagination text-start position-relative mt-4"></div>
-          </div>
-        </div>
-      </div>
-
-  </section> -->
-
-<!-- <section id="blogs">
-    <div class="container">
-      <div class="mb-3 d-flex flex-wrap align-items-center justify-content-between">
-        <div>
-          <h6 class="text-primary">Blog & articles</h6>
-          <h3 class="display-5 fw-bold mb-3">Read our latest news</h3>
-        </div>
-        <a href="blog.html" class="btn btn-primary">Read Blogs</a>
-      </div>
-      <div class="row mt-5 mt-lg-0">
-        <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="images/blog1.jpg" alt="image" class="img-fluid"></a>
-          <h6 class="text-primary mt-3">16 Feb, 2024</h6>
-          <h3><a href="blog-single.html">New research for green life</a></h3>
-        </div>
-        <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="images/blog2.jpg" alt="image" class="img-fluid"></a>
-          <h6 class="text-primary mt-3">16 Feb, 2024</h6>
-          <h3><a href="blog-single.html">Happy city after energized</a></h3>
-        </div>
-        <div class="col-md-4 mb-4">
-          <a href="blog-single.html"><img src="images/blog3.jpg" alt="image" class="img-fluid"></a>
-          <h6 class="text-primary mt-3">16 Feb, 2024</h6>
-          <h3><a href="blog-single.html">Turbines helped alot for people</a></h3>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
 <section id="contact-info" class="padding-small bg-gray">
   <div class="container">

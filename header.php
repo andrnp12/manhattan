@@ -26,66 +26,71 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap"
     rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <style>
-.dropdown-submenu {
-  position: relative;
-}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    .dropdown-submenu {
+      position: relative;
+    }
 
-.dropdown-submenu .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -1px;
-  margin-left: 0.1rem;
-    margin-right: 0.1rem;
-}
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-top: -1px;
+      margin-left: 0.1rem;
+      margin-right: 0.1rem;
+    }
 
-.item {
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    .item {
+      transition: opacity 0.3s ease, transform 0.3s ease;
       opacity: 1;
       transform: scale(1);
     }
+
     .hidden {
       opacity: 0;
-    transform: scale(0.95);
-    pointer-events: none;
+      transform: scale(0.95);
+      pointer-events: none;
     }
 
     /* Highlight tombol filter aktif */
     #filterTags .btn.active {
-      background-color:rgb(253, 177, 13);
+      background-color: rgb(253, 177, 13);
       color: #fff;
       border-color: rgb(253, 177, 13);
     }
 
     .pdf-viewer {
-    width: 100%;
-    height: 100vh; /* default untuk desktop */
-  }
-
-  /* Aturan khusus untuk layar kecil (mobile) */
-  @media (max-width: 768px) {
-    .pdf-viewer {
-      height: 500px; /* batasi tinggi di mobile */
+      width: 100%;
+      height: 100vh;
+      /* default untuk desktop */
     }
 
-    .index-header {
-      gap: 3rem;
+    /* Aturan khusus untuk layar kecil (mobile) */
+    @media (max-width: 768px) {
+      .pdf-viewer {
+        height: 500px;
+        /* batasi tinggi di mobile */
+      }
+
+      .index-header {
+        gap: 3rem;
+      }
     }
-  }
 
-  .bg-images {
-    height: 250px; /* tinggi background header */
-    background: linear-gradient(rgba(44, 3, 3, 0.35), rgba(44, 3, 3, 0.35)), url('https://picsum.photos/1600/400') no-repeat center center;
-    background-size: cover;
-}
-.section-images {
-  margin-top: -100px; /* geser section ke atas agar card overlap */
-  position: relative;
-  z-index: 1;
-}
+    .bg-images {
+      height: 250px;
+      /* tinggi background header */
+      background: linear-gradient(rgba(44, 3, 3, 0.35), rgba(44, 3, 3, 0.35)), url('https://picsum.photos/1600/400') no-repeat center center;
+      background-size: cover;
+    }
 
-</style>
+    .section-images {
+      margin-top: -100px;
+      /* geser section ke atas agar card overlap */
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 
 <body>
@@ -197,34 +202,8 @@
                 <use xlink:href="#phone"></use>
               </svg>+666 333 9999
             </li>
-            <!-- <li class="time text-white text-capitalize d-flex align-items-center me-4" style="font-size: 12px;">
-              <svg class="text-primary me-1" width="15" height="15">
-                <use xlink:href="#clock"></use>
-              </svg>8:00-18:00, Sat: Closed
-            </li> -->
           </ul>
           <ul class="social-links d-flex flex-wrap list-unstyled m-0">
-            <!-- <li class="social">
-              <a href="#">
-                <svg class="me-1" width="16" height="16">
-                  <use xlink:href="#facebook"></use>
-                </svg>
-              </a>
-            </li> -->
-            <!-- <li class="social ms-4">
-              <a href="#">
-                <svg class="me-1" width="16" height="16">
-                  <use xlink:href="#twitter"></use>
-                </svg>
-              </a>
-            </li> -->
-            <!-- <li class="social ms-4">
-              <a href="#">
-                <svg class="me-1" width="16" height="16">
-                  <use xlink:href="#linkedin"></use>
-                </svg>
-              </a>
-            </li> -->
             <li class="social ms-4">
               <a href="#">
                 <svg class="me-1" width="16" height="16">
@@ -263,9 +242,6 @@
           </div>
           <div class="offcanvas-body align-items-center justify-content-end">
             <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
-              <!-- <li class="nav-item px-3">
-                <a class="nav-link active p-0" aria-current="page" href="index.php">Home</a>
-              </li> -->
               <li class="nav-item px-3">
                 <a class="nav-link p-0" aria-current="page" href="pages/index.php">Materi & rps</a>
               </li>

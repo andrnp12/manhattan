@@ -2,10 +2,16 @@
 include(__DIR__ . '../../data/data_dummy.php');
 include(__DIR__ . '../../function/koneksi.php');
 
-// session_start();
-// if (!isset($_SESSION['username'])) {
-//   header("Location: ../../index.php");
-// }
+session_start();
+if (!isset($_SESSION['username'])) {
+  session_destroy();
+  header("Location: ../../index.php");
+} else {
+  if ($_SESSION['role'] != 0) {
+    session_destroy();
+    header("Location: ../../index.php");
+  }
+}
 
 ob_start();
 ?>
