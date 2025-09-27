@@ -253,3 +253,13 @@ function updateuser($username, $password_hash)
         echo "<script>alert('Update Gagal'); window.location.href = 'settings.php';</script>";
     }
 }
+
+function cari($keyword)
+{
+    $conn = koneksi();
+
+    $sql = "SELECT * FROM subtopik INNER JOIN topik ON subtopik.id_topik = topik.id_topik WHERE subtopik.judul_sub LIKE '%$keyword%'";
+    $query = mysqli_query($conn, $sql);
+
+    return $query;
+}
