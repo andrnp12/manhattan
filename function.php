@@ -19,7 +19,7 @@ function register($username, $password, $verifikasi)
 
     $passwordhash = password_hash($checkpass, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO user VALUES(null, '$checkuser', '$passwordhash', '$verifikasi', '$role')";
+    $sql = "INSERT INTO user VALUES(null, '$checkuser', '$passwordhash', '$verifikasi', $role)";
     $query = mysqli_query($conn, $sql);
 
     if ($query) {

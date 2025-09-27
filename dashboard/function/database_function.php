@@ -245,3 +245,63 @@ function getMateriById($id)
 
     return $row; // hasil array atau null
 }
+
+
+
+// mengambil jumlah data 
+function countKategori()
+{
+    $con = connect();
+    $query = 'SELECT COUNT(*) as total FROM kategori';
+    $result = mysqli_query($con, $query);
+
+    // Cek apakah kueri berhasil dan ada hasil
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $total_rows = (int)$row['total'];
+        mysqli_free_result($result);
+    } else {
+        $total_rows = "Error: " . mysqli_error($con);
+    }
+
+    mysqli_close($con);
+    return $total_rows;
+}
+
+function countTopik()
+{
+    $con = connect();
+    $query = 'SELECT COUNT(*) as total FROM topik';
+    $result = mysqli_query($con, $query);
+
+    // Cek apakah kueri berhasil dan ada hasil
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $total_rows = (int)$row['total'];
+        mysqli_free_result($result);
+    } else {
+        $total_rows = "Error: " . mysqli_error($con);
+    }
+
+    mysqli_close($con);
+    return $total_rows;
+}
+
+function countMateri()
+{
+    $con = connect();
+    $query = 'SELECT COUNT(*) as total FROM subtopik';
+    $result = mysqli_query($con, $query);
+
+    // Cek apakah kueri berhasil dan ada hasil
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $total_rows = (int)$row['total'];
+        mysqli_free_result($result);
+    } else {
+        $total_rows = "Error: " . mysqli_error($con);
+    }
+
+    mysqli_close($con);
+    return $total_rows;
+}

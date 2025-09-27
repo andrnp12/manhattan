@@ -61,25 +61,6 @@
                         <!-- <span class="hide-menu badge bg-secondary-subtle text-secondary fs-1 py-1">Pro</span> -->
                     </a>
                 </li>
-                <li>
-                    <span class="sidebar-divider lg"></span>
-                </li>
-                <li class="nav-small-cap">
-                    <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
-                    <span class="hide-menu">Auth</span>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
-                        <iconify-icon icon="solar:login-3-line-duotone"></iconify-icon>
-                        <span class="hide-menu">Login</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
-                        <iconify-icon icon="solar:user-plus-rounded-line-duotone"></iconify-icon>
-                        <span class="hide-menu">Register</span>
-                    </a>
-                </li>
         </nav>
         <!-- End Sidebar navigation -->
     </div>
