@@ -32,7 +32,7 @@ $topik = subtopik('LIMIT 3');
             sit clita duo justo elitr rebum at clita diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat
             ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet
           </p>
-          <a class="btn btn-primary mt-4" href="about.html">Jelajahi Fitur</a>
+          <!-- <a class="btn btn-primary mt-4" href="about.html">Jelajahi Fitur</a> -->
         </div>
       </div>
       <div class="col-lg-6">
@@ -147,7 +147,7 @@ $topik = subtopik('LIMIT 3');
         <h6 class="text-primary">Materi Terbaru</h6>
         <h3 class="display-5 fw-bold mb-3">Lihat Materi Terbaru Kami</h3>
       </div>
-      <a href="blog.html" class="btn btn-primary">Lihat Semuanya</a>
+      <a href="pages/index.php" class="btn btn-primary">Lihat Semuanya</a>
     </div>
     <div class="row mt-5 mt-lg-0">
       <?php while ($row = $topik->fetch_assoc()) { ?>

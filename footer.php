@@ -75,8 +75,8 @@
 
       </div>
       <div class="col-md-6 text-md-end">
-        <p class="">Free Website Template:<a href="https://templatesjungle.com/" class="text-decoration-underline"
-            target="_blank">TemplatesJungle</a></p>
+        <p class="">Sola Website Edukasi Terbaik<a href="" class="text-decoration-underline"
+            target="_blank"></a></p>
       </div>
 
     </footer>
