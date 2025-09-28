@@ -19,7 +19,7 @@ function register($username, $password, $verifikasi)
 
     $passwordhash = password_hash($checkpass, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO user VALUES(null, '$checkuser', '$passwordhash', '$verifikasi', '$role')";
+    $sql = "INSERT INTO user VALUES(null, '$checkuser', '$passwordhash', '$verifikasi', $role)";
     $query = mysqli_query($conn, $sql);
 
     if ($query) {
@@ -248,7 +248,18 @@ function updateuser($username, $password_hash)
     $query = mysqli_query($conn, $sql);
 
     if ($query) {
-        echo "<script>alert('Update User Berhasil'); window.location.href = 'settings.php';</script>";
+        // ambil role dari session
+        $role = $_SESSION['role'];
+
+        if ($role == 0) {
+            $redirect = "index.php?page=profile";
+        } elseif ($role == 1) {
+            $redirect = "settings.php";
+        } else {
+            $redirect = "index.php"; // fallback kalau role tidak dikenali
+        }
+
+        echo "<script>alert('Update User Berhasil'); window.location.href = '$redirect';</script>";
     } else {
         echo "<script>alert('Update Gagal'); window.location.href = 'settings.php';</script>";
     }

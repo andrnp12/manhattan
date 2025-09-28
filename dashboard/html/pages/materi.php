@@ -11,9 +11,6 @@ if (!isset($_SESSION['username'])) {
     }
 }
 
-// include(__DIR__ . '../../../data/data_dummy.php');
-
-include(__DIR__ . '../../../function/database_function.php');
 
 // ambil data kategori dari database
 $categories = getCategories();
@@ -96,9 +93,15 @@ if (isset($_POST['submit'])) {
 
 // menampilkan pesan tambah gagak dan berhasil 
 if (isset($_GET['success'])) {
-    echo "<script>alert('Materi berhasil ditambahkan!');</script>";
+    echo "<script>
+    alert('Materi berhasil ditambahkan!');
+    window.location.href = 'index.php?page=materi';
+    </script>";
 } elseif (isset($_GET['error'])) {
-    echo "<script>alert('Materi gagal ditambahkan!');</script>";
+    echo "<script>
+    alert('Materi gagal ditambahkan!');
+    window.location.href = 'index.php?page=materi';
+    </script>";
 }
 
 
@@ -200,9 +203,15 @@ if (isset($_POST['edit_submit'])) {
 
 // menampilkan pesan edit gagak dan berhasil 
 if (isset($_GET['successEdit'])) {
-    echo "<script>alert('Edit Materi berhasil!');</script>";
+    echo "<script>
+    alert('Edit Materi berhasil!');
+    window.location.href = 'index.php?page=materi';
+    </script>";
 } elseif (isset($_GET['errorEdit'])) {
-    echo "<script>alert('Edit Materi gagal!');</script>";
+    echo "<script>
+    alert('Edit Materi gagal!');
+    window.location.href = 'index.php?page=materi';
+    </script>";
 }
 
 // hapus materi
@@ -235,9 +244,15 @@ if (isset($_POST['delete_submit'])) {
 
 // menampilkan pesan tambah gagak dan berhasil 
 if (isset($_GET['successDelete'])) {
-    echo "<script>alert('Materi berhasil dihapus!');</script>";
+    echo "<script>
+    alert('Materi berhasil dihapus!');
+    window.location.href = 'index.php?page=materi';
+    </script>";
 } elseif (isset($_GET['errorDelete'])) {
-    echo "<script>alert('Materi gagal dihapus!');</script>";
+    echo "<script>
+    alert('Materi gagal dihapus!');
+    window.location.href = 'index.php?page=materi';
+    </script>";
 }
 ?>
 

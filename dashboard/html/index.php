@@ -1,6 +1,7 @@
 <?php
 include(__DIR__ . '../../data/data_dummy.php');
-include(__DIR__ . '../../function/koneksi.php');
+include(__DIR__ . '../../function/database_function.php');
+include(__DIR__ . '../../../function.php');
 
 session_start();
 if (!isset($_SESSION['username'])) {
@@ -12,6 +13,12 @@ if (!isset($_SESSION['username'])) {
     header("Location: ../../index.php");
   }
 }
+
+// mengambil data jumlah 
+$kategori = countKategori();
+$topik = countTopik();
+$materi = countMateri();
+
 
 ob_start();
 ?>
@@ -81,7 +88,7 @@ ob_start();
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <li>
-                            <a class="dropdown-item d-flex align-items-center gap-3" href="javascript:void(0)"><i
+                            <a class="dropdown-item d-flex align-items-center gap-3" href="index.php?page=category"><i
                                 class="fs-4 ti ti-plus"></i>Add</a>
                           </li>
                         </ul>
@@ -89,7 +96,7 @@ ob_start();
                     </div>
                     <div class="row align-items-end justify-content-between pt-4">
                       <div class="col-5">
-                        <h2 class="mb-6 fs-8">4,562</h2>
+                        <h2 class="mb-6 fs-8"><?php echo $kategori; ?></h2>
                         <!-- <span class="badge rounded-pill border border-muted fw-bold text-muted fs-2 py-1">+23% last
                             month</span> -->
                       </div>
@@ -120,7 +127,7 @@ ob_start();
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <li>
-                            <a class="dropdown-item d-flex align-items-center gap-3" href="javascript:void(0)"><i
+                            <a class="dropdown-item d-flex align-items-center gap-3" href="index.php?page=topik"><i
                                 class="fs-4 ti ti-plus"></i>Add</a>
                           </li>
                         </ul>
@@ -128,7 +135,7 @@ ob_start();
                     </div>
                     <div class="row align-items-center justify-content-between pt-4">
                       <div class="col-5">
-                        <h2 class="mb-6 fs-8 text-nowrap">$6,280</h2>
+                        <h2 class="mb-6 fs-8 text-nowrap"><?php echo $topik; ?></h2>
                       </div>
                       <div class="col-5">
                         <div id="total-income"></div>
@@ -147,7 +154,7 @@ ob_start();
                           <iconify-icon icon="solar:wallet-2-line-duotone" class="fs-7 text-white"></iconify-icon>
                         </div>
                         <h6 class="mb-0 fs-4 fw-medium text-muted">
-                          Jumlah RPP
+                          Jumlah Sub Topik
                         </h6>
                       </div>
                       <div class="dropdown dropstart">
@@ -157,7 +164,7 @@ ob_start();
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <li>
-                            <a class="dropdown-item d-flex align-items-center gap-3" href="javascript:void(0)"><i
+                            <a class="dropdown-item d-flex align-items-center gap-3" href="index.php?page=materi"><i
                                 class="fs-4 ti ti-plus"></i>Add</a>
                           </li>
                         </ul>
@@ -165,44 +172,7 @@ ob_start();
                     </div>
                     <div class="row align-items-center justify-content-between pt-4">
                       <div class="col-5">
-                        <h2 class="mb-6 fs-8 text-nowrap">$6,280</h2>
-                      </div>
-                      <div class="col-5">
-                        <div id="total-income"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card bg-info-subtle shadow-none w-100">
-                  <div class="card-body">
-                    <div class="d-flex mb-10 pb-1 justify-content-between align-items-center">
-                      <div class="d-flex align-items-center gap-6">
-                        <div
-                          class="rounded-circle-shape bg-info px-3 py-2 rounded-pill d-inline-flex align-items-center justify-content-center">
-                          <iconify-icon icon="solar:wallet-2-line-duotone" class="fs-7 text-white"></iconify-icon>
-                        </div>
-                        <h6 class="mb-0 fs-4 fw-medium text-muted">
-                          Jumlah video
-                        </h6>
-                      </div>
-                      <div class="dropdown dropstart">
-                        <a href="javascript:void(0)" class="text-muted" id="dropdownMenuButton"
-                          data-bs-toggle="dropdown" aria-expanded="false">
-                          <i class="ti ti-dots-vertical fs-6"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <li>
-                            <a class="dropdown-item d-flex align-items-center gap-3" href="javascript:void(0)"><i
-                                class="fs-4 ti ti-plus"></i>Add</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="row align-items-center justify-content-between pt-4">
-                      <div class="col-5">
-                        <h2 class="mb-6 fs-8 text-nowrap">$6,280</h2>
+                        <h2 class="mb-6 fs-8 text-nowrap"><?php echo $materi; ?></h2>
                       </div>
                       <div class="col-5">
                         <div id="total-income"></div>

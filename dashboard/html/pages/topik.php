@@ -11,9 +11,6 @@ if (!isset($_SESSION['username'])) {
     }
 }
 
-// include(__DIR__ . '../../../data/data_dummy.php');
-include(__DIR__ . '../../../function/database_function.php');
-
 // ambil data topik dari database
 $topics = getAllTopics();
 
@@ -39,9 +36,15 @@ if (isset($_POST['submit'])) {
 
 // menampilkan pesan tambah gagak dan berhasil 
 if (isset($_GET['success'])) {
-    echo "<script>alert('Topik berhasil ditambahkan!');</script>";
+    echo "<script>
+    alert('Topik berhasil ditambahkan!');
+    window.location.href = 'index.php?page=topik';
+    </script>";
 } elseif (isset($_GET['error'])) {
-    echo "<script>alert('Topik gagal ditambahkan!');</script>";
+    echo "<script>
+    alert('Topik gagal ditambahkan!');
+    window.location.href = 'index.php?page=topik';
+    </script>";
 }
 
 // edit topik
@@ -64,9 +67,15 @@ if (isset($_POST['edit_submit'])) {
 
 // menampilkan pesan edit gagak dan berhasil 
 if (isset($_GET['successEdit'])) {
-    echo "<script>alert('Edit Topik berhasil!');</script>";
+    echo "<script>
+    alert('Edit Topik berhasil!');
+    window.location.href = 'index.php?page=topik';
+    </script>";
 } elseif (isset($_GET['errorEdit'])) {
-    echo "<script>alert('Edit Topik gagal!');</script>";
+    echo "<script>
+    alert('Edit Topik gagal!');
+    window.location.href = 'index.php?page=topik';
+    </script>";
 }
 
 
@@ -86,9 +95,15 @@ if (isset($_POST['delete_submit'])) {
 
 // menampilkan pesan hapus gagak dan berhasil 
 if (isset($_GET['successDelete'])) {
-    echo "<script>alert('Hapus Topik berhasil!');</script>";
+    echo "<script>
+    alert('Hapus Topik berhasil!');
+    window.location.href = 'index.php?page=topik';
+    </script>";
 } elseif (isset($_GET['errorDelete'])) {
-    echo "<script>alert('Hapus Topik gagal!');</script>";
+    echo "<script>
+    alert('Hapus Topik gagal!');
+    window.location.href = 'index.php?page=topik';
+    </script>";
 }
 
 ?>

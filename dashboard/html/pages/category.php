@@ -11,7 +11,7 @@ if (!isset($_SESSION['username'])) {
     }
 }
 
-include(__DIR__ . '../../../function/database_function.php');
+// include(__DIR__ . '../../../function/database_function.php');
 
 // ambil data kategori dari database
 $categories = getCategories();
@@ -34,10 +34,17 @@ if (isset($_POST['submit'])) {
 
 // menampilkan pesan tambah gagak dan berhasil 
 if (isset($_GET['success'])) {
-    echo "<script>alert('Kategori berhasil ditambahkan!');</script>";
+    echo "<script>
+        alert('Kategori berhasil ditambahkan!');
+        window.location.href = 'index.php?page=category';
+    </script>";
 } elseif (isset($_GET['error'])) {
-    echo "<script>alert('Kategori gagal ditambahkan!');</script>";
+    echo "<script>
+        alert('Kategori gagal ditambahkan!');
+        window.location.href = 'index.php?page=category';
+    </script>";
 }
+
 
 // edit kategori
 if (isset($_POST['edit_submit'])) {
@@ -58,9 +65,15 @@ if (isset($_POST['edit_submit'])) {
 
 // menampilkan pesan edit gagak dan berhasil 
 if (isset($_GET['successEdit'])) {
-    echo "<script>alert('Edit Kategori berhasil ditambahkan!');</script>";
+    echo "<script>
+    alert('Edit Kategori berhasil ditambahkan!');
+    window.location.href = 'index.php?page=category';
+    </script>";
 } elseif (isset($_GET['errorEdit'])) {
-    echo "<script>alert('Edit Kategori gagal ditambahkan!');</script>";
+    echo "<script>
+    alert('Edit Kategori gagal ditambahkan!'); 
+    window.location.href = 'index.php?page=category';
+    </script>";
 }
 
 
@@ -80,9 +93,14 @@ if (isset($_POST['delete_submit'])) {
 
 // menampilkan pesan hapus gagak dan berhasil 
 if (isset($_GET['successDelete'])) {
-    echo "<script>alert('Hapus Kategori berhasil!');</script>";
+    echo "<script>
+    alert('Hapus Kategori berhasil!');
+    window.location.href = 'index.php?page=category';
+    </script>";
 } elseif (isset($_GET['errorDelete'])) {
-    echo "<script>alert('Hapus Kategori gagal!');</script>";
+    echo "<script>alert('Hapus Kategori gagal!');
+    window.location.href = 'index.php?page=category';
+    </script>";
 }
 
 ?>
