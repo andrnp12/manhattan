@@ -95,12 +95,12 @@ if (isset($_POST['submit'])) {
 if (isset($_GET['success'])) {
     echo "<script>
     alert('Materi berhasil ditambahkan!');
-    window.location.href = 'index.php?page=topik';
+    window.location.href = 'index.php?page=materi';
     </script>";
 } elseif (isset($_GET['error'])) {
     echo "<script>
     alert('Materi gagal ditambahkan!');
-    window.location.href = 'index.php?page=topik';
+    window.location.href = 'index.php?page=materi';
     </script>";
 }
 
@@ -205,12 +205,12 @@ if (isset($_POST['edit_submit'])) {
 if (isset($_GET['successEdit'])) {
     echo "<script>
     alert('Edit Materi berhasil!');
-    window.location.href = 'index.php?page=topik';
+    window.location.href = 'index.php?page=materi';
     </script>";
 } elseif (isset($_GET['errorEdit'])) {
     echo "<script>
     alert('Edit Materi gagal!');
-    window.location.href = 'index.php?page=topik';
+    window.location.href = 'index.php?page=materi';
     </script>";
 }
 
@@ -246,12 +246,12 @@ if (isset($_POST['delete_submit'])) {
 if (isset($_GET['successDelete'])) {
     echo "<script>
     alert('Materi berhasil dihapus!');
-    window.location.href = 'index.php?page=topik';
+    window.location.href = 'index.php?page=materi';
     </script>";
 } elseif (isset($_GET['errorDelete'])) {
     echo "<script>
     alert('Materi gagal dihapus!');
-    window.location.href = 'index.php?page=topik';
+    window.location.href = 'index.php?page=materi';
     </script>";
 }
 ?>
