@@ -64,7 +64,7 @@ $topik = subtopik('LIMIT 3');
         </div>
       </div>
       <iframe
-        src="https://docs.google.com/gview?embedded=true&url=https://b3c605ec45fd.ngrok-free.app/website-2/manhattan/dashboard/uploads/<?php echo urlencode($sub['nama_rpp']); ?>"
+        src="https://docs.google.com/gview?embedded=true&url=https://overpotently-unmagnifying-erlene.ngrok-free.dev/manhattan/dashboard/uploads/<?php echo urlencode($sub['nama_rpp']); ?>"
         style="width:100%; height:500px;"
         frameborder="0">
       </iframe>
@@ -78,7 +78,7 @@ $topik = subtopik('LIMIT 3');
         </div>
       </div>
       <iframe
-        src="https://docs.google.com/gview?embedded=true&url=https://b3c605ec45fd.ngrok-free.app/website-2/manhattan/dashboard/uploads/<?php echo urlencode($sub['nama_lkp']); ?>"
+        src="https://docs.google.com/gview?embedded=true&url=https://overpotently-unmagnifying-erlene.ngrok-free.dev/manhattan/dashboard/uploads/<?php echo urlencode($sub['nama_lkp']); ?>"
         style="width:100%; height:500px;"
         frameborder="0">
       </iframe>
@@ -104,19 +104,6 @@ $topik = subtopik('LIMIT 3');
           <h3><a href="detail.php?id=<?php echo $row['id_sub']; ?>"><?php echo $row['judul_sub']; ?></a></h3>
         </div>
       <?php } ?>
-    </div>
-  </div>
-</section>
-
-
-<section id="contact-info" class="padding-small bg-gray">
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-between">
-      <div>
-        <h3 class="display-5 fw-bold mb-3">Segera Hubungi Kami</h3>
-        <p>Jika anda memiliki masukan atau pesan dan kesan pada kami silahkan hubungi di <br> yyy@gmail.com atau Via Whatsapp di +628123456789</p>
-      </div>
-      <a href="contact.html" class="btn btn-primary">Contact Us</a>
     </div>
   </div>
 </section>

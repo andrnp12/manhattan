@@ -1,16 +1,5 @@
 <?php
 
-session_start();
-if (!isset($_SESSION['username'])) {
-    session_destroy();
-    header("Location: ../../index.php");
-} else {
-    if ($_SESSION['role'] != 0) {
-        session_destroy();
-        header("Location: ../../index.php");
-    }
-}
-
 // include(__DIR__ . '../../../function/database_function.php');
 
 // ambil data kategori dari database

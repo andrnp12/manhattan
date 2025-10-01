@@ -2,4 +2,4 @@
 
 session_start();
 session_destroy();
-header("Location: /manhattan/index.php");
+header("Location: ../../index.php");

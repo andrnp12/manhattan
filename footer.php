@@ -1,3 +1,15 @@
+<section id="contact-info" class="padding-small bg-gray">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between">
+      <div>
+        <h3 class="display-5 fw-bold mb-3">Segera Hubungi Kami</h3>
+        <p>Jika anda memiliki masukan atau pesan dan kesan pada kami silahkan hubungi <br> Via Whatsapp di +62 857-9921-8071</p>
+      </div>
+      <a href="https://wa.me/6285799218071" class="btn btn-primary">Contact Us</a>
+    </div>
+  </div>
+</section>
+
 <section id="footer">
   <div class="container footer-container mt-5 pt-3">
     <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
@@ -10,20 +22,20 @@
           <li class="location text-capitalize d-flex align-items-center">
             <svg class="text-primary me-1" width="16" height="16">
               <use xlink:href="#location"></use>
-            </svg>State Road 54 Trinity, Florida
+            </svg>Jl. Taman Siswa, Pekeng, Kauman, Tahunan, Kec. Tahunan
           </li>
           <li class="phone text-capitalize d-flex align-items-center">
             <svg class="text-primary me-1" width="16" height="16">
               <use xlink:href="#phone"></use>
-            </svg>+666 333 9999
+            </svg>+62 857-9921-8071
           </li>
           <li class="time text-capitalize d-flex align-items-center">
             <svg class="text-primary me-1" width="16" height="16">
               <use xlink:href="#email"></use>
-            </svg>yourdomain@email.com
+            </svg>delezine01@gmail.com
           </li>
         </ul>
-        <ul class="social-links d-flex flex-wrap list-unstyled mt-4">
+        <!-- <ul class="social-links d-flex flex-wrap list-unstyled mt-4">
           <li class="social me-4">
             <a href="#">
               <svg width="16" height="16">
@@ -38,31 +50,17 @@
               </svg>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
-      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-        <h5 class="py-3">Quick links</h5>
+      <div class="col-md-12 col-lg-6 mb-3 mb-lg-0 text-md-end">
+        <h5 class="py-3">Daftar Halaman</h5>
         <ul class="nav flex-column">
-          <li class="nav-item"><a href="#" class="text-uppercase p-0 "> About us </a></li>
-          <li class="nav-item"><a href="#" class="text-uppercase p-0 "> Our Services </a></li>
-          <li class="nav-item"><a href="#" class="text-uppercase p-0 "> Privacy Policy</a></li>
-          <li class="nav-item"><a href="#" class="text-uppercase p-0 "> Contact us </a></li>
-          <li class="nav-item"><a href="#" class="text-uppercase p-0 "> Support </a></li>
+          <li class="nav-item"><a href="register.php" class="text-uppercase p-0 "> Daftar Akun </a></li>
+          <li class="nav-item"><a href="#" class="text-uppercase p-0 "> Login </a></li>
+          <li class="nav-item"><a href="forgot.php" class="text-uppercase p-0 "> Lupa Password</a></li>
+          <li class="nav-item"><a href="pages/index.php" class="text-uppercase p-0 "> Materi Edukasi</a></li>
         </ul>
       </div>
-      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-        <h5 class="py-3">Our Newsletter</h5>
-        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-        <form class=" position-relative">
-          <input type="text" class="form-control rounded-5 px-4 py-2 bg-transparent" placeholder="Your email address">
-          <a href="#" class="position-absolute top-50 end-0 translate-middle-y bg-primary rounded-circle p-1 mx-1">
-            <svg class="text-white" width="25" height="25">
-              <use xlink:href="#send"></use>
-            </svg>
-          </a>
-        </form>
-      </div>
-
     </footer>
   </div>
 
@@ -71,40 +69,17 @@
   <div class="container">
     <footer class="row align-items-center py-2">
       <div class="col-md-6 ">
-        <p>© 2024 Sola - All rights reserved</p>
+        <p>© 2025 Dele - All rights reserved</p>
 
       </div>
       <div class="col-md-6 text-md-end">
-        <p class="">Sola Website Edukasi Terbaik<a href="" class="text-decoration-underline"
+        <p class="">Dele Website Edukasi Terbaik<a href="#" class="text-decoration-underline"
             target="_blank"></a></p>
       </div>
 
     </footer>
   </div>
 </section>
-
-<!-- Video Popup -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-
-    <div class="modal-content">
-
-      <div class="modal-body">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><svg class="bi" width="40"
-            height="40">
-            <use xlink:href="#close-sharp"></use>
-          </svg></button>
-        <div class="ratio ratio-16x9">
-          <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
-            allow="autoplay"></iframe>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</div>
 
 <script src="js/login.js"></script>
 

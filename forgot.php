@@ -59,18 +59,6 @@ if (isset($_POST['submit'])) {
   </div>
 </section>
 
-<section id="contact-info" class="m-t-5 padding-small bg-gray">
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-between">
-      <div>
-        <h3 class="display-5 fw-bold mb-3">Segera Hubungi Kami</h3>
-        <p>Jika anda memiliki masukan atau pesan dan kesan pada kami silahkan hubungi di <br> yyy@gmail.com atau Via Whatsapp di +628123456789</p>
-      </div>
-      <a href="contact.html" class="btn btn-primary">Contact Us</a>
-    </div>
-  </div>
-</section>
-
 <?php include('footer.php'); ?>
 
 </html>
