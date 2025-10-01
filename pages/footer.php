@@ -3,9 +3,9 @@
     <div class="d-flex flex-wrap align-items-center justify-content-between">
       <div>
         <h3 class="display-5 fw-bold mb-3">Segera Hubungi Kami</h3>
-        <p>Jika anda memiliki masukan atau pesan dan kesan pada kami silahkan hubungi di <br> yyy@gmail.com atau Via Whatsapp di +628123456789</p>
+        <p>Jika anda memiliki masukan atau pesan dan kesan pada kami silahkan hubungi di <br> delezine01@gmail.com atau Via Whatsapp di +628123456789</p>
       </div>
-      <a href="contact.html" class="btn btn-primary">Contact Us</a>
+      <a href="https://wa.me/6285799218071" class="btn btn-primary">Contact Us</a>
     </div>
   </div>
 </section>
@@ -22,7 +22,7 @@
           <li class="location text-capitalize d-flex align-items-center">
             <svg class="text-primary me-1" width="16" height="16">
               <use xlink:href="#location"></use>
-            </svg>Rembang, Jawa Tengah
+            </svg>Jl. Taman Siswa, Pekeng, Kauman, Tahunan, Kec. Tahunan
           </li>
           <li class="phone text-capitalize d-flex align-items-center">
             <svg class="text-primary me-1" width="16" height="16">
@@ -32,10 +32,10 @@
           <li class="time text-capitalize d-flex align-items-center">
             <svg class="text-primary me-1" width="16" height="16">
               <use xlink:href="#email"></use>
-            </svg>dele@example.com
+            </svg>delezine01@gmail.com
           </li>
         </ul>
-        <ul class="social-links d-flex flex-wrap list-unstyled mt-4">
+        <!-- <ul class="social-links d-flex flex-wrap list-unstyled mt-4">
           <li class="social me-4">
             <a href="#">
               <svg width="16" height="16">
@@ -50,15 +50,15 @@
               </svg>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
       <div class="col-md-12 col-lg-6 mb-3 mb-lg-0 text-md-end">
         <h5 class="py-3">Daftar Halaman</h5>
         <ul class="nav flex-column">
-          <li class="nav-item"><a href="register.php" class="text-uppercase p-0 "> Daftar Akun </a></li>
+          <li class="nav-item"><a href="logout.php" class="text-uppercase p-0 "> Daftar Akun </a></li>
           <li class="nav-item"><a href="#" class="text-uppercase p-0 "> Login </a></li>
-          <li class="nav-item"><a href="forgot.php" class="text-uppercase p-0 "> Lupa Password</a></li>
-          <li class="nav-item"><a href="pages/index.php" class="text-uppercase p-0 "> Materi Edukasi</a></li>
+          <li class="nav-item"><a href="logout.php" class="text-uppercase p-0 "> Lupa Password</a></li>
+          <li class="nav-item"><a href="logout.php" class="text-uppercase p-0 "> Materi Edukasi</a></li>
         </ul>
       </div>
     </footer>

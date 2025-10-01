@@ -5,7 +5,7 @@
         <h3 class="display-5 fw-bold mb-3">Segera Hubungi Kami</h3>
         <p>Jika anda memiliki masukan atau pesan dan kesan pada kami silahkan hubungi <br> Via Whatsapp di +62 857-9921-8071</p>
       </div>
-      <a href="contact.html" class="btn btn-primary">Contact Us</a>
+      <a href="https://wa.me/6285799218071" class="btn btn-primary">Contact Us</a>
     </div>
   </div>
 </section>
@@ -22,7 +22,7 @@
           <li class="location text-capitalize d-flex align-items-center">
             <svg class="text-primary me-1" width="16" height="16">
               <use xlink:href="#location"></use>
-            </svg>Rembang, Jawa Tengah
+            </svg>Jl. Taman Siswa, Pekeng, Kauman, Tahunan, Kec. Tahunan
           </li>
           <li class="phone text-capitalize d-flex align-items-center">
             <svg class="text-primary me-1" width="16" height="16">
@@ -32,10 +32,10 @@
           <li class="time text-capitalize d-flex align-items-center">
             <svg class="text-primary me-1" width="16" height="16">
               <use xlink:href="#email"></use>
-            </svg>dele@example.com
+            </svg>delezine01@gmail.com
           </li>
         </ul>
-        <ul class="social-links d-flex flex-wrap list-unstyled mt-4">
+        <!-- <ul class="social-links d-flex flex-wrap list-unstyled mt-4">
           <li class="social me-4">
             <a href="#">
               <svg width="16" height="16">
@@ -50,7 +50,7 @@
               </svg>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
       <div class="col-md-12 col-lg-6 mb-3 mb-lg-0 text-md-end">
         <h5 class="py-3">Daftar Halaman</h5>
